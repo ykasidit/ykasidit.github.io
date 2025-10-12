@@ -1,0 +1,15 @@
+---
+title: Manually install Nvidia drivers on Ubuntu 8.10
+category: howto
+---
+<p> For some strange reason, the restrictred hardware drivers that used to work for installing the nvidia drivers on ubuntu freezed/hanged on two computers i tried already. So I somehow found this useful. <br />
+<br />
+Open the Accessories &gt; Terminal and enter  <br />
+<br />
+sudo apt-get install nvidia-glx-177 <br />
+<br />
+Then <br />
+<br />
+sudo nvidia-xconfig <br />
+<br />
+Then, make sure all work is saved, all other programs are closed, press Ctrl+Alt+Backspace to restart the window server. Hope this helps.     </p>

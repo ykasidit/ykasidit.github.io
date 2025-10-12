@@ -1,56 +1,56 @@
 ---
-permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+permalink: /about
+title: "About"
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+About ClearEvo.com
+=====
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+ClearEvo.com was started back in early 2005, hosting most of personal interest/developed products (the Nokia Symbian, J2ME days...) and official pages for some of our open-source projects and blog.
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+About Kasidit Yusuf
+-------------------
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+I'm a 'Wireless Protocol Software Engineer' from Thailand. I've been developing software related to wireless protocols since 2004, and commercial mobile network test and measurement software since 2006. Currently my work focuses on development of low-level software and Android/Linux kernel modifications for radio-chip/modem access and decoding of LTE, WCDMA, GSM radio parameters and Layer-3 signalling messages, signalling state detection etc - on Android for the [AZENQOS - AZQ Android Network Testing Solution](http://www2.azenqos.com) product/Tools under [Meritech Solutions](https://meritechsolutions.com).
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+Open-source projects on github
+------------------------------
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+<https://github.com/ykasidit>
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
 
-**Markdown generator**
+Experience:
+-----------
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+- Developed the totally new AZENQOS GNU\Linux based server back end (Python gevent based log import scheduler, Parquet in S3 objectstore + Python Pandas radio/signalling calculation modules for LTE/WCDMA/GSM, geographical radio params plotter, report generator, KML/CSV/QGIS-SPATIALITE-DB exporters, uplink wav playback + downlink wav recording on Android + Numpy-based wav silence/spacing detector/splitter + integration with Opticom's licensed POLQA caculation modules, etc...)
+- Developed 'azm_db_merge': <https://github.com/freewillfx-azenqos/azm_db_merge>
+- Developed the core parts of log processing, database merging, report generation of the AZENQOS second generation GNU/Linux based server, implemented to work together through docker-compose.
+- Developed the main software engine for access and decoding of low-level radio parameters/measurements and Layer-3 messages used in the [AZQ Android Radio Network Testing Solution](http://www.azenqos.com/):
+- Developed advanced radio-interface locking features: LTE PCI Cell Locking, LTE EARFCN Locking, LTE Band Locking, WCDMA Dedicated-Mode PSC Locking (disabling Measurement Reports), WCDMA UARFCN Locking, R99 Force, GPRS Force (disabling EDGE), etc - without needing to restart/reboot (power-cycle) the phone for most models.
+- Developed software decoders for GSM Layer-3 Messages: RR, CC, MM, GMM, SM protocols (3GPP 44.018 24.007, 24.008, etc).
+- Developed software decoders for WCDMA Layer-3 Messages: WCDMA RRC (3GPP 25.331) - a big "THANK YOU" to [asn1c](http://lionet.info/asn1c/blog/).
+- Coded the "assembling" of the SysInfo "Segments" as they come over the air - through Qualcomm L3 packets.
+- Developed device specific (radio chipset) methods on Android to digitally play wav sound to telephony voice uplink and also record on downlink of the receiving phone - totally in Android - no need for a notebook PCs to record via its soundcards. 
+- Most of the above are developed in pure C programming language - for Android NDK, GNU/Linux testing engine and also Windows DLLs for the AZQ Replay software.
+- Some old code for GSM RR/CC/MM decoding was in C++ (with [wxWidgets](http://www.wxwidgets.org/) core and also legacy Symbian C++) - before I learned that pure C was much more suitable for my tasks and preference and switched to C fully.
+- Experience with Qualcomm protocols/formats, Diagnostic packets, modem command/reponse protocols and related Android Linux kernel drivers.
+- Experience with Qualcomm tools and technologies.
+- Experience with LTE, VoLTE, LTE Carrier Aggregation, WCDMA and GSM L3 signalling protocols, parameters and the calculation thereof.
+- Developed Android software to digitally record Telephony Downlink audio, digitally playing wav audio to Telephony Uplink on Qualcomm MSM, MDM and Exynos+MDM (S6 HK) Android phones - for audio quality sample recording (on GSM/WCDMA and VoLTE) and processing.
+- Developed server software to use POLQA MOS score calculation tools.
+- VoLTE SIP full decrypted (behind IPSec) message access and RTP, RTCP packet statistics - on some Android VoLTE phone models - requires kernel and system modificaitons.
+- Android enterprise software/kernel modifications that can directly read/write modem settings, and directly read/write modem command pipes without going through Android RIL.
+- Enterprise Android 'root-like' app firmware development - also disbling SELinux and other security features that can block certain engineering access. The kernel modifications that allow 'root' access to only certain enterprise apps. Customer simply flashes the 'custom firmware' and installs the enterprise app that requires root. Phone is not 'rooted' - root checkers would show so. (Nexus 5X, Samsung S6 HK, Samsung S5, Note 4/Edge, Google/LG Nexus 5, etc).
+- Some Android Linux Kernel Driver pathes for ARM (Qualcomm MSM) targets - worked on a driver improvement to better handle high speed packet logging when running on multi-cores like Google Nexus 4 (2013).
+- Happy to be one of the world's 29 [winners of Symbian's global "Because of the Code" competition in 2007](symbian_because_of_the_code_2007_winners.pdf).
+- That was a world-wide competition - send 100 lines of Symbian C++ code and let the expert judges compare and choose a few...
+- Graduated in Computer Science (BSc) from Kasetsart University, Thailand.
+- Developed a C++ implementation of Bluetooth protocols L2CAP, SDP, RFCOMM and OBEX (Acedemic "Computer Science" Project during BSc studies at Kasetsard University) to send files via Bluetooth:
+- The developed Bluetooth protocol stack successfully sended files and vCards via "OBEX Object Push" to Nokia Symbian S60 Phones and also PC Computers running WIDCOMM Bluetooth stacks, etc.
+- Developed a C++ (used MFC at that time) implementation of required parts of L2CAP, SDP, RFCOMM and OBEX on top of a driver and HCI implementation by [FreeBT's](http://www.freebt.net/) (6th December, 2004 - A3 Release).
+- The old [source code (quite low-quality code - please forgive me as I was just learning to develop software) - click here to download](kasidit_cs_bsc_BTServerLIB_l2cap_sdp_rfcomm_obex_implementation.zip).
+- A Winner of Thailand Java Contest 2003. In category "Personal Applications" - the J2ME project "Bangkok Bus Pathfinder" developed with my colleague Anon Sutichairatana. Developed a file indexing/storage system that stored the whole database of all Bangkok bus routes (bus number "109" for example) and the "places"/"main stations" that it pased into a searchable database for the tiny RAM (about 50K if I remember correctly) available in the Siemens SL45 - it can also search (even connecting routes) for what bus take to get from "start" to "destination" by querying a Java-Servlet via GPRS.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
-
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+Contact: **`<`ykasidit[AT]gmail.com`>`**

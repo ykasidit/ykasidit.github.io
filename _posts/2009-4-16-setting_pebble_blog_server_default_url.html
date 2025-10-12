@@ -1,0 +1,20 @@
+---
+title: Setting Pebble Blog Server default URL
+category: programming
+---
+After I setup lighttpd for my server (to serve static files of my site and also keep the door open to try some php, ruby webapps) , using it to proxy tomcat (mod_proxy) and also using virtual servers in both tomcat and lighttpd, there were two problems with my Pebble Blog Server:<br />
+(This problem doesn't happen on my previous setup where I used tomcat directly on port 80...)<br />
+<br />
+1. The URL of all pebble-based links were like www.clearevo.com:8080/blog/....<br />
+2. Login to Pebble failed, or sometimes worked then I'd see http 404 not found sometimes, and on logoff.<br />
+<br />
+These two problems can be fixed by editing the file: &lt;your pebble folder&gt;/WEB-INF/applicationContext-pebble.xml (thanks to the xml &quot;comments&quot; from Pebble in the file, it was easy to understand what to set...)<br />
+<ol>
+    <li>Set your blog default URL: from ${url} to &quot;your blog URL&quot;, my case was edited to &lt;property name=&quot;url&quot; value=&quot;http://www.clearevo.com/blog/&quot;/&gt;</li>
+    <li>Empty the ${secureUrl} to an empty string, my case was edited to &lt;property name=&quot;secureUrl&quot; value=&quot;&quot;/&gt;</li>
+    <li>Reload your pebble instance from your java webserver/tomcat (tomcat app manager: http://&lt;url&gt;/manager/html).</li>
+    <li>Login to your Pebble server, goto the top menu &quot;Configuration&quot; &gt; &quot;Utilities&quot; then click on &quot;Reindex&quot; to apply the new correct url to all past posts/links.</li>
+</ol>
+<u>Note:</u> Since these settings are in /WEB-INF so you'd probably have to set them again when you deplay each new version of Pebble because the file would be overwritten.<br />
+<br />
+Hope this helps other Pebble users! Get the latest pebble release from <a href="http://pebble.sourceforge.net/">Pebble Official Site</a>.&nbsp;

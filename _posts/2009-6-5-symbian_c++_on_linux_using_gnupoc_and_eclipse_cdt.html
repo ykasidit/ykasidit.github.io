@@ -1,0 +1,90 @@
+---
+title: Symbian C++ on Linux using Gnupoc and Eclipse CDT
+category: programming
+---
+
+Update: the <a href="http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html">Nokia Qt SDK</a> is released - supproting Ubuntu GNU/Linux!
+
+Finally I can develop all my main symbian C++ work projects in Ubuntu - and I'd like to share the knowledge in this howto which I was trying/writing little by little across a few months.<br />
+<br />
+I'm posting this on Forum Nokia Wiki too - please feel help edit and contribute there. This blog entry would be my original article - comments are welcome!<br />
+<br />
+<img src="http://www.clearevo.com/blog/files/develop_symbian_linux_gnupoc_eclipse.jpg" alt="" /><br />
+<br />
+<br />
+Full credit to the developers of Gnupoc, Martin Storsj&ouml; (http://www.martin.st/symbian/), and all others who made this possible.<br />
+<br />
+Discalimer: This software is provided 'as-is', without any express or implied warranty. In no event will <br />
+the authors be held liable for any damages arising from the use of this software.<br />
+<br />
+///////<br />
+Working: <br />
+&nbsp;&nbsp;&nbsp; - Making native builds of Symbian C++ applications, sis, signing.<br />
+&nbsp;&nbsp;&nbsp; - Code assist. (but settings are still done repetitively for each project - please help suggest - see below.)<br />
+///////<br />
+<br />
+///////<br />
+Missing: (please help suggest and contribute)<br />
+&nbsp;&nbsp;&nbsp; 1. Emulator builds/runs (see in <a href="http://www.martin.st/symbian/">Martin's page</a> - not covered in this howto)<br />
+&nbsp;&nbsp;&nbsp; 2. Debug on emulator/device (Personally, I now prefer debug by logging things to file - because my &quot;debug on device&quot; experience was very unstable when I used it for large workspaces and a few debug apps running at the same time - used days to identity debugger problems instead of debugging.)&nbsp;&nbsp;&nbsp; <br />
+///////<br />
+<br />
+///////<br />
+Getting Started<br />
+<br />
+0. Compiling the symbian gcc, csl-gcc, EKA2, EKA1 tools from source made lots of errors for me - because I didn't have all the required packages - so make sure you install these and read what's missing if error happens then google for it when a compile error happens:<br />
+&nbsp;&nbsp;&nbsp; - sudo apt-get install build-essential<br />
+&nbsp;&nbsp;&nbsp; - sudo apt-get install bison<br />
+&nbsp;&nbsp;&nbsp; - sudo apt-get install flex<br />
+&nbsp;&nbsp;&nbsp; - sudo apt-get install libssl-dev<br />
+&nbsp;&nbsp;&nbsp; if you want to use S60 2nd ed sdks also then sudo apt-get install libncurses5-dev<br />
+&nbsp;&nbsp;&nbsp; (Yes, I'm using Ubuntu so I'm using &quot;sudo apt-get install&quot; - your linux distro might be different)&nbsp;&nbsp;&nbsp; <br />
+<br />
+1. Download the latest version of Gnupoc from <a href="http://www.martin.st/symbian/">Martin's page</a> and extract to ~/gnupoc.<br />
+<br />
+2. Since we're targetting S60 3rd apps - follow &quot;Installing the EKA2 toolchain&quot; in http://www.martin.st/symbian/ - I want to use native Linux builds of the tools, so I followed:<br />
+&nbsp;&nbsp;&nbsp; 1.1 &quot;To compile it from source instead&quot; - download &quot;the source&quot; link and compile it. (using the binaries didn't work for me)<br />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &gt;&gt; if failed because no bison &gt;&gt; &quot;sudo apt-get install bison&quot; then clean by: &quot;rm -R csl-build&quot; then compile it again<br />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &gt;&gt; if failed because no flex &gt;&gt; &quot;sudo apt-get install flex&quot; then clean as above and re-compile&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &gt;&gt; OK that worked for me...<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2 &quot;Then you can install the rest of the tools&quot;<br />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &gt;&gt; If failed because needed openssl dev libs, so: sudo apt-get install libssl-dev<br />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; then try build it again - if you get other buld errors - try see what's missing and try to find/google or see in the synaptic pkg manager the appropriate &quot;dev&quot; libs and install them via apt-get... I remember once I needed &quot;bison&quot;... etc.<br />
+<br />
+3. Follow &quot;SDKs&quot; in <a href="http://www.martin.st/symbian/">Martin's page</a> and also install the wrapper (./install_wrapper ~/gnupoc) - As I'm focused on compiling for the device only and I'm using the natively compiled tools above so I skipped the &quot;Wine setup&quot; stage.<br />
+<br />
+(You can go on to Martin's &quot;Using it&quot; section to get the real taste of Symbian C++ development from the commandline and to understand how the Carbide IDE actually works. We'll make a shell script to call these things from the eclipse IDE in the next steps - so make sure you can make helloworldbasic.sisx run on your phone first.)<br />
+<br />
+4. Install java: &quot;sudo apt-get install sun-java6-jdk&quot;<br />
+<br />
+5. Download eclipse for c++ from eclipse.org (&quot;ganymede&quot; at the time of this writing), unzip it, double click &quot;eclipse&quot; in its folder to start it.<br />
+<br />
+6. Take a working project from carbide or the s60 examples, copy its folder to your workspace, delete all the .cproject .project .metadata etc - just a plain folder with group, inc, src, data, etc folders.<br />
+<br />
+7. File &gt; New &gt; C++ project &gt; type: Makefile Project &gt; Empty project, Select &quot;other toolchain&quot;, Use the project name as exactly the same name as your folder (a warning would show).<br />
+<br />
+8. Download (and edit as you like) -  &quot;mysismakelist&quot; from <a href="http://www.clearevo.com/blog/files/mysismakelist">here (right-click)</a> into your project's group folder - edit all in the &quot;config part&quot; of the file to meet your project - this will be the main script that would call &quot;abld&quot;, etc. I'm a novice in shell scripts - please help share about how to make it better - for example, make it build only if not already built, so when we press Ctrl+B it doesn't take too long.<br />
+<br />
+9. Right-Click on your project folder &gt; C++ build &gt; uncheck the &quot;use default build command&quot; &gt; set command as &quot;sh mysismakelist&quot;, add /group to the build location.<br />
+<br />
+10. Build it. You might want to uncheck &quot;auto-build&quot; or &quot;build after clean&quot; and other default build setttings of eclipse.<br />
+<br />
+11. A lot of &quot;file not found&quot; errors might pop up - generally these are about the case-sensitivity of file-names in the Linux world that is not there in Windows so you should fix them one by one - be patient.<br />
+<br />
+12. They'd be errors in the pkg file (that is shown in the build-console but not detected by eclipse-cdt parsers) - I don't know how to make the $(EPOCROOT) or other params work yet - so I used the full path to each file of the sis. Try searching your sdk folders to see where some files actually are.<br />
+<br />
+13. See <a href="http://www.martin.st/symbian/">Martin's page</a> for info on how to make your cert and keys if you want to self sign projects (that don't need protected capabilities).<br />
+<br />
+14. For making .csr files with symbian devcert request tool - install and use it via WINE. (I installed WINE from WineHQ official site, using its deb for Ubuntu - then installed &quot;wine tricks&quot; from http://wiki.winehq.org/winetricks - working with DevcertRequest 2.3)<br />
+<br />
+15. For code-completion (when you press the -&gt; or . after a ptr or object) - you need to add the epoc32\include and &lt;your project&gt;\inc to each project's Properties &gt; C/C++ General &gt; Paths &gt; then select language as &quot;GNU C++&quot; then &quot;Add&quot; - choose &quot;file system&quot; for the sdk include and &quot;workspace&quot; for your project include. Then, right click your project &gt; Index &gt; Rebuild, then after indexing is done - choose Index &gt; Search for unresolved Includes and analyze what path/folder you're missing - start over as needed. (TODO: Please help contribute/suggest about how to do this once per &quot;build configuration&quot; per workspace.)<br />
+<br />
+///////<br />
+<br />
+Extra suggestions:<br />
+- If you want to use Git with these projects - I suggest to add to .gitignore about the .metadata folder, *.sis, *.sisx and project files like .cproject, .project.<br />
+<br />
+<br />
+For S60 2nd ed sdks:<br />
+- if compiling symbian-gcc as in Martin's page: EKA1 - you need to install libncurses -&gt; i checked the synaptic and installed libncurses5-dev, then i had to delete the src and obj folder in the current folder - build succeeds.<br />
+- If you run into &quot; *** Unknown character ' &quot; errors - this is because the new line character problem - it needs to be converted from \r\n (0D0A) to \n (0A) - so you can use dos2unix: &quot;sudo apt-get install tofrodos&quot; then run in terminal &quot;dos2unix &lt;the file&gt;&quot;.

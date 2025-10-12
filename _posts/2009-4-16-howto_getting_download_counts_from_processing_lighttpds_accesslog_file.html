@@ -1,0 +1,15 @@
+---
+title: HOWTO Getting download counts from processing lighttpd's access.log file
+category: programming
+published: false
+---
+HOWTO: <br />
+<br />
+especially for PAD users, you should link to the file directly so you can't use google analytics to get the real download count.<br />
+<br />
+my site, the download of my bluetooth presenter remote app was reported by google analytics at around 40-70 downlaods per day - google analytics knows this from its script in the download.html, but there are many other downloads from other downloads site via the direct-link as in the PAD file. After analyzing the pad file, the real download count of WMouseXP's installer was around <strong>600 downloads per day!!!</strong> It's like google analytics is just showing 10 percent of the real download count.<br />
+Same for my new little wifi-presenter product, google analytics showed just a handful, <strong>but the real download count from analyzing access.log was around 100 downloads per day!</strong><br />
+<br />
+So let's see how to actually analyze the access.log - I had some experience with Ruby, and Rail's ActiveRecord at work (I'm currently working as a Symbian C++ developer for www.Azenqos.com - GSM/WCDMA network testing solution provider...) so I wrote a little Ruby program/script to log all &quot;exe&quot; downloads from the access.log to the database (mysql or anything ActiveRecord supports...). In most cases, there's even the download source url!<br />
+<br />
+After all the download logs are now records in your DBMS, it's easy for you to use simple SQL to SELECT and analyze your downloads. You can even make a &quot;crontab&quot; (scheduled tasks in linux) to regularly (I set once a day) set your &quot;download count&quot; or &quot;page hits&quot; to some file which you can use it do be taken to show in a html iframe as each product's download count or &quot;page hits&quot;... since when and what's the average per day, etc...

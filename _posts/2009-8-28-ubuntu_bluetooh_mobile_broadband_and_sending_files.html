@@ -1,0 +1,49 @@
+---
+title: Ubuntu Bluetooh Mobile Broadband and sending files
+category: howto
+---
+<p>
+<b>This howto enables you to use your mobile phone as an internet connection for your notebook - great for travelling internet needs - but make sure your mobile network plan is cost-effective for such uses.</b><br/><br/>
+The default GNOME bluetooth app is quite behind blueman, no internet tethering (aka mobile broadband, bluetooth dial-up network) and the default KDE bluetooth doesn't work for internet tethering either.
+<br/>
+<br/>
+<big><ul>Install/Setup</ul></big>
+<br/>
+- For Ubuntu 9.10 simply run "sudo apt-get install blueman" without having to add any software sources, then Blueman would start automatically.
+<br/>
+- For Ubuntu 9.10 you MUST also add the "ppa" for network-manager otherwise bluetooth internet won't work: Go to System > Administration > Software Sources then clock the "Other Software" tab and press the "Add" button below, enter "ppa:network-manager/trunk" (without quotes) press "Add Source" then press "close" below, let it update. Finally, go to System > Administration > Update Manager > Install updates then let it finish installing the new network manager updates, then restart.
+<br/>
+<br/>
+- For ubuntu 9.04 or older then please follow this HOWTO: <a href="http://www.ubuntugeek.com/blueman-bluetooth-manager-for-ubuntu.html"><big>install "blueman"</big></a><br/>(This howto is tested on Ubuntu 9.04) then open a terminal and type "blueman-manager" to start it.
+<br/>
+<p>
+<big><ul>Mobile internet/broadband via Bluetooth</ul></big>
+ Blueman can be used for "internet tethering": using your phone's internet (GPRS or 3G data) for your notebook when you're traveling:
+<br/>
+(From what I tested, it is working in GNOME,XFCE with Nokia E61 and Nokia 6120 classic - but <b>NOT working in KDE yet</b>).
+<br/>
+1. "Find" your phone and right-click and select "dial-up network service". 
+<br/>
+<br/>
+For Ubuntu 9.10:<br/>
+2. just click the network manager icon and select New mobile broadband connection to launch the wizard, next time just select that connection.
+<br/>
+<br/>
+For Ubuntu 9.04 or older:<br/>
+2. Right-click the LAN/connection tray icon and "Manage connections" > click the "mobile broadbnad" tab.
+<br/>
+Add > Select "Bluetooth DUN xx:xx:xx:xx:xx:xx", press OK,  set a name (for example: "AIS Bluetooth"), check the "Connect automatically" checkbox, press Apply. 
+<br/>
+<br/>
+3. Wait a few seconds and you'd see the "network manager" circles as it tries to connect but if not, click its tray icon and select your new connection to connect manually.
+<p>
+If you want to use this internet tethering via USB instead, just plug your phone and select the appropriate mode (for Nokia S60 phones slect "PC Suite") and the "Mobile Broadband" Wizard would start and get things done automatically.
+<p>
+<b>Sending files via Bluetooth:</b><br/>
+- In GNOME (ubuntu-desktop) right click your file, send-to and select your bluetooth phone.
+<br/>
+- In XFCE (xubuntu-desktop) right click your file, send-to and select your bluetooth phone. If there's no send-to menu for bluetooth yet then please follow the "Bluetooth to your phone..." section in <a href="http://thunar.xfce.org/pwiki/documentation/sendto_menu">this Thunar wiki page</a>.
+<br/>
+- For KDE (kubuntu-desktop), I couldn't find an easy way to manage or add the send-to menu yet but I can right-click the file > open with > and type "blueman-sendto" (without quotes) as the command. 
+<p>
+Blueman also enables you to automatically receive files via Bluetooth without installing and running the gnome obex server. Right click the blueman icon > local services > transfer > and check accept files from trusted devices to make it auto-receive files from the phone which you already set as trusted (after you find/pair a phone then you press the "star" icon to mark it as trusted).

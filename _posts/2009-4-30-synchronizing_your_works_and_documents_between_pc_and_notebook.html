@@ -1,0 +1,20 @@
+---
+title: Synchronizing your works and documents between PC and Notebook
+category: programming
+---
+After having a Notebook sometime back, I had to zip my work and transfer them between my PC and Notebook before and after going to work.<br />
+<br />
+When using SVN, the daily routine is like: <br />
+- Simply &quot;update&quot; your local SVN folder (using <a href="http://tortoisesvn.tigris.org/">TurtoiseSVN</a> - for windows) from the server (I use my PC running <a href="http://www.visualsvn.com/server/">VisualSVN</a> server - for windows - as the server) before working, and &quot;commit&quot; it back to the Server after you're done.<br />
+<br />
+(However, remember to always zip the work folders for safety and backup purposes - write them to a CDbefore new big changes, also weekly etc. - all these stuff the manage your work folders are in some way dangerous and sometimes risky about losing your work.)<br />
+<br />
+At fist you got to create a &quot;folder&quot; in the SVN server itself, then &quot;checkout&quot; the project folder to a folder using TurtoiseSVN (right-click on folder...).<br />
+<br />
+Fore more info please read the <a href="http://svnbook.red-bean.com/">Subversion Book</a> to know what SVN is all about and the docs of TurtoiseSVN, VisualSVN or other tools you chose as the server and client.<br />
+<br />
+If you're using it to sync software development project folders (I use for Carbide.C++ Symbian development projects) then you should also set TurtoiseSVN (on both PC and Notebook) to omit certain filetypes that are not necessary for syncing/<br />
+<br />
+For Carbide.C++ folders, I set Turtoise SVN settings &gt; Subversion &gt; &quot;Global ignore pattern&quot; as &quot;*.log *.pdom */.metadata .metadata&quot; to make it sync well without all other other unnecessary files. Remember to close Carbide.C++ before you update or commit your folder.<br />
+<strong><br />
+Update:</strong> Nowadays, I'm mainly using git instead, for many reasons, mainly that I can commit frequently (because commits are done locally) and fast because, many many other things are really neat with git - and it's not hard to use the command-line/terminal at all if you devote some time to read the docs/tutorials/help.
