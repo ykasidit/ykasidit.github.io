@@ -9,26 +9,25 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Your Name / Site Title"
+title                    : "ClearEvo.com"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+name                     : &name "ClearEvo.com"
+description              : &description ""
+url                      : https://www.clearevo.com
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "ykasidit/ykasidit.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Kasidit Yusuf"
-  bio              : "Software Engineer and clean energy enthusiast"
+  bio              : "Software engineer and clean energy enthusiast"
   location         : "Thailand"
   employer         : "Meritech Solutions"
-  uri              : www.clearevo.com
+  uri              : https://www.clearevo.com
   email            : "ykasidit@gmail.com" 
   # Repositories and software development
   github           : "ykasidit"
