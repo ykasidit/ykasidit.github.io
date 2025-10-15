@@ -4,7 +4,7 @@ title: "Legacy projects history"
 ---
 
 
-*Legacy/discontinued ClearEvo.com software projects and products history*
+*Legacy discontinued projects and products history.*
 
 ---
 
