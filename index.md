@@ -1,11 +1,8 @@
 ---
-title: Home of the Bluetooth GNSS app
+title: ClearEvo.com - Home of the Bluetooth GNSS app
 description: ClearEvo.com - Home of the Bluetooth GNSS app
 permalink: /
 ---
-
-ClearEvo.com - Home of the Bluetooth GNSS app
-=============================================
 
 Welcome to my humble collection of open source projects and blog.
 
