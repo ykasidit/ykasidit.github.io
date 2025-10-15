@@ -13,7 +13,7 @@ title                    : "ClearEvo.com"
 title_separator          : "-"
 name                     : &name "ClearEvo.com"
 description              : &description ""
-url                      : https://www.clearevo.com
+url                      : ""
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ykasidit/ykasidit.github.io"
 
