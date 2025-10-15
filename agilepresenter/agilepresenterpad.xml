@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.01</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>PADManager 1.0.35</MASTER_PAD_EDITOR>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-00931FF5B3F</Company_UIN>
+    <Product_UIN>APP-00931F9B1B7</Product_UIN>
+    <Search_String>AgilePresenter</Search_String>
+    <Search_String_Unique>AgilePresenter</Search_String_Unique>
+    <Publish_on_CD>FALSE</Publish_on_CD>
+    <Company_Description></Company_Description>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Additional_Categories></Additional_Categories>
+    <Backlink></Backlink>
+  </RoboSoft>
+  <Company_Info>
+    <Company_Name>Kasidit Yusuf</Company_Name>
+    <Address_1>120/90 Serithai Rd.</Address_1>
+    <Address_2>Klongkum, Bungkum.</Address_2>
+    <City_Town>Bangkok</City_Town>
+    <State_Province>Bangkok</State_Province>
+    <Zip_Postal_Code>10240</Zip_Postal_Code>
+    <Country>Thailand</Country>
+    <Company_WebSite_URL>http://www.clearevo.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Kasidit</Contact_First_Name>
+      <Contact_Last_Name>Yusuf</Contact_Last_Name>
+      <Contact_Email>contact@clearevo.com</Contact_Email>
+      <Author_First_Name>Kasidit</Author_First_Name>
+      <Author_Last_Name>Yusuf</Author_Last_Name>
+      <Author_Email>contact@clearevo.com</Author_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>contact@clearevo.com</Sales_Email>
+      <Support_Email>contact@clearevo.com</Support_Email>
+      <General_Email>contact@clearevo.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <ASP>
+    <ASP_FORM>Y</ASP_FORM>
+    <ASP_Member>N</ASP_Member>
+    <ASP_Member_Number></ASP_Member_Number>
+  </ASP>
+  <OISV>
+    <OISV_FORM>Y</OISV_FORM>
+    <OISV_Member>N</OISV_Member>
+    <OISV_Member_Number></OISV_Member_Number>
+  </OISV>
+  <Program_Info>
+    <Program_Name>AgilePresenter</Program_Name>
+    <Program_Version>1.03</Program_Version>
+    <Program_Release_Month>03</Program_Release_Month>
+    <Program_Release_Day>27</Program_Release_Day>
+    <Program_Release_Year>2009</Program_Release_Year>
+    <Program_Cost_Dollars>5</Program_Cost_Dollars>
+    <Program_Type>Shareware</Program_Type>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>WinXP,Windows Vista Starter,Windows Vista Home Basic,Windows Vista Home Premium,Windows Vista Business,Windows Vista Enterprise,Windows Vista Ultimate,Windows Vista Home Basic x64,Windows Vista Home Premium x64,Windows Vista Business x64,Windows Vista Enterprise x64,Windows Vista Ultimate x64,Symbian,Java,Handheld/Mobile Other</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Specific_Category>Education</Program_Specific_Category>
+    <Program_Category_Class>Education::Teaching &amp; Training Tools</Program_Category_Class>
+    <Program_System_Requirements>Any WIFI-Enabled phone + a Windows XP computer/notebook + WIFI access point: connect all together.</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>1401312</File_Size_Bytes>
+      <File_Size_K>1368</File_Size_K>
+      <File_Size_MB>1.34</File_Size_MB>
+      <Filename_Versioned></Filename_Versioned>
+      <Filename_Previous></Filename_Previous>
+      <Filename_Generic></Filename_Generic>
+      <Filename_Long></Filename_Long>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Count></Expire_Count>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+    <Includes_JAVA_VM>N</Includes_JAVA_VM>
+    <Includes_VB_Runtime>N</Includes_VB_Runtime>
+    <Includes_DirectX>N</Includes_DirectX>
+    <Program_Change_Info>Added the feature to shot the "computer name" URL for opening in WFI phone instead of only plain IP URL.</Program_Change_Info>
+    <Limitations>It would just display a "buy reminder" message  (showing for 10 seconds) every 2 minutes.</Limitations>
+    <Program_Categories>Business &amp; Finance :: Presentation Tools,Communication :: Remote Control Tools,Business &amp; Finance :: Office Tools</Program_Categories>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Awards></Awards>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>http://www.clearevo.com/agilepresenter/</Application_Info_URL>
+      <Application_Order_URL>http://store.esellerate.net/s.aspx?s=STR2779821468</Application_Order_URL>
+      <Application_Screenshot_URL>http://www.clearevo.com/agilepresenter/images/agilepresenterpc.jpg</Application_Screenshot_URL>
+      <Application_Icon_URL>http://www.clearevo.com/agilepresenter/images/AgileLogo32px.gif</Application_Icon_URL>
+      <Application_XML_File_URL>http://www.clearevo.com/agilepresenter/agilepresenterpad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>http://www.clearevo.com/agilepresenter/AgilePresenter1_0Installer.exe</Primary_Download_URL>
+      <Secondary_Download_URL></Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Affiliates>
+    <Affiliates_FORM>Y</Affiliates_FORM>
+    <Affiliates_VERSION>1.4</Affiliates_VERSION>
+    <Affiliates_URL>http://www.asp-shareware.org/pad/extensions/Affiliates.htm</Affiliates_URL>
+    <Affiliates_Information_Page>https://affiliates.esellerate.net/JoinNow.aspx?PubIDC=PUB9501640550</Affiliates_Information_Page>
+    <Affiliates_eSellerate_Order_Page>http://store.esellerate.net/s.aspx?s=STR2779821468</Affiliates_eSellerate_Order_Page>
+    <Affiliates_eSellerate_Vendor_ID>PUB9501640550</Affiliates_eSellerate_Vendor_ID>
+    <Affiliates_eSellerate_Product_ID>SKU55607616509</Affiliates_eSellerate_Product_ID>
+    <Affiliates_eSellerate_Maximum_Commission_Rate>50%</Affiliates_eSellerate_Maximum_Commission_Rate>
+    <Affiliates_FORM_VER></Affiliates_FORM_VER>
+    <Affiliates_BMTMicro_Order_Page></Affiliates_BMTMicro_Order_Page>
+    <Affiliates_BMTMicro_Vendor_ID></Affiliates_BMTMicro_Vendor_ID>
+    <Affiliates_BMTMicro_Product_ID></Affiliates_BMTMicro_Product_ID>
+    <Affiliates_BMTMicro_Maximum_Commission_Rate></Affiliates_BMTMicro_Maximum_Commission_Rate>
+    <Affiliates_DigiBuy_Order_Page></Affiliates_DigiBuy_Order_Page>
+    <Affiliates_DigiBuy_Vendor_ID></Affiliates_DigiBuy_Vendor_ID>
+    <Affiliates_DigiBuy_Product_ID></Affiliates_DigiBuy_Product_ID>
+    <Affiliates_DigiBuy_Maximum_Commission_Rate></Affiliates_DigiBuy_Maximum_Commission_Rate>
+    <Affiliates_DigitalCandle_Order_Page></Affiliates_DigitalCandle_Order_Page>
+    <Affiliates_DigitalCandle_Vendor_ID></Affiliates_DigitalCandle_Vendor_ID>
+    <Affiliates_DigitalCandle_Product_ID></Affiliates_DigitalCandle_Product_ID>
+    <Affiliates_DigitalCandle_Maximum_Commission_Rate></Affiliates_DigitalCandle_Maximum_Commission_Rate>
+    <Affiliates_Emetrix_Order_Page></Affiliates_Emetrix_Order_Page>
+    <Affiliates_Emetrix_Vendor_ID></Affiliates_Emetrix_Vendor_ID>
+    <Affiliates_Emetrix_Product_ID></Affiliates_Emetrix_Product_ID>
+    <Affiliates_Emetrix_Maximum_Commission_Rate></Affiliates_Emetrix_Maximum_Commission_Rate>
+    <Affiliates_Kagi_Order_Page></Affiliates_Kagi_Order_Page>
+    <Affiliates_Kagi_Vendor_ID></Affiliates_Kagi_Vendor_ID>
+    <Affiliates_Kagi_Product_ID></Affiliates_Kagi_Product_ID>
+    <Affiliates_Kagi_Maximum_Commission_Rate></Affiliates_Kagi_Maximum_Commission_Rate>
+    <Affiliates_NorthStarSol_Order_Page></Affiliates_NorthStarSol_Order_Page>
+    <Affiliates_NorthStarSol_Vendor_ID></Affiliates_NorthStarSol_Vendor_ID>
+    <Affiliates_NorthStarSol_Product_ID></Affiliates_NorthStarSol_Product_ID>
+    <Affiliates_NorthStarSol_Maximum_Commission_Rate></Affiliates_NorthStarSol_Maximum_Commission_Rate>
+    <Affiliates_Order1_Order_Page></Affiliates_Order1_Order_Page>
+    <Affiliates_Order1_Vendor_ID></Affiliates_Order1_Vendor_ID>
+    <Affiliates_Order1_Product_ID></Affiliates_Order1_Product_ID>
+    <Affiliates_Order1_Maximum_Commission_Rate></Affiliates_Order1_Maximum_Commission_Rate>
+    <Affiliates_Osolis_Order_Page></Affiliates_Osolis_Order_Page>
+    <Affiliates_Osolis_Vendor_ID></Affiliates_Osolis_Vendor_ID>
+    <Affiliates_Osolis_Product_ID></Affiliates_Osolis_Product_ID>
+    <Affiliates_Osolis_Maximum_Commission_Rate></Affiliates_Osolis_Maximum_Commission_Rate>
+    <Affiliates_Regnet_Order_Page></Affiliates_Regnet_Order_Page>
+    <Affiliates_Regnet_Vendor_ID></Affiliates_Regnet_Vendor_ID>
+    <Affiliates_Regnet_Product_ID></Affiliates_Regnet_Product_ID>
+    <Affiliates_Regnet_Maximum_Commission_Rate></Affiliates_Regnet_Maximum_Commission_Rate>
+    <Affiliates_Regnow_Order_Page></Affiliates_Regnow_Order_Page>
+    <Affiliates_Regnow_Vendor_ID></Affiliates_Regnow_Vendor_ID>
+    <Affiliates_Regnow_Product_ID></Affiliates_Regnow_Product_ID>
+    <Affiliates_Regnow_Maximum_Commission_Rate></Affiliates_Regnow_Maximum_Commission_Rate>
+    <Affiliates_Regsoft_Order_Page></Affiliates_Regsoft_Order_Page>
+    <Affiliates_Regsoft_Vendor_ID></Affiliates_Regsoft_Vendor_ID>
+    <Affiliates_Regsoft_Product_ID></Affiliates_Regsoft_Product_ID>
+    <Affiliates_Regsoft_Maximum_Commission_Rate></Affiliates_Regsoft_Maximum_Commission_Rate>
+    <Affiliates_ShareIt_Order_Page></Affiliates_ShareIt_Order_Page>
+    <Affiliates_ShareIt_Vendor_ID></Affiliates_ShareIt_Vendor_ID>
+    <Affiliates_ShareIt_Product_ID></Affiliates_ShareIt_Product_ID>
+    <Affiliates_ShareIt_Maximum_Commission_Rate></Affiliates_ShareIt_Maximum_Commission_Rate>
+    <Affiliates_SWReg_Order_Page></Affiliates_SWReg_Order_Page>
+    <Affiliates_SWReg_Vendor_ID></Affiliates_SWReg_Vendor_ID>
+    <Affiliates_SWReg_Product_ID></Affiliates_SWReg_Product_ID>
+    <Affiliates_SWReg_Maximum_Commission_Rate></Affiliates_SWReg_Maximum_Commission_Rate>
+    <Affiliates_V-Share_Order_Page></Affiliates_V-Share_Order_Page>
+    <Affiliates_V-Share_Vendor_ID></Affiliates_V-Share_Vendor_ID>
+    <Affiliates_V-Share_Product_ID></Affiliates_V-Share_Product_ID>
+    <Affiliates_V-Share_Maximum_Commission_Rate></Affiliates_V-Share_Maximum_Commission_Rate>
+    <Affiliates_VFree_Order_Page></Affiliates_VFree_Order_Page>
+    <Affiliates_VFree_Vendor_ID></Affiliates_VFree_Vendor_ID>
+    <Affiliates_VFree_Product_ID></Affiliates_VFree_Product_ID>
+    <Affiliates_VFree_Maximum_Commission_Rate></Affiliates_VFree_Maximum_Commission_Rate>
+    <Affiliates_Yaskifo_Order_Page></Affiliates_Yaskifo_Order_Page>
+    <Affiliates_Yaskifo_Vendor_ID></Affiliates_Yaskifo_Vendor_ID>
+    <Affiliates_Yaskifo_Product_ID></Affiliates_Yaskifo_Product_ID>
+    <Affiliates_Yaskifo_Maximum_Commission_Rate></Affiliates_Yaskifo_Maximum_Commission_Rate>
+  </Affiliates>
+  <Simtel>
+    <Simtel_FORM>Y</Simtel_FORM>
+    <SIMTEL_FORM_VER>1.6 11/26/2002</SIMTEL_FORM_VER>
+    <Simtel_Platform>winxp - Windows XP</Simtel_Platform>
+    <Simtel_Category>Education: Classroom &amp; Teacher Related</Simtel_Category>
+  </Simtel>
+  <Delphi>
+    <D1>FALSE</D1>
+    <D2>FALSE</D2>
+    <D3>FALSE</D3>
+    <D4>FALSE</D4>
+    <D5>FALSE</D5>
+    <D6>FALSE</D6>
+    <D7>FALSE</D7>
+    <BCB1>FALSE</BCB1>
+    <BCB3>FALSE</BCB3>
+    <BCB4>FALSE</BCB4>
+    <BCB5>FALSE</BCB5>
+    <BCB6>FALSE</BCB6>
+    <K1>FALSE</K1>
+    <K2></K2>
+    <K3></K3>
+    <D1_URL></D1_URL>
+    <D2_URL></D2_URL>
+    <D3_URL></D3_URL>
+    <D4_URL></D4_URL>
+    <D5_URL></D5_URL>
+    <D6_URL></D6_URL>
+    <D7_URL></D7_URL>
+    <BCB1_URL></BCB1_URL>
+    <BCB3_URL></BCB3_URL>
+    <BCB4_URL></BCB4_URL>
+    <BCB5_URL></BCB5_URL>
+    <BCB6_URL></BCB6_URL>
+    <K1_URL></K1_URL>
+    <K2_URL></K2_URL>
+    <K3_URL></K3_URL>
+    <Type></Type>
+    <Price></Price>
+    <Source></Source>
+    <File_Location></File_Location>
+    <Link_URL></Link_URL>
+    <Download_URL></Download_URL>
+    <Version></Version>
+    <Notes></Notes>
+  </Delphi>
+  <PADRING>
+    <PADRING_FORM>Y</PADRING_FORM>
+    <PADRING>http://www.clearevo.com/wmousexp/wmousexp1_0pad.xml</PADRING>
+  </PADRING>
+  <NewsFeed>
+    <NewsFeed_FORM>Y</NewsFeed_FORM>
+    <NewsFeed_VERSION>1.0</NewsFeed_VERSION>
+    <NewsFeed_URL>http://Submit-Everywhere.com/extensions/NewsFeed.htm</NewsFeed_URL>
+    <NewsFeed_DESCRIPTION>This PAD extension allows you to add your RSS and Atom news feeds info into your PAD file. This info can be used by RSS feed submission software or by feed directories themselves.</NewsFeed_DESCRIPTION>
+    <NewsFeed_Type>RSS 0.90</NewsFeed_Type>
+    <NewsFeed_Language>English</NewsFeed_Language>
+    <NewsFeed_Purpose>News</NewsFeed_Purpose>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Author_First_Name></NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name></NewsFeed_Author_Last_Name>
+    <NewsFeed_Author_Email></NewsFeed_Author_Email>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+  </NewsFeed>
+  <OnlineShops>
+    <OnlineShops_FORM>Y</OnlineShops_FORM>
+    <OnlineShops_VERSION>1.0</OnlineShops_VERSION>
+    <OnlineShops_URL>http://Submit-Everywhere.com/extensions/OnlineShops.htm</OnlineShops_URL>
+    <OnlineShops_DESCRIPTION>This PAD extension allows you to check these sites distribution agreements and decide wether you wish to sell your product through them</OnlineShops_DESCRIPTION>
+    <OnlineShops_PalmGear></OnlineShops_PalmGear>
+    <OnlineShops_PocketLand></OnlineShops_PocketLand>
+    <OnlineShops_PDAssi></OnlineShops_PDAssi>
+    <OnlineShops_PDATopSoft></OnlineShops_PDATopSoft>
+    <OnlineShops_PocketGear></OnlineShops_PocketGear>
+    <OnlineShops_Softonic></OnlineShops_Softonic>
+    <OnlineShops_Winowin></OnlineShops_Winowin>
+    <OnlineShops_Handango_Agreement></OnlineShops_Handango_Agreement>
+    <OnlineShops_Handango></OnlineShops_Handango>
+  </OnlineShops>
+  <Press_Release>
+    <Press_Release>No need to sit or walk back to your computer to change the presentation/PowerPoint slide anymore - now WIFI-phones can give you full presentation slide control in your hand. All you've got to do is to install a cool little software on your computer: AgilePresenter.
+
+As simple as opening a web page - that's how simple it is to use your phone to control "next slide", "previous slide" of your presentation. Since it's that simple - just any wifi-enabled phone would easily work with it - from the new and hot iPhones, the wifi-enabled Symbian phones like Nokia S60 E-Series (and some high-end N-Series), along to Windows Mobile and other smart phones or PDAs would work.
+
+AgilePresenter simply hosts a local intranet site on your computer, it tells you the URL, then you open it on your phone's browser. Since it's an "intranet" site so you should connect your phone to the WIFI access point that links to the same local network with your computer - alternatively, you can also connect your computer (especially notebooks) to the same WIFI access-point/network with your phone.
+
+When active, you see 3 buttons - "previous slide", "mouse click" (for going through the steps of animated slides) and "next slide". Below them, you have the current screen-shot of your computer so you can easily see the current page in your hand while still facing focused to your audience!
+
+So, if you like to remote control your TV, don't forget to try to remote control your presentations! Simply download and install AgilePresenter from www.ClearEvo.com and try it with your presentations!</Press_Release>
+    <Summary>No need to sit or walk back to your computer to change the presentation slide anymore - now WIFI-phones can give you full presentation slide control in your hand.</Summary>
+    <Headline>New software lets you remote-control PowerPoint/Presentations from WIFI-enabled phones.</Headline>
+  </Press_Release>
+  <Permissions>
+    <Distribution_Permissions>This product can be freely distributed through the Internet or other mediums such as CDs or DVD. The license is automatically managed per computer via the eSellerate license module which is embedded in our software.</Distribution_Permissions>
+    <EULA></EULA>
+  </Permissions>
+  <Article>
+    <Article_FORM></Article_FORM>
+    <Article_VERSION></Article_VERSION>
+    <Article_Title></Article_Title>
+    <Article_URL></Article_URL>
+    <Article_Summary></Article_Summary>
+    <Article_Keywords></Article_Keywords>
+    <Article_Author_Info></Article_Author_Info>
+    <Article_Photo_URL></Article_Photo_URL>
+    <Article_Photo_Local></Article_Photo_Local>
+    <Article_Text></Article_Text>
+    <Article_Text_Plain></Article_Text_Plain>
+  </Article>
+  <ESC>
+    <ESC_FORM></ESC_FORM>
+  </ESC>
+  <Program_Descriptions>
+    <English>
+      <Keywords>wifi, remote, presentation, powerpoint, iphone, nokia, s60, e-series, n-series, windows-mobile, mobile</Keywords>
+      <Char_Desc_45>Turns WIFI-Phones into a presentation remote.</Char_Desc_45>
+      <Char_Desc_80>Use this software to Remote-Control Powerpoint/Presentations from WIFI Phones.</Char_Desc_80>
+      <Char_Desc_250>Use this software to Remote-Control Powerpoint/Presentations from WIFI-enabled Phones! Imagine yourself standing, presenting confidently with full presentation slide control in your hand. No need to sit or walk back to your computer anymore.</Char_Desc_250>
+      <Char_Desc_450>Use this software to Remote-Control Powerpoint/Presentations from WIFI-enabled Phones! Imagine yourself standing, presenting confidently with full presentation slide control in your hand. No need to sit or walk back to your computer anymore. Works with any WIFI-Enabled phone: iPhone, Nokia S60 N-Series, E-Series, Windows Mobile, Blackberry...</Char_Desc_450>
+      <Char_Desc_2000>Use this software to Remote-Control Powerpoint/Presentations from WIFI-enabled Phones! 
+
+Works with any WIFI-Enabled phone: iPhone, Nokia S60 N-Series, E-Series, Windows Mobile, Blackberry...
+
+Imagine yourself standing, presenting confidently with full presentation slide control in your hand. No need to sit or walk back to your computer anymore.
+
+Most Simple Setup in 60 Seconds: Nothing to Install on phone!
+1. Just download and install the PC software.
+2. Open you're WIFI phone's browser to the specified URL... connecting via WIFI to the same network with your computer. You'd see three buttons: Previous Slide, Mouse Click, Next Slide and the current screenshot of your PC. 
+3. Start (F5) your Powerpoint/Presentation and remote-control from phone!
+
+The "Trial Version" doesn't have any usage time or expiry limit! It would just display a "buy reminder" message  (showing for 10 seconds) every 2 minutes.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+</XML_DIZ_INFO>

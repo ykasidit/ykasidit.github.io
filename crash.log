@@ -1,0 +1,162 @@
+Crashlog created at 2023-06-24 13:25:12 +0700
+
+===== MESSAGE:
+
+Nanoc::Core::ConfigLoader::NoConfigFileFoundError: No configuration file found
+
+===== STACK TRACE:
+
+  0. /var/lib/gems/2.7.0/gems/nanoc-core-4.12.15/lib/nanoc/core/config_loader.rb:42:in `new_from_cwd'
+  1. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/commands/view.rb:22:in `run'
+  2. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/command_runner.rb:15:in `block in call'
+  3. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/error_handler.rb:57:in `handle_while'
+  4. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/error_handler.rb:15:in `handle_while'
+  5. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/command_runner.rb:14:in `call'
+  6. /var/lib/gems/2.7.0/gems/cri-2.15.11/lib/cri/command_dsl.rb:294:in `block in runner'
+  7. /var/lib/gems/2.7.0/gems/cri-2.15.11/lib/cri/command.rb:362:in `run_this'
+  8. /var/lib/gems/2.7.0/gems/cri-2.15.11/lib/cri/command.rb:298:in `run'
+  9. /var/lib/gems/2.7.0/gems/cri-2.15.11/lib/cri/command.rb:316:in `run'
+  10. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli.rb:88:in `block in run'
+  11. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/error_handler.rb:57:in `handle_while'
+  12. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli/error_handler.rb:15:in `handle_while'
+  13. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib/nanoc/cli.rb:86:in `run'
+  14. /var/lib/gems/2.7.0/gems/nanoc-4.12.15/bin/nanoc:18:in `<top (required)>'
+  15. /usr/local/bin/nanoc:23:in `load'
+
+===== VERSION INFORMATION:
+
+Nanoc 4.12.15 © 2007–… Denis Defreyne.
+Running ruby 2.7.0 (2019-12-25) on x86_64-linux-gnu with RubyGems 3.1.2.
+
+===== SYSTEM INFORMATION:
+
+Linux kasidit-desktop 5.4.0-60-generic #67-Ubuntu SMP Tue Jan 5 18:31:36 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+===== INSTALLED GEMS:
+
+  addressable 2.8.0
+  adsf 1.4.7
+  benchmark 0.1.0
+  bigdecimal 2.0.0
+  bundler 2.1.2
+  cgi 0.1.0
+  colored 1.2
+  concurrent-ruby 1.1.9
+  cri 2.15.11
+  csv 3.1.2
+  date 3.0.0
+  dbm 1.1.0
+  ddmemoize 1.0.0
+  ddmetrics 1.0.1
+  ddplugin 1.0.3
+  delegate 0.1.0
+  did_you_mean 1.4.0
+  diff-lcs 1.4.4
+  etc 1.1.0
+  fcntl 1.0.0
+  fiddle 1.0.0
+  fileutils 1.4.1
+  forwardable 1.3.1
+  gdbm 2.1.0
+  getoptlong 0.1.0
+  hamster 3.0.0
+  io-console 0.5.3
+  ipaddr 1.2.2
+  irb 1.2.1
+  json 2.3.0
+  json_schema 0.21.0
+  kramdown 2.3.1
+  logger 1.4.2
+  matrix 0.2.0
+  memo_wise 1.7.0
+  minitest 5.13.0
+  mutex_m 0.1.0
+  nanoc 4.12.2, 4.12.15
+  nanoc-checking 1.0.1, 1.0.2
+  nanoc-cli 4.12.2, 4.12.15
+  nanoc-core 4.12.2, 4.12.15
+  nanoc-deploying 1.0.1
+  net-pop 0.1.0
+  net-smtp 0.1.0
+  net-telnet 0.1.1
+  observer 0.1.0
+  open3 0.1.0
+  openssl 2.1.2
+  ostruct 0.2.0
+  parallel 1.20.1
+  pastel 0.8.0
+  power_assert 1.1.7
+  prime 0.1.1
+  pstore 0.1.0
+  psych 3.1.0, 4.0.6
+  public_suffix 4.0.6
+  racc 1.4.16
+  rack 3.0.8
+  rackup 2.1.0
+  rake 13.0.1
+  rdoc 6.2.1
+  readline 0.0.2
+  readline-ext 0.1.0
+  ref 2.0.0
+  reline 0.1.2
+  rexml 3.2.3
+  rss 0.2.8
+  sdbm 1.0.0
+  singleton 0.1.0
+  slow_enumerator_tools 1.1.0
+  stringio 0.1.0
+  strscan 1.0.3
+  test-unit 3.3.5
+  timeout 0.1.0
+  tracer 0.1.0
+  tty-color 0.6.0
+  tty-command 0.10.1
+  tty-platform 0.3.0
+  tty-which 0.4.2
+  uri 0.10.0
+  webrick 1.6.0, 1.8.1
+  xmlrpc 0.3.0
+  yaml 0.1.0
+  zeitwerk 2.4.2
+  zlib 1.1.0
+
+===== LOAD PATHS:
+
+  0. /var/lib/gems/2.7.0/gems/public_suffix-4.0.6/lib
+  1. /var/lib/gems/2.7.0/gems/addressable-2.8.0/lib
+  2. /var/lib/gems/2.7.0/gems/colored-1.2/lib
+  3. /var/lib/gems/2.7.0/gems/cri-2.15.11/lib
+  4. /var/lib/gems/2.7.0/gems/diff-lcs-1.4.4/lib
+  5. /var/lib/gems/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby
+  6. /var/lib/gems/2.7.0/gems/ddmetrics-1.0.1/lib
+  7. /var/lib/gems/2.7.0/gems/ddplugin-1.0.3/lib
+  8. /var/lib/gems/2.7.0/gems/hamster-3.0.0/lib
+  9. /var/lib/gems/2.7.0/gems/json_schema-0.21.0/lib
+  10. /var/lib/gems/2.7.0/gems/memo_wise-1.7.0/lib
+  11. /var/lib/gems/2.7.0/gems/psych-4.0.6/lib
+  12. /var/lib/gems/2.7.0/extensions/x86_64-linux/2.7.0/psych-4.0.6
+  13. /var/lib/gems/2.7.0/gems/slow_enumerator_tools-1.1.0/lib
+  14. /var/lib/gems/2.7.0/gems/tty-platform-0.3.0/lib
+  15. /var/lib/gems/2.7.0/gems/zeitwerk-2.4.2/lib
+  16. /var/lib/gems/2.7.0/gems/nanoc-core-4.12.15/lib
+  17. /var/lib/gems/2.7.0/gems/nanoc-cli-4.12.15/lib
+  18. /var/lib/gems/2.7.0/gems/nanoc-checking-1.0.2/lib
+  19. /var/lib/gems/2.7.0/gems/nanoc-deploying-1.0.1/lib
+  20. /var/lib/gems/2.7.0/gems/parallel-1.20.1/lib
+  21. /var/lib/gems/2.7.0/gems/tty-color-0.6.0/lib
+  22. /var/lib/gems/2.7.0/gems/pastel-0.8.0/lib
+  23. /var/lib/gems/2.7.0/gems/tty-command-0.10.1/lib
+  24. /var/lib/gems/2.7.0/gems/tty-which-0.4.2/lib
+  25. /var/lib/gems/2.7.0/gems/nanoc-4.12.15/lib
+  26. /var/lib/gems/2.7.0/gems/rack-3.0.8/lib
+  27. /var/lib/gems/2.7.0/gems/webrick-1.8.1/lib
+  28. /var/lib/gems/2.7.0/gems/rackup-2.1.0/lib
+  29. /var/lib/gems/2.7.0/gems/adsf-1.4.7/lib
+  30. /usr/local/lib/site_ruby/2.7.0
+  31. /usr/local/lib/x86_64-linux-gnu/site_ruby
+  32. /usr/local/lib/site_ruby
+  33. /usr/lib/ruby/vendor_ruby/2.7.0
+  34. /usr/lib/x86_64-linux-gnu/ruby/vendor_ruby/2.7.0
+  35. /usr/lib/ruby/vendor_ruby
+  36. /usr/lib/ruby/2.7.0
+  37. /usr/lib/x86_64-linux-gnu/ruby/2.7.0

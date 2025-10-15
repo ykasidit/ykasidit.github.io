@@ -1,6 +1,6 @@
 ---
 title: How to be mentally strong
-category: ethics
+category: other
 ---
 
 Practice patience and forgiveness.

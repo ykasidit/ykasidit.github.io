@@ -1,0 +1,75 @@
+---
+layout: archive
+permalink: /blog
+title: "Kasidit's Blog"
+author_profile: true
+---
+
+<p>
+{% assign first_post = site.posts[0] %}
+<div id="post" class="main">
+  <small><i>Latest article</i></small>
+  <h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+  <small><small>{{ first_post.date | date_to_string }}</small></small><br/>
+
+  {{ first_post.content }}
+  <a href="{{ first_post.url  }}" title="Click for permanent article link"><p/><b><i>[Permalink]</i></b></a>
+</div>
+</p>
+<HR WIDTH="45%">
+<br/>
+<big><i>Recent articles by category:</i></big>
+<br/>
+<br/>
+<HR WIDTH="40%">
+<br/>
+<div>
+  <h2>Software HOWTOs</h2>
+  <ul class="posts">
+    {% for post in site.categories.howto limit: 7 %}
+      <li><a href="{{ post.url  }}">{{ post.title }}</a> &raquo; <span>{{ post.date | date_to_string }}</span></li>
+    {% endfor %}
+	<br/>
+    <b><i><a href="howto.html">More howto articles...</a></i></b>
+  </ul>
+</div>
+<HR WIDTH="40%">
+<br/>
+  
+<div>
+  <h2>Programming - Software Development</h2>
+  <ul class="posts">
+    {% for post in site.categories.programming limit: 7 %}
+      <li><a href="{{ post.url  }}">{{ post.title }}</a> &raquo; <span>{{ post.date | date_to_string }}</span></li>
+    {% endfor %}
+	<br/>
+    <b><i><a href="programming.html">More programming articles...</a></i></b>
+  </ul>
+</div>
+<HR WIDTH="40%">
+<br/>
+<div>
+  <h2>Sustainable Energy and Environment conservation</h2>
+  <ul class="posts">
+    {% for post in site.categories.energy limit: 7 %}
+      <li><a href="{{ post.url  }}">{{ post.title }}</a> &raquo; <span>{{ post.date | date_to_string }}</span></li>
+    {% endfor %}
+	<br/>
+    <b><i><a href="energy.html">More energy articles...</a></i></b>
+  </ul>
+</div>
+<HR WIDTH="40%">
+<div>
+  <h2>Other topics - Uncategorized</h2>
+  <ul class="posts">
+    {% for post in site.categories.other limit: 7 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <span>{{ post.date | date_to_string }}</span></li>
+    {% endfor %}
+	<br/>
+    <b><i><a href="other.html">More uncategorized articles...</a></i></b>
+  </ul>
+</div>
+<HR WIDTH="40%">
+<br/>
+
+</p>

@@ -1,0 +1,2647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Kasidit's Blog</title>
+ <updated>2024-01-01T06:33:40+07:00</updated>
+ <id>http://www.clearevo.com/blog/</id>
+ <author>
+   <name>Kasidit Yusuf</name>
+   <email>kasidit@clearevo.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>A calculator where you can type simple math operations</title>
+   <link href="http://www.clearevo.com/blog/howto/2023/12/31/a_calculator_where_you_can_type_simple_math_operations.html"/>
+   <updated>2023-12-31T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2023/12/31/a_calculator_where_you_can_type_simple_math_operations</id>
+   <content type="html">&lt;p&gt;Just made a simple tool to eval math expressions - &lt;a href=&quot;https://tools.clearevo.com/#/calculator&quot;&gt;click here to try a simple math calculator where you can type numbers and operations&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Testing Python projects with commands like make -j4</title>
+   <link href="http://www.clearevo.com/blog/programming/2020/04/23/testing_python_projects_with_commands_like_make_-j4.html"/>
+   <updated>2020-04-23T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2020/04/23/testing_python_projects_with_commands_like_make_-j4</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/blog/images/test_python_with_make.png&quot; alt=&quot;test python with GNU Make&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Having used pytest, nose, nose2 for many months and faced random issues like some tests would fail when running in a set (not concurrently) together with all other tests but pass if ran alone (whereas the target use case was to be run in its own process alone), and also random issues in getting tests to continue from the last failed one (in larger projects with 300+ integration tests) - I was looking for a solution that can run tests concurrently, in their own processes, and can continue from the last failed (not having to start again from the first test). Tried pytest, nose, nose2 but they dont seem to fit this need although one of them had a continue from last failed feature but randomly it would start all again..&lt;/p&gt;
+
+&lt;p&gt;What if we can use the tried in true ‘GNU Make’ as used in most C projects like the Linux kernel sources to run python tests? It can run concurrently like &lt;code&gt;make -j4&lt;/code&gt;, it continues from last failed just by running &lt;code&gt;make&lt;/code&gt;, start over with &lt;code&gt;make clean&lt;/code&gt; then &lt;code&gt;make&lt;/code&gt; - yes it worked perfectly for my needs! Just make sure you handle &lt;code&gt;__main__&lt;/code&gt; to run your test function in each &lt;code&gt;test_&amp;lt;test name&amp;gt;.py&lt;/code&gt; file so that each test could be run with &lt;code&gt;python test_&amp;lt;test name&amp;gt;.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To use this, just use copy this Makefile from my github repo into your python project folder then run &lt;code&gt;make&lt;/code&gt;: &lt;a href=&quot;https://github.com/ykasidit/python_make_test_example/blob/master/Makefile&quot;&gt;https://github.com/ykasidit/python_make_test_example/blob/master/Makefile&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to use Bluetooth Xbee Module on ardusimple ublox F9 UART1 with UBX message support instead of UART2</title>
+   <link href="http://www.clearevo.com/blog/howto/2020/01/02/how_to_use_bluetooth_xbee_module_on_ardusimple_ublox_f9_uart1_with_ubx_message_support_instead_of_uart2.html"/>
+   <updated>2020-01-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2020/01/02/how_to_use_bluetooth_xbee_module_on_ardusimple_ublox_f9_uart1_with_ubx_message_support_instead_of_uart2</id>
+   <content type="html">&lt;p&gt;Normally the SimpleRTK2B board’s XBee mount point only supports UART2 which doesn’t support UBX messages, below video shows how to map UART1 to UART2 and thus using UART1 on the XBee port:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rFpKoT-v3Kg&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Finally, below video shows above config in action:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/VgdNPssRcjA&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to connect the Ardusimple ublox F9 board to u-center in Windows 7</title>
+   <link href="http://www.clearevo.com/blog/howto/2020/01/02/how_to_connect_the_ardusimple_ublox_f9_board_to_u-center_in_windows_7.html"/>
+   <updated>2020-01-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2020/01/02/how_to_connect_the_ardusimple_ublox_f9_board_to_u-center_in_windows_7</id>
+   <content type="html">&lt;p&gt;Thanks to our friend Geoff from Australia for sharing this tip of using the Ardusimple SimplRTK2B board with U-Blox U-Center program on Windows 7 PC (normally it works only with Windows 10). The trick is the power the board first via the ‘power+xbee’ usb port then connect to the main ‘power+gps’ usb port and disconnect the first one - this is shown in below video:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dZ2H5XP8gJ4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Android NDK Get IMSI from C code</title>
+   <link href="http://www.clearevo.com/blog/programming/2013/06/26/android_ndk_get_imsi.html"/>
+   <updated>2013-06-26T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2013/06/26/android_ndk_get_imsi</id>
+   <content type="html">&lt;p&gt;Although not really “native”, but works well by parsing a command line call instead - credit goes to “Alex P.” for the answer in &lt;a href=&quot;http://stackoverflow.com/questions/14813875/how-to-get-imsi-number-in-android-using-command-line&quot;&gt;http://stackoverflow.com/questions/14813875/how-to-get-imsi-number-in-android-using-command-line&lt;/a&gt; - thanks for the command.&lt;/p&gt;
+
+&lt;pre&gt;
+
+char cmd_res_line[256];
+char total_cmd_res[25600];
+
+
+//WARNING! NO HANDLING FOR VERY_LONG COMMAND READS YET
+char* exec_get_out(char* cmd) {
+
+    FILE* pipe = popen(cmd, &quot;r&quot;);
+
+    if (!pipe) 
+      return NULL;
+
+    total_cmd_res[0] = 0;
+
+    while(!feof(pipe)) {
+        if(fgets(cmd_res_line, 256, pipe) != NULL)
+	  {
+	    //TODO: add handling for long command reads...
+	    strcat(total_cmd_res,cmd_res_line);
+	  }
+    }
+    pclose(pipe);
+    return total_cmd_res;
+}
+
+...
+
+char imsi[16];
+imsi[15]=0;
+char* res = exec_get_out(&quot;service call iphonesubinfo 3&quot;);  
+if (strlen(res)&amp;gt;210) {
+	imsi[0] = res[75];
+	imsi[1] = res[77];
+	imsi[2] = res[79];
+	imsi[3] = res[81];
+	imsi[4] = res[136];
+	imsi[5] = res[138];
+	imsi[6] = res[140];
+	imsi[7] = res[142];
+	imsi[8] = res[144];
+	imsi[9] = res[146];
+	imsi[10] = res[148];
+	imsi[11] = res[150];
+	imsi[12] = res[205];
+	imsi[13] = res[207];
+	imsi[14] = res[209];
+	printf(&quot;imsi: %s len %d\r\n&quot;,imsi,strlen(imsi));
+}
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Android NDK Get IMEI Natively</title>
+   <link href="http://www.clearevo.com/blog/programming/2012/11/26/android_ndk_get_imei_natively.html"/>
+   <updated>2012-11-26T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2012/11/26/android_ndk_get_imei_natively</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Here’s how you can get the phone’s IMEI directly via (NDK) Native C code:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This code uses 2 methods, should work on most single-sim GSM/WCDMA/LTE phones.&lt;/p&gt;
+
+&lt;p&gt;#include &amp;lt;sys/system_properties.h&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;
+	//returns the string length of the value.
+	int ir = __system_property_get(&quot;ro.gsm.imei&quot;, imei_start);           
+	
+      if(ir &amp;gt; 0)
+	{
+	  imei_start[15]=0;//strz end      
+	  printf(&quot;method1 got imei %s len %d\r\n&quot;,imei_start,strlen(imei_start));
+	  strcpy(g_imei,imei_start);
+	}
+      else
+	{
+	  printf(&quot;method1 imei failed - trying method2\r\n&quot;);
+	  //old dumpsys imei getter
+	  char* res = exec_get_out(&quot;dumpsys iphonesubinfo&quot;);  
+	  const char* imei_start_match = &quot;ID = &quot;;
+	  int imei_start_match_len = strlen(imei_start_match);
+	  char* imei_start = strstr(res,imei_start_match);
+	  if(imei_start &amp;amp;&amp;amp; strlen(imei_start)&amp;gt;=15+imei_start_match_len)
+	    {
+	      imei_start += imei_start_match_len;
+	      imei_start[15] = 0;
+	      printf(&quot;method2 IMEI [%s] len %d\r\n&quot;,imei_start,strlen(imei_start));
+	      strcpy(g_imei,imei_start);
+	    }
+	}      
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Android force WCDMA or GSM or AUTO from shell</title>
+   <link href="http://www.clearevo.com/blog/howto/2012/10/10/android_force_wcdma_or_gsm_or_auto_from_shell.html"/>
+   <updated>2012-10-10T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2012/10/10/android_force_wcdma_or_gsm_or_auto_from_shell</id>
+   <content type="html">&lt;p&gt;This requires a rooted phone - tested on HTC OneS (Thailand) and OneX (AT&amp;amp;T - USA).&lt;/p&gt;
+
+&lt;p&gt;Simply open an &lt;em&gt;adb shell&lt;/em&gt; and enter:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;pre&gt;
+./sqlite3 /data/data/com.android.providers.settings/databases/settings.db &quot;update secure set value=&apos;2&apos; where name=&apos;preferred_network_mode&apos;&quot;
+&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;/pre&amp;gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;after “su”, &amp;lt;pre&amp;gt;killall com.android.phone&amp;lt;/pre&amp;gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Done.&lt;/p&gt;
+
+&lt;p&gt;The step 1 changes the settings database - but it is not reflected in the settings app or known/reloaded by com.android.phone (which I understand that it does the real forcing…) yet - we can reboot but that takes too long and unneccesary - I found that killing the process of com.android.phone would cause some watchdog to re-start it (step 2) - and re-load our new settings into effect (probably by calling &lt;em&gt;setpreferrednetworktype&lt;/em&gt; with our new values - I think we can’t call that internal java function directly due to signature/key restrictions).&lt;/p&gt;
+
+&lt;p&gt;I’d like to try to find some time to make an app to do/automate this - it helps rooted phones with special firmwares have that missing option to force directly - very beneficial for programmatical/automated forcing - this is an alternative to the manual/GUI method using the &lt;em&gt;#&lt;/em&gt;#4636#&lt;em&gt;#&lt;/em&gt; &amp;gt; phone info &amp;gt; Setpreferred network type method.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Use your Nokia to change PowerPoint Presentation Slides</title>
+   <link href="http://www.clearevo.com/blog/howto/2012/01/14/use_your_nokia_to_change_powerpoint_presentation_slides.html"/>
+   <updated>2012-01-14T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2012/01/14/use_your_nokia_to_change_powerpoint_presentation_slides</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.clearevo.com/wmousexp/WMouseXP2_3Installer.exe&quot;&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/wmousexp_nokia_c5_control_powerpoint.jpg&quot; alt=&quot;WMouseXP mobile screenshot&quot; style=&quot;float:right;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/WMouseXP_Bluetooth_Presenter_Remote_Logo.png&quot; style=&quot;float:left;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can turn your Nokia into a Wireless Presenter Remote - use it to control PowerPoint in front of class or on stage. The magically wireless control is done by using your phone’s and notebook’s Bluetooth technology to connect together.&lt;/p&gt;
+
+&lt;p&gt;Just follow the 3 steps below:&lt;/p&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;1.&amp;lt;/big&amp;gt;&amp;lt;/big&amp;gt; On your Nokia - install the WMouseXP mobile app - open phone’s web browser to http://wap.clearevo.com as in screenshots below:&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote0.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 1&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote1.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 2&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote2.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 3&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote3.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 4&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote4.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 5&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote6.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 6&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote8.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 7&quot; /&gt;
+&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/nokia_install_WMouseXP_presenter_remote9.jpg&quot; alt=&quot;Nokia Install WMouseXP Presenter Remote Step 8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;2.&amp;lt;/big&amp;gt;&amp;lt;/big&amp;gt; Make sure your Nokia’s Bluetooth is paired with your Computer - you can do this by a right click on the Bluetooth icon in system tray and select “Add a new Bluetooth Device”.&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/add_bt_dev.gif&quot; alt=&quot;Add a Bluetooth Device&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;3.&amp;lt;/big&amp;gt;&amp;lt;/big&amp;gt; &lt;a href=&quot;http://www.clearevo.com/wmousexp/WMouseXP2_3Installer.exe&quot;&gt;Click here to Download WMouseXP “PC App”&lt;/a&gt; - install on computer, start it. Enter the “WMouseXP Mobile ID” as shown on phone’s WMouseXP App, press the “Connect” button. Done.&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/ss/pc_side.png&quot; alt=&quot;Start and enter WMouseXP mobile ID&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After they’re connected, open a PowerPoint presentaion on your computer. Now, control from your Nokia:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/wmousexp/WMouseXP_j2me_bluetooth_remote.gif&quot; alt=&quot;WMouseXP nokia screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Press 3 (if touch-sreen: touch the presentation icon at top-right) on the phone to start the presentation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Click/press the phone’s joystick (middle button) to change to the next step/slide.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Press 2 for the previous slide.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Works on most Nokia Series 40 (like Nokia C3) and also Symbian, E-Series, N-Series.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It just works? »&amp;gt; Upgrade to full version for just 4.95 US$&lt;/strong&gt;
+&lt;a href=&quot;http://store.eSellerate.net/s.asp?s=STR2779821468&amp;amp;Cmd=BUY&amp;amp;SKURefnum=SKU40052769969&quot;&gt;Click here to Buy a serial-number to register/enable the Full Version.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Free-Trial Limitation:&lt;/em&gt; The trial PC Side would disconnect from Mobile Side after 7 minutes. &lt;strong&gt;Please upgrade to Full Version to have unlimited connection time!&lt;/strong&gt;
+(&lt;em&gt;Note:&lt;/em&gt; After trial-limit disconnection by PC, you can press “Connect” from PC again - no expiry.)&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>วิธีทำให้ HTC Rhyme พิมพ์ไทยแต่ใช้เมนูอังกฤษ</title>
+   <link href="http://www.clearevo.com/blog/howto/2011/12/23/%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%97%E0%B8%B3%E0%B9%83%E0%B8%AB%E0%B9%89_htc_rhyme_%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B9%8C%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B9%81%E0%B8%95%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B8%AD%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A4%E0%B8%A9.html"/>
+   <updated>2011-12-23T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2011/12/23/วิธีทำให้_htc_rhyme_พิมพ์ไทยแต่ใช้เมนูอังกฤษ</id>
+   <content type="html">&lt;p&gt;ตอนที่ผมได้มือถือ HTC Rhyme มา เมนูต่างๆเป็นอังกฤษ พอจะพิมพ์ข้อความแล้วไม่มีภาษาไทยให้เลือกครับ ซึ่งปรกติจะมีให้เลือกโดยการเลื่อนที่แป้นวรรคครับ&lt;/p&gt;
+
+&lt;h2 id=&quot;วิธีทำ&quot;&gt;วิธีทำ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/htc_rhyme_th_kb_set0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;วิธีเลือกภาษาไทยคือ เพียงกดที่กล่อง Add text ค้างไว้ครู่เดียวจะมีกล่อง “Input method” ปรากฏขึ้นมาครับ ให้กดที่กล่องนั้นแล้วเลือก “Thai keyboard” ครับ เรียบร้อยแล้วครับ พิมพ์ได้ทั้งไทยและอังกฤษครับ&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/htc_rhyme_th_kb_set1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หากจต้องการเปลี่ยนภาษาที่แสดงบนเมนูทั้งหมดเป็นภาษาไทย ทำได้โดยไปที่ settings &amp;gt; language &amp;amp; keyboard &amp;gt; Select language &amp;gt; ไทย (ซึ่งจะทำให้ input method ตั้งเป็น Thai keyboard ให้เองด้วยครับ) แต่บางคนอาจต้องการให้ภาษาหลักของเครื่อง(เมนูทั้งหลาย)เป็นอังกฤษแต่พิมพ์ไทยได้ ให้ตั้งภาษาเครื่อง (Select language) เป็น English (Thailand) ครับ (แต่จะเปลี่ยน Input method ไปเป็น”touch input” ที่ไม่มีภาษาไทยไปด้วยครับ ทำให้ต้องเลือก Input method ดังข้างต้นให้เป็น “Thai keyboard” จึงจะพิมพ์ไทยได้ครับ)&lt;/p&gt;
+
+&lt;h2 id=&quot;ข้อมูลมือถือ&quot;&gt;ข้อมูลมือถือ&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTC Rhyme S510b (ซื้อในไทย)&lt;/li&gt;
+  &lt;li&gt;Android 2.3.5&lt;/li&gt;
+  &lt;li&gt;HTC Sense 3.5&lt;/li&gt;
+  &lt;li&gt;Software number 1.31.707.6&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Writing good clean portable quality ANSI C code</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/09/01/writing_good_clean_portable_quality_ansi_c_code.html"/>
+   <updated>2011-09-01T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/09/01/writing_good_clean_portable_quality_ansi_c_code</id>
+   <content type="html">&lt;p&gt;Looking to make your ANSI C source code and software up to good standards? See the &lt;a href=&quot;http://www.gnu.org/prep/standards/standards.html&quot;&gt;GNU Coding Standards&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows native C programming - Simulate a keyboard key-press event</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/windows_native_c_programming_-_simulate_a_keyboard_key-press_event.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/windows_native_c_programming_-_simulate_a_keyboard_key-press_event</id>
+   <content type="html">&lt;p&gt;Something like this example code can be used to generate key-press events on Windows.&lt;/p&gt;
+
+&lt;pre&gt;
+#include &lt;windows.h&gt;
+#include &lt;Winuser.h&gt;
+#include &lt;Wtsapi32.h&gt;
+
+.
+.
+.
+
+enum {
+KModMaskCtrl,
+KModMaskAlt,
+KModMaskShift
+};
+
+.
+.
+.
+
+void SimulateKey(int KeyCode, int mod)
+{
+
+		INPUT  Input={0};
+
+
+
+		if(mod &amp;amp; KModMaskCtrl)
+		{
+			ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_CONTROL;
+		  Input.ki.dwFlags = KEYEVENTF_UNICODE;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));		  
+		  Sleep(20);
+		}		
+
+		if(mod &amp;amp; KModMaskAlt)
+		{
+		  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_MENU;
+		  Input.ki.dwFlags = KEYEVENTF_UNICODE;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));
+		  Sleep(20);
+		}
+
+		if(mod &amp;amp; KModMaskShift)
+		{
+		  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_SHIFT;
+		  Input.ki.dwFlags = KEYEVENTF_UNICODE;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));
+		  Sleep(20);
+		}
+
+	  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+	  Input.type      = INPUT_KEYBOARD;	  
+	  Input.ki.wVk = KeyCode;	  
+	  Input.ki.dwFlags = KEYEVENTF_UNICODE;	  
+	  SendInput(1,&amp;amp;Input,sizeof(INPUT));
+
+	  Sleep(20);
+	  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+	  Input.type      = INPUT_KEYBOARD;	  
+	  Input.ki.wVk = KeyCode;
+	  Input.ki.dwFlags = KEYEVENTF_KEYUP;	  
+	  SendInput(1,&amp;amp;Input,sizeof(INPUT)); 
+
+
+
+		if(mod &amp;amp; KModMaskShift)
+		{
+			Sleep(20);
+		  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_SHIFT;
+		  Input.ki.dwFlags = KEYEVENTF_KEYUP;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));
+
+		}
+
+
+
+		if(mod &amp;amp; KModMaskAlt)
+		{
+			Sleep(20);
+		  ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_MENU;
+		  Input.ki.dwFlags = KEYEVENTF_KEYUP;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));
+
+		}
+
+		if(mod &amp;amp; KModMaskCtrl)
+		{
+			Sleep(20);
+			ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+		  Input.type      = INPUT_KEYBOARD;	  
+		  Input.ki.wVk = VK_CONTROL;
+		  Input.ki.dwFlags = KEYEVENTF_KEYUP;
+		  SendInput(1,&amp;amp;Input,sizeof(INPUT));		  
+
+		}	
+}
+
+&amp;lt;/pre&amp;gt;
+
+See winuser.h for a list of virtual_key codes you can use, here are some codes
+
+&lt;pre&gt;
+#define VK_SPACE          0x20
+#define VK_PRIOR          0x21
+#define VK_NEXT           0x22
+#define VK_END            0x23
+#define VK_HOME           0x24
+#define VK_LEFT           0x25
+#define VK_UP             0x26
+#define VK_RIGHT          0x27
+#define VK_DOWN           0x28
+#define VK_SELECT         0x29
+#define VK_PRINT          0x2A
+#define VK_EXECUTE        0x2B
+#define VK_SNAPSHOT       0x2C
+#define VK_INSERT         0x2D
+#define VK_DELETE         0x2E
+#define VK_HELP           0x2F
+.
+.
+.
+&lt;pre&gt;
+&lt;/pre&gt;&lt;/pre&gt;&lt;/Wtsapi32.h&gt;&lt;/Winuser.h&gt;&lt;/windows.h&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows C programming - Simulate a Mouse Click</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/windows_c_programming_-_simulate_a_mouse_click.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/windows_c_programming_-_simulate_a_mouse_click</id>
+   <content type="html">&lt;p&gt;Simulate a Mouse Click in Windows using native C programming:&lt;/p&gt;
+
+&lt;h2 id=&quot;includes&quot;&gt;Includes&lt;/h2&gt;
+&lt;pre&gt;
+#include &lt;windows.h&gt;
+#include &lt;Winuser.h&gt;
+#include &lt;Wtsapi32.h&gt;
+&amp;lt;/pre&amp;gt;
+
+Code
+---
+
+&lt;pre&gt;
+	INPUT    Input={0};
+        // left down
+        Input.type      = INPUT_MOUSE;
+        Input.mi.dwFlags  = MOUSEEVENTF_LEFTDOWN;
+        ::SendInput(1,&amp;amp;Input,sizeof(INPUT));
+
+        Sleep(10);
+        // left up
+        ::ZeroMemory(&amp;amp;Input,sizeof(INPUT));
+        Input.type      = INPUT_MOUSE;
+        Input.mi.dwFlags  = MOUSEEVENTF_LEFTUP;
+        ::SendInput(1,&amp;amp;Input,sizeof(INPUT));
+&lt;/pre&gt;
+&lt;/Wtsapi32.h&gt;&lt;/Winuser.h&gt;&lt;/windows.h&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows C C++ - Set and Get Registry Keys</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_set_and_get_registry_keys.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_set_and_get_registry_keys</id>
+   <content type="html">&lt;p&gt;Used this code a while back to Modify: Set and Get the Reigstry keys.&lt;/p&gt;
+
+&lt;pre&gt;
+static
+BOOL SetRegistryKey (
+  char* keyPath,
+  char* keyName,
+  char* keyData
+) {
+  HKEY  key;
+  long  error;
+  DWORD disposition;
+
+  error = RegCreateKeyEx(
+    HKEY_CURRENT_USER, keyPath, 0, NULL, REG_OPTION_NON_VOLATILE,
+    KEY_ALL_ACCESS, NULL, &amp;amp;key, &amp;amp;disposition
+  );
+  if ( error ) return FALSE;
+
+  error = RegSetValueEx(
+    key, keyName, 0, REG_SZ, (BYTE*) keyData, lstrlen(keyData) + 1
+  );
+  RegCloseKey(key);
+  if ( error ) return FALSE;
+
+  return TRUE;
+}
+
+//////////////////////////////////////////////////
+
+static
+BOOL GetRegistryKey (
+  char* keyPath,
+  char* keyName,
+  char* keyData
+) {
+  HKEY  key;
+  long  error;
+  char  content[1024];
+  DWORD type = REG_SZ;
+  DWORD size = 1024;
+
+  error = RegOpenKeyEx(
+    HKEY_CURRENT_USER, keyPath, 0, KEY_ALL_ACCESS, &amp;amp;key
+  );
+  if ( error ) return FALSE;
+
+  error = RegQueryValueEx(
+    key, keyName, NULL, &amp;amp;type, (BYTE*) content, &amp;amp;size
+  );
+  RegCloseKey(key);
+  if ( error ) return FALSE;
+
+  lstrcpy(keyData, content);
+  return TRUE;
+}
+
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows C C++ - Get monitor display screen size in pixels</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_get_monitor_display_screen_size_in_pixels.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_get_monitor_display_screen_size_in_pixels</id>
+   <content type="html">&lt;p&gt;This code can get the screen size/resolution - works with multi-screen/monitors too - use the RefreshMonitorsMetrics() function.&lt;/p&gt;
+
+&lt;pre&gt;
+long lMonitorsX, lMonitorsY;
+
+BOOL CALLBACK MonitorEnumProc(
+HMONITOR hMonitor, // handle to display monitor
+HDC hdcMonitor, // handle to monitor DC
+LPRECT lprcMonitor, // monitor intersection rectangle
+LPARAM dwData // data
+)
+{
+RECT Rect;
+MONITORINFO mi;
+
+mi.cbSize = sizeof( mi );
+Rect = *lprcMonitor;
+GetMonitorInfo( hMonitor, &amp;amp;mi );
+
+//chad edit - make += instead of max because we want whole multiscreen width
+lMonitorsX += mi.rcMonitor.right;
+lMonitorsX--;//0 based
+
+lMonitorsY = max( lMonitorsY, mi.rcMonitor.bottom );
+lMonitorsY--;//0 based
+
+return TRUE;
+}
+
+
+void RefreshMonitorsMetrics( )
+{
+
+// work out how big we have to be to cover all the screens.
+lMonitorsX = 0;
+lMonitorsY = 0;
+EnumDisplayMonitors(
+NULL, // handle to display DC 
+NULL, // clipping rectangle 
+MonitorEnumProc, // callback function
+0 // data for callback function 
+);
+
+
+
+}
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows C C++ - Autostart program on Boot of computer using the Registry</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_autostart_program_on_boot_of_computer_using_the_registry.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/windows_c_c++_-_autostart_program_on_boot_of_computer_using_the_registry</id>
+   <content type="html">&lt;p&gt;An example for autostarting your software using the registry - I think it was inspired by &lt;a href=&quot;http://www.codeguru.com/cpp/w-p/system/registry/article.php/c5677&quot;&gt;http://www.codeguru.com/cpp/w-p/system/registry/article.php/c5677&lt;/a&gt; a long while back…&lt;/p&gt;
+
+&lt;pre&gt;
+
+	////////////auto-start
+
+	HKEY hKey;
+	CString sKeyName;
+	unsigned char szFilePathOri[MAX_PATH];
+	unsigned char szFilePath[MAX_PATH];
+
+	GetModuleFileName(AfxGetInstanceHandle(), (char *)szFilePathOri, MAX_PATH);
+	strcpy((char *)szFilePath,&quot;\&quot;&quot;);
+	strcat((char *)szFilePath,(char *)szFilePathOri);
+	strcat((char *)szFilePath,&quot;\&quot;&quot;);
+	strcat((char *)szFilePath,&quot; /autostart&quot;);
+
+
+
+	LONG lnRes = RegOpenKeyEx(
+           HKEY_LOCAL_MACHINE,  // handle of open key
+             // The following is the address of name of subkey to open
+           &quot;SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run&quot;,
+           0L,KEY_WRITE,
+           &amp;amp;hKey            // address of handle of open key
+       );
+
+	// now add program path to the RUN key
+	lstrcpy( (char *) szFilePath , LPCTSTR(szFilePath) );
+
+
+	if( ERROR_SUCCESS == lnRes )
+	{
+		if(code == BST_CHECKED)
+		{
+
+		   lnRes = RegSetValueEx(hKey,
+								 LPCTSTR( &quot;my_program&quot; ),  // handle of the opened
+													   // key to set value for
+								 0,
+								 REG_SZ,
+								 szFilePath,   //value data
+								 MAX_PATH );
+
+		   if(ERROR_SUCCESS == lnRes)
+			   ;
+		   else
+		   {
+			   AfxMessageBox(&quot;Auto-start on boot set failed&quot;);
+			   mydebug::log(&quot;Auto-start on boot set failed&quot;);
+		   }
+
+		}
+		else
+		{
+			 lnRes = RegDeleteValueA(hKey, LPCTSTR( &quot;WMouseXP&quot; ));
+
+		   if(ERROR_SUCCESS == lnRes)
+			   ;
+		   else
+		   {
+			   AfxMessageBox(&quot;Auto-start on boot remove failed&quot;);
+			   mydebug::log(&quot;Auto-start on boot remove failed&quot;);
+		   }
+
+
+		}
+
+	}
+	else
+	{
+		AfxMessageBox(&quot;Opening of auto-start on boot settings failed&quot;);
+		mydebug::log(&quot;Opening of auto-start on boot settings failed&quot;);
+	}
+
+
+	//////////////
+}
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Qt C++ read a whole file into memory</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_read_a_whole_file_into_memory.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_read_a_whole_file_into_memory</id>
+   <content type="html">&lt;p&gt;Sometimes you just want to get that whole file into a buffer for quick use:&lt;/p&gt;
+
+&lt;pre&gt;
+QFile file(abs_path);
+
+    if(file.open(QIODevice::ReadOnly))
+    {
+        QByteArray bytes = file.readAll();
+        file.close();
+        main_template = bytes;
+        qDebug(main_template.toAscii());
+    }
+    else
+	qDebug(&quot;rfile failed...&quot;);
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Qt C++ make a Label show animated GIF - for something like an ajax-loading icon</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_make_a_label_show_animated_gif_-_for_something_like_an_ajax-loading_icon.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_make_a_label_show_animated_gif_-_for_something_like_an_ajax-loading_icon</id>
+   <content type="html">&lt;p&gt;Just use a QMovie together with your label… something like this:&lt;/p&gt;
+
+&lt;h2 id=&quot;in-class-ctor&quot;&gt;in class ctor&lt;/h2&gt;
+&lt;pre&gt;
+iAnimGif = new QMovie(&quot;:/images/ajax-loader.gif&quot;);
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;show-the-animation-when-needed&quot;&gt;show the animation when needed&lt;/h2&gt;
+&lt;pre&gt;
+ui-&amp;gt;connectLoadingLabel-&amp;gt;setMovie(iAnimGif);
+iAnimGif-&amp;gt;start();
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Qt C++ Get Screenshot</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_get_screenshot.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/qt_c++_get_screenshot</id>
+   <content type="html">&lt;p&gt;How to get the screenshot of the computer using Qt c++.&lt;/p&gt;
+
+&lt;pre&gt;
+    ss = QPixmap::grabWindow(QApplication::desktop()-&amp;gt;winId());    
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Programmatially Send files using OBEX Object Push over the Microsoft Bluetooth Stack</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/programmatially_send_files_using_obex_object_push_over_the_microsoft_bluetooth_stack.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/programmatially_send_files_using_obex_object_push_over_the_microsoft_bluetooth_stack</id>
+   <content type="html">&lt;p&gt;A while back during my senior project of my BSc computer science studies, I wrote an implementation of parts_of_HCI, L2CAP, SDP, RFCOMM and OBEX on top of freebt.net’s bluetooth implementation for Windows.&lt;/p&gt;
+
+&lt;p&gt;That same OBEX code was modified to be used with the MS BT stack to send files over bluetooth - please see the code of WMouseXP open-source version, the fuction “sendFile” at &lt;a href=&quot;https://github.com/ykasidit/WMouseXP/blob/master/src/WMouseXPDlg.cpp&quot;&gt;https://github.com/ykasidit/WMouseXP/blob/master/src/WMouseXPDlg.cpp&lt;/a&gt; and the main OBEX layer packet code was &lt;a href=&quot;https://github.com/ykasidit/WMouseXP/blob/master/src/OBEX.cpp&quot;&gt;https://github.com/ykasidit/WMouseXP/blob/master/src/OBEX.cpp&lt;/a&gt; - sorry for the low quality/cleanliness of code here - it was written when I was still just starting C and C++ programming back then - but it worked when tested with many Bluetooth devices/phones.&lt;/p&gt;
+
+&lt;p&gt;The main part is making the OBEX object:&lt;/p&gt;
+&lt;pre&gt;
+bool CWMouseXPDlg::SendFile(char* devaddr, int port, BYTE* dataptr, DWORD datalen)
+{
+	//close socket to make sure it is closed, new session
+	closesocket(iSocket);    
+	WSACleanup();
+
+	if(!InitSocket())
+	{
+		throw &quot;Initialize MS Bluetooth stack/driver failed&quot;;		
+	}
+
+	SOCKADDR_BTH sa = { 0 };
+	int sa_len = sizeof(sa);
+
+
+	if( SOCKET_ERROR == WSAStringToAddress( devaddr, AF_BTH,
+	NULL, (LPSOCKADDR) &amp;amp;sa, &amp;amp;sa_len ) ) 
+	{
+		throw &quot;Convert BT address WSAStringToAddress failed&quot;;	
+	}
+
+	sa.port = port;
+
+	if( sa.port == 0 ) {
+		iStep1Label.SetWindowText(&quot;Invalid device OBEX port specified&quot;);
+	return false;
+	}	
+
+
+
+
+	//open socket
+
+
+
+	//Made new send and recv functions implements a timer, see SendViaSocketL and RevcViaSocketL
+
+	//try catch handles when send and recv fails
+
+
+
+
+
+
+	//make safe cleanup when exceptions occur
+
+
+
+	OBEXPutCommand* opc = NULL;
+
+	OBEXPacket* obexPktToSend = NULL; //file part packet
+
+
+	bool success = false;
+
+	try{
+              
+				iStep1Label.SetWindowText(&quot;Waiting for phone to accept file...&quot;);
+
+				StartBTInteractionTimer(); //so we don&apos;t wait too long for a user to respond
+
+				if(SOCKET_ERROR != connect( iSocket, (LPSOCKADDR) &amp;amp;sa, sa_len ))
+                  {
+						//Send OBEX Connect				
+
+						StopBTInteractionTimer();  	
+
+						m_InstallPic.Draw();
+
+					    OBEXConnectPacket obexConnectPkt(Opcode_Connect,0x4000);				
+
+                        BYTE recvBuff[512];												
+
+						SendViaSocketL((const char*) (obexConnectPkt.wholePacket),obexConnectPkt.packetLength);
+
+
+						bool startedPut	= false;
+						USHORT theirMaxOBEXPacketSize = 0;					
+
+
+						//See response, then Send all OBEX file packets											
+
+						int nreceived = RecvViaSocketL((char*)recvBuff,512);						
+
+
+
+                        if(recvBuff[0] == RspCode_Success)
+                        {
+                              	
+							iStep1Label.SetWindowText(&quot;Connect OBEX Success&quot;);		
+
+
+						while(1)
+						{
+
+							if(startedPut)
+								nreceived = RecvViaSocketL((char*)recvBuff,512);
+
+
+							OBEXPacket obexRcvdPkt(recvBuff,nreceived);
+
+
+							if(!startedPut)
+							{
+
+									if(obexRcvdPkt.wholePacket-&amp;gt;code == RspCode_Success)
+									{
+										iStep1Label.SetWindowText(&quot;OBEX connection successful&quot;);
+
+										BEUS tmo(((BYTE*)(obexRcvdPkt.wholePacket-&amp;gt;data))+2);					
+										theirMaxOBEXPacketSize = tmo.getValUSHORT(); 
+
+										char buf[50] = {0};
+										sprintf(buf,&quot;Their max OBEX packet size: %d&quot;,theirMaxOBEXPacketSize);
+										iStep1Label.SetWindowText(buf);
+
+
+
+										//file-&amp;gt;Open(&quot;card.vcf&quot;,CFile::modeRead|CFile::typeBinary);
+										//file-&amp;gt;Open(&quot;img.jpg&quot;,CFile::modeRead|CFile::typeBinary);
+										//if(opc)
+										//	delete opc;
+
+										 opc = new OBEXPutCommand(&quot;WMouseXP.jar&quot;,theirMaxOBEXPacketSize,dataptr,datalen);							
+
+										//sprintf(buf,&quot;N OBEX puts to send: %d&quot;,opc-&amp;gt;nPacketsToSend);
+										iStep1Label.SetWindowText(&quot;Sending File...&quot;);
+										//devicesLB-&amp;gt;DrawAnimatedRects()
+
+
+													obexPktToSend = opc-&amp;gt;CgetNextPacket();
+
+													SendViaSocketL((const char*) (obexPktToSend-&amp;gt;wholePacket),obexPktToSend-&amp;gt;packetLength);
+
+													delete obexPktToSend;
+													obexPktToSend = NULL;
+
+													startedPut = true;
+
+									}
+
+
+							}						
+							else
+							{
+									if(obexRcvdPkt.wholePacket-&amp;gt;code == RspCode_Success)
+										{
+											//send obex disc
+											iStep1Label.SetWindowText(&quot;File sent via Bluetooth&quot;);
+											success = true;
+
+											OBEXPacket dsc(Opcode_Disconnect,NULL,0);
+
+											//AddLog(&quot;Sending OBEX Disconnect Request&quot;);
+										    SendViaSocketL((const char*) (dsc.wholePacket),dsc.packetLength);					
+											//AddLog(&quot;OBEX Disconnect Sent&quot;);					
+											iStep1Label.SetWindowText(&quot;File sent via Bluetooth&quot;);
+											break;
+
+										}
+										else
+									if(obexRcvdPkt.wholePacket-&amp;gt;code == RspCode_Continue)
+										{
+											obexPktToSend = opc-&amp;gt;CgetNextPacket();	
+
+											SendViaSocketL((const char*) (obexPktToSend-&amp;gt;wholePacket), obexPktToSend-&amp;gt;packetLength);
+
+											delete obexPktToSend;
+											obexPktToSend = NULL;//avoid double deletion
+
+										}
+									else
+										{
+											throw &quot;Unknown OBEX Response&quot;;
+											//break; throw already broke...
+										}
+
+
+							}//end else of if(!started)
+
+
+							}//end while	
+
+
+
+
+						}//end if(recvBuff[0] == RspCode_Success)			
+						else
+						{
+							throw(&quot;OBEX handshake failed.&quot;);							
+
+						}	
+                        
+
+				}// end if(connect!=SOCKET_ERROR)                                          
+				else
+      			{			StopBTInteractionTimer();
+							throw &quot;Connection Declined or Timed-Out&quot;;
+				}
+
+
+
+
+
+	}
+	catch(char* exception)
+	{
+		iStep1Label.SetWindowText(exception);
+	}
+
+
+	delete obexPktToSend;
+	delete opc;
+
+
+	closesocket(iSocket);      
+	WSACleanup();
+
+	return success;
+
+}
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Counting days between two dates - programming in Java or C</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/30/counting_days_between_two_dates_-_programming_in_java_or_c.html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/30/counting_days_between_two_dates_-_programming_in_java_or_c</id>
+   <content type="html">&lt;p&gt;When I was a Computer Science student at Kasetsart University, I had this ANSI C programming homework to make a program that counts the number of days between dates, at that time I didn’t have a computer yet, I had to write this code on a piece of papaer while at the hostel - then write it again on the computer at university or at my cousin’s who had one. Now, many years later, that same code became part of the j2me &lt;a href=&quot;http://www.clearevo.com/daystoday/&quot;&gt;DaysToDay Calendar Counter Program&lt;/a&gt; - I tried using the java Calendar class on mobile but it had bugs/wrong_results while computing long date differences of many many years. Here’s the main part of the code, &lt;a href=&quot;http://www.clearevo.com/daystoday/DaysToDay.java&quot;&gt;the full Code is here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+long dtd(int d1, int m1, int y1, int d2,int m2,int y2)
+{
+     long  totald, dofyrsbtw, stm2;
+     int  n, btw;         
+            if( ( y2 &amp;lt; y1) || ( y1 == y2 &amp;amp;&amp;amp; m2 &amp;lt; m1 ) || ( y1 == y2 &amp;amp;&amp;amp; m1 == m2 &amp;amp;&amp;amp; d2 &amp;lt; d1) )
+		{
+			
+			int trans;
+			trans = y1;
+			y1 = y2;
+			y2 = trans;
+			trans = m1;
+			m1 = m2;
+			m2 = trans;
+			trans = d1;
+			d1 = d2;
+			d2 = trans;
+		}
+	if ( y1 == y2)
+	{
+		if( m1 == m2 )
+		totald = d2 - d1;
+		else
+		{
+			int t1m1 = m1;
+			btw = 0;
+			while(true)
+			{
+				if( ( m2 - t1m1) == 1)
+				break;
+				btw += mlength(++t1m1, y1);
+			}
+			totald = mlength(m1, y1) - d1 + d2 +btw;
+		}
+
+	}
+	else
+	{
+		int t2m1, m1tend, t1y1;
+		t2m1 = m1;
+		m1tend = 0;
+		while(true)
+		{
+			if(t2m1 == 12)
+			break;
+			m1tend += mlength(++t2m1, y1);
+		}
+		dofyrsbtw = 0;
+		t1y1 = y1;
+		while(true)
+		{
+			if( y2 - t1y1 == 1)
+			break;
+			dofyrsbtw += ylength( ++t1y1);
+		}
+		stm2 = 0;
+		n = 0;
+		while(true)
+		{
+			if(m2 == n + 1)
+			break;
+			stm2 += mlength(++n, y2);
+			if(n == m2 - 1 )
+			break;
+		}
+		totald = mlength(m1, y1) - d1 + m1tend + dofyrsbtw + stm2 + d2;
+	}
+	
+        return(totald);
+    
+}    
+
+
+
+int mlength(int m, int y)
+	{
+	int retml = 0;
+	switch(m)
+		{
+			case 1 :  retml = 31;break;
+			case 2 :  if(  (y%4 == 0  &amp;amp;&amp;amp;  y%100 != 0) || ( y%400 == 0)  ) retml = 29 ; else retml = 28;break;
+			case 3 :  retml = 31;break;
+			case 4 :  retml = 30;break;
+			case 5 :  retml = 31;break;
+			case 6 :  retml = 30;break;
+			case 7 :  retml = 31;break;
+			case 8 :  retml = 31;break;
+			case 9 :   retml = 30;break;
+			case 10 :  retml = 31;break;
+			case 11 :  retml = 30;break;
+			case 12 :  retml = 31;break;
+		}
+	return(retml);
+	}
+boolean check(int d, int m, int y)
+{
+	return ( ( m&amp;gt;0 &amp;amp;&amp;amp; m &amp;lt; 13) &amp;amp;&amp;amp; ( (d&amp;gt;0) &amp;amp;&amp;amp; (d &amp;lt;= mlength(m, y))) );
+}
+int ylength( int y)
+{
+	int doy;
+	if(  (y%4 == 0  &amp;amp;&amp;amp;  y%100 != 0) || ( y%400 == 0)  ) doy = 366; else doy = 365;
+	return(doy);
+}
+
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Counting days between two dates (programming in Java or C)</title>
+   <link href="http://www.clearevo.com/blog/programmings/2011/08/30/counting_days_between_two_dates_(programming_in_java_or_c).html"/>
+   <updated>2011-08-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programmings/2011/08/30/counting_days_between_two_dates_(programming_in_java_or_c)</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Nokia C5 Backup Contacts to Memory Card</title>
+   <link href="http://www.clearevo.com/blog/howto/2011/08/22/nokia_c5_backup_contacts_to_memory_card.html"/>
+   <updated>2011-08-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2011/08/22/nokia_c5_backup_contacts_to_memory_card</id>
+   <content type="html">&lt;p&gt;It’s great that Nokia S60 phones provide a simple and direct “do it yourself” way to backup and restore contacts via memory-card:&lt;/p&gt;
+
+&lt;p&gt;Discalimer: Always be careful about backing up and handling contacts to avoid losing data. Do this at your own risk.&lt;/p&gt;
+
+&lt;p&gt;The method is to copy all the .vcf files from phone to some folder on your computer as a backup. To restore them, copy them back from computer to mmc then “Copy business card” from the mmc on phone to restore - something like the screenshots below:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Choose Options &amp;gt; Mark &amp;gt; Mark All&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_c5_backup_contacts_mark_all.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Choose Options &amp;gt; Create Backup &amp;gt; Phone to Memory card.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_c5_backup_contacts.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GNU C Generic Makefile Example</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/22/gnu_c_generic_makefile_example.html"/>
+   <updated>2011-08-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/22/gnu_c_generic_makefile_example</id>
+   <content type="html">&lt;p&gt;Here’s an example of a GNU Make “Makefile” to compile your C programs - it searches for all .c files and includes them in the compile list:&lt;/p&gt;
+
+&lt;pre&gt;
+#####generic conf
+SRC_FILTER = .c
+LIBS  = 
+LIBS += 
+CFLAGS = -I.
+LDFLAGS =
+CONF = .
+SOURCES :=  $(shell find ./ -type f -name &apos;*${SRC_FILTER}&apos;)
+################
+
+################target_specific conf
+
+##### single target without a name - so we just call &quot;make&quot; without CONF=... for this target
+ifeq ($(CONF),.)
+#mkres := $(shell mkdir $(CONF))
+CFLAGS += 
+TARGET = your_compiled_binary_output_name
+CC = gcc
+LD = gcc
+endif
+####
+
+################
+
+
+OBJS := $(patsubst ./%${SRC_FILTER}, ${CONF}/%.o, $(SOURCES))
+
+#all: post-build
+#post-build: $(TARGET)
+#	@echo post_build_step if you want to run somthing here like copy the binary to somewhere, etc.
+#
+
+all: $(TARGET)
+
+$(TARGET): ${OBJS}
+	$(LD) ${OBJS} ${LIBS} ${LDFLAGS} -o ${CONF}/&quot;$(TARGET)&quot;
+
+${CONF}/%.o: %${SRC_FILTER}
+	$(CC) $(CFLAGS) -o $@ -c $&amp;lt;
+
+clean:
+	rm -f ${CONF}/$(TARGET)
+	rm -f $(OBJS)
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Decoding WCDMA RRC packets (3GPP 25.331)</title>
+   <link href="http://www.clearevo.com/blog/programming/2011/08/22/decoding_wcdma_rrc_packets_(3gpp_25331).html"/>
+   <updated>2011-08-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2011/08/22/decoding_wcdma_rrc_packets_(3gpp_25331)</id>
+   <content type="html">&lt;p&gt;The 3GPP 25.331 provides the asn1 syntax for the specs of WCDMA RRC packets sent over 3G networks between phone and base station, however, you need a asn1 compiler to convert it to C code to do the decoding in a software program.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://lionet.info/asn1c/blog/&quot;&gt;Lev Walkin’s asn1c open source asn1 compiler&lt;/a&gt;, you can convert asn1 sytax source into C code ready for decoding the raw binary packets! This is a huge contribution by Lev Walkin. Thanks so much, Lev!&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to use your Samsung Jet to change Powerpoint slides on computer</title>
+   <link href="http://www.clearevo.com/blog/howto/2011/08/07/how_to_use_your_samsung_jet_to_change_powerpoint_slides_on_computer.html"/>
+   <updated>2011-08-07T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2011/08/07/how_to_use_your_samsung_jet_to_change_powerpoint_slides_on_computer</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/images/samsung_jet.jpg&quot; alt=&quot;How to use your Samsung Jet to change Powerpoint slides on computer&quot; style=&quot;float:right;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A while ago I got a Samsung Jet (aka S8000) for mobile network testing, I was also curious about its java-blueotooth features. After playing with it for a while, I found out that it worked well with the touch-screen version of WMouseXP (a powerpoint/presentation remote-control software) mobile app, so here’s how to set it up:&lt;/p&gt;
+
+&lt;h2 id=&quot;phone-setup&quot;&gt;Phone Setup&lt;/h2&gt;
+
+&lt;p&gt;The touch-screen enabled mobile version is needed, this is available on the mobile “wap” site:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the browser (“Internet” icon) in your Samsung Jet, go to “wap.clearevo.com”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Choose WMouseXP &amp;gt; Download&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open phone’s Bluetooth setting icon (its page shows “Tap here to turn Bluetooth on” - tap on it).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start the WMouseXP mobile app, if all things went correctly, you’d see “Awaiting PC Side” shown on top of the screen - this means were’re ready and waiting for the computer/notebook to connect to us.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;computer-setup&quot;&gt;Computer Setup&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download and install &lt;a href=&quot;http://www.clearevo.com/wmousexp/WMouseXP2_3Installer.exe&quot;&gt;the WMouseXP installer&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Makesure your computer/notebook’s Bluetooth is started and ready. (if your Notebook has internal Bluetooth - start it using its assigned Fn+ bluetooth button or hardware bluetooth/wireless button)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start WMouseXP (double click the icon on your Desktop).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Press the “Connect” button, wait until it finds your phone’s WMouseXP and connects to it, if all went well, it would show a “Wireless Connection Active” balloon from the system tray.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Use the phone’s on-screen joystick to move your computer’s mouse cursor! Click the middle of the joystick to click things on your computer, try double-click some things on computer from phone. Try open a Powerpoint Presentation, tap the top-right command icon to start the presentation, tap the joystick middle button to go to the next step/slide, press the top-middle command icon to go back, press the top-left command icon to exit.&lt;/p&gt;
+
+&lt;p&gt;Note: the WMouseXP Computer program has a “Step 1” button to send and install the mobile app to phone - we omit this because it would send the “old” mobile app version which doesn’t support touch-screen command pressing, it was for phones with numeric-pads, that’s why we installed the new touch-screen enabled version from the “wap” side directly on the phone instead.&lt;/p&gt;
+
+&lt;p&gt;For more info, please visit &lt;a href=&quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP Bluetooth Presentation Remote-Control Software&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to be mentally strong</title>
+   <link href="http://www.clearevo.com/blog/other/2011/01/14/how_to_be_mentally_strong.html"/>
+   <updated>2011-01-14T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2011/01/14/how_to_be_mentally_strong</id>
+   <content type="html">&lt;p&gt;Practice patience and forgiveness.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New Ovi Maps for Symbian Scrolls and Zooms much faster</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/11/05/new_ovi_maps_for_symbian_scrolls_and_zooms_much_faster.html"/>
+   <updated>2010-11-05T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/11/05/new_ovi_maps_for_symbian_scrolls_and_zooms_much_faster</id>
+   <content type="html">&lt;p&gt;The new Nokia Ovi maps for S60 phones scrolls and zooms much faster than older versions.&lt;/p&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;em&gt;&lt;a href=&quot;http://maps.nokia.com/services-and-apps/ovi-maps/downloads&quot;&gt;Download it here&lt;/a&gt;&lt;/em&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;p&gt;The old version on my Nokia 5230 was really slow/lagging frame by frame slow motion when you scroll/drag/zoom especially in urban places - very annoying. This new one seems to draw only the main routes while scrolling and then draws the detailed parts after the user has stopped scrolling, that’s probably a part of how its scrolling got much faster.&lt;/p&gt;
+
+&lt;p&gt;It seems to be much more usable now. Just downloaded the sis installer from the link above to my &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;Ubuntu 10.10&lt;/a&gt; computer then I right-click the downloaded the sis file then send-to bluetooth - to my phone - worked well.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Git Tutorials</title>
+   <link href="http://www.clearevo.com/blog/programming/2010/10/27/git_tutorials.html"/>
+   <updated>2010-10-27T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2010/10/27/git_tutorials</id>
+   <content type="html">&lt;p&gt;very good and simple book - pdf available on page - covered general problems i had at first: &lt;a href=&quot;http://www-cs-students.stanford.edu/~blynn/gitmagic/&quot;&gt;http://www-cs-students.stanford.edu/~blynn/gitmagic/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;good howto from setup to usage: &lt;a href=&quot;http://scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way&quot;&gt;http://scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;video talk explaining what git is: &lt;a href=&quot;http://www.youtube.com/watch?v=8dhZ9BXQgc4&quot;&gt;http://www.youtube.com/watch?v=8dhZ9BXQgc4&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;community book: &lt;a href=&quot;http://book.git-scm.com/&quot;&gt;http://book.git-scm.com/&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Openbox in GNOME - setting the keyboard shortcuts</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/08/25/openbox_in_gnome_-_setting_the_keyboard_shortcuts.html"/>
+   <updated>2010-08-25T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/08/25/openbox_in_gnome_-_setting_the_keyboard_shortcuts</id>
+   <content type="html">&lt;p&gt;As the “window manager” Openbox being much more responsive than the default one called Metacity - it proved to be a great replacement expecially on my slower notebook. Much faster/responsive when doing all kinds of gui tasks - opening/closing a window, switching workspaces, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Install on Ubuntu 10.04&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install openbox obconf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Starting Openbox&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Press Alt-F2 and enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openbox --replace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, as using the keyboard is at times much faster than using the mouse, some normal GNOME/metacity shortcuts are missing - I did as below to add the main keyboard shortcuts I use:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Add the section below to your openbox config file:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gedit ~/.config/openbox/rc.xml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Find the &lt;code&gt;&amp;lt;/keyboard&amp;gt;&lt;/code&gt; line and add the following in a new line just above it:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- my custom Keybindings --&amp;gt;
+&amp;lt;keybind key=&quot;A-F1&quot;&amp;gt;
+  &amp;lt;action name=&quot;execute&quot;&amp;gt;
+    &amp;lt;execute&amp;gt;gnome-panel-control --main-menu&amp;lt;/execute&amp;gt;
+  &amp;lt;/action&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;A-F2&quot;&amp;gt;
+  &amp;lt;action name=&quot;execute&quot;&amp;gt;
+    &amp;lt;execute&amp;gt;gnome-panel-control --run-dialog&amp;lt;/execute&amp;gt;
+  &amp;lt;/action&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;A-F10&quot;&amp;gt;
+  &amp;lt;action name=&quot;ToggleMaximizeFull&quot;/&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;A-F9&quot;&amp;gt;
+  &amp;lt;action name=&quot;Iconify&quot;/&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;A-F7&quot;&amp;gt;
+  &amp;lt;action name=&quot;Move&quot;/&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;A-F8&quot;&amp;gt;
+  &amp;lt;action name=&quot;Resize&quot;/&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;C-A-d&quot;&amp;gt;
+  &amp;lt;action name=&quot;ToggleShowDesktop&quot;/&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&amp;lt;keybind key=&quot;C-A-t&quot;&amp;gt;
+  &amp;lt;action name=&quot;execute&quot;&amp;gt;
+    &amp;lt;execute&amp;gt;gnome-terminal&amp;lt;/execute&amp;gt;
+  &amp;lt;/action&amp;gt;
+&amp;lt;/keybind&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Let openbox reload your settings:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openbox --reconfigure
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Done.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Adjusting the window manager theme&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Go to System &amp;gt; Preferences &amp;gt; Openbox Configuration Mnanager&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Auto start openbox&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Go to System &amp;gt; Preferences &amp;gt; Startup Applications, press Add, enter some name, in the command, enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openbox --replace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Thanks to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ubuntuforums.org/showthread.php?t=75471&quot;&gt;http://ubuntuforums.org/showthread.php?t=75471&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://openbox.org/wiki/Help:Actions&quot;&gt;http://openbox.org/wiki/Help:Actions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://openbox.org/wiki/Help:GNOME/Openbox&quot;&gt;http://openbox.org/wiki/Help:GNOME/Openbox&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Installing OpenSS7's Linux Fast STREAMS on Debian Lenny</title>
+   <link href="http://www.clearevo.com/blog/programming/2010/08/12/install_linux_fast_streams_on_debian_lenny.html"/>
+   <updated>2010-08-12T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2010/08/12/install_linux_fast_streams_on_debian_lenny</id>
+   <content type="html">&lt;p&gt;Did the following to compile and install on a Debian Lenny server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget http://www.openss7.org/repos/tarballs/streams-0.9.2.4.tar.gz
+
+tar -xzvf streams-0.9.2.4.tar.gz 
+
+mkdir build
+
+cd build
+
+sudo apt-get install linux-headers-$(uname -r)
+
+sudo apt-get install libsnmp-dev
+
+sudo apt-get install libperl-dev
+
+../streams-0.9.2.4/configure --enable-autotest CC=gcc-4.1
+
+make
+
+make check
+
+sudo make install
+
+sudo make installcheck
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Finally Nokia Qt SDK supports Ubuntu GNU/Linux</title>
+   <link href="http://www.clearevo.com/blog/programming/2010/07/31/finally_nokia_qt_sdk_supports_ubuntu_gnu_linux.html"/>
+   <updated>2010-07-31T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2010/07/31/finally_nokia_qt_sdk_supports_ubuntu_gnu_linux</id>
+   <content type="html">&lt;p&gt;Finally we can develop native (Qt) Symbian apps on GNU/Linux with official tools from Nokia? It’s just amazing to see the simplicity and features of newly released &lt;strong&gt;&lt;a href=&quot;http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html&quot;&gt;Nokia Qt SDK&lt;/a&gt;&lt;/strong&gt; - officially supproting Ubuntu GNU/Linux!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;But is this it? Develop Qt Symbian, Maemo apps from one QtCreator on Ubuntu?&lt;/em&gt; &lt;strong&gt;Well not yet for Symbian on linux in this current 1.0 release yet&lt;/strong&gt; as per the &lt;a href=&quot;http://labs.trolltech.com/blogs/2010/06/23/nokia-qt-sdk-10-released/&quot;&gt;comments in their blog&lt;/a&gt; but you can &lt;a href=&quot;http://wiki.forum.nokia.com/index.php/Nokia_Qt_SDK_Remote_Compiler&quot;&gt;use Remote Compilation for the time being&lt;/a&gt;. (You can install it using SDKMaintenanceTool and then see the QtCreator Help about it.)&lt;/p&gt;
+
+&lt;p&gt;After waiting and using &lt;a href=&quot;http://www.clearevo.com/blog/programming/2009/06/05/symbian_c%2B%2B_on_linux_using_gnupoc_and_eclipse_cdt.html&quot;&gt;unofficial tools like gnupoc with eclipse cdt to develop native Symbian C++ applications&lt;/a&gt; for a long while. This Nokia Qt SDK looks promising for new future Qt apps.&lt;/p&gt;
+
+&lt;p&gt;I’ve been programming Native Symbian C++ for a few years and I still say that many times it is a hassle just to develop/program a simple task (things got much easier thanks to the very helpful Forum Nokia Wiki Symbian C++ code examples and discussion boards) - after trying Qt in my computer apps like Ookjor and AgilePresenter - I can say that Qt is truly amazingly simple and “right” in many ways - far simpler to get a task done (while still having the native C and C++ “engine” strength) far “cute” and smart in my opinion than other UI tools I’ve tried in the past: MFC (when I was younger, still locked to windows), wxWidgets, native S60 Avkon C++…&lt;/p&gt;
+
+&lt;p&gt;I like the VLC media player approach: develop the core engine of the app in native_standard_ANSI_C and then you can use whatever UI you like - and now it’s Qt (VLC now uses Qt for their UI too). Although Symbian and Qt are Object Oriented C++ based, C++/OO seems to suit GUI programming and business apps where there are easily mapped to real “objects”. However, every language has its stregths and weakness and suitable job - C++ doesn’t suit deeper or lower-level programming like hex/communications stuff in my opinion. I’m really tired of adding/adjusting new features into an old C++ app engines for my current kind of work: making wireless protocol decoding engines (GSM RR/CC/MM) - standard C fits the job far better in my view - my new app engines are all in ansi C - it get things done more simply and leaves a lot of room for change - instead of wasting too much time on just coding the “OO design” hierrachy then after a year or two they become a huge mess when adapting to new paradigms and needs. Something like what was &lt;a href=&quot;http://harmful.cat-v.org/software/c++/linus&quot;&gt;expressed by Linus Torvalrds in a (strong comments) reply about why git wasn’t in C++&lt;/a&gt;. We can see that deeper stuff like the linux kernel, OsmocomBB, OpenCV, apache2 httpd, lighttpd, wireshark, imagemagick are in native C, while UIs and business apps are suitable for OO languages like C++, Java, Ruby, etc.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>VirtualBox USB fix for Ubuntu 10.04</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/05/25/virtualbox_usb_fix_for_ubuntu_1004.html"/>
+   <updated>2010-05-25T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/05/25/virtualbox_usb_fix_for_ubuntu_1004</id>
+   <content type="html">&lt;p&gt;Howto use your USB device in a Windows XP guest on a Ubuntu 10.04 VirtualBox host:&lt;/p&gt;
+
+&lt;h2 id=&quot;part-1---generic-usb-devices&quot;&gt;&lt;em&gt;Part 1 - Generic USB devices&lt;/em&gt;&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add your Ubuntu account to group “vboxusers” and “usb”: Go to System&amp;gt;Administration&amp;gt;Users and Groups - then “Manage Groups”, then:
+0.1 double-click “vboxusers” then check/enable your account in there, OK.
+0.2 Click Add &amp;gt; enter group name: usb, group id: 85, add your account in there too, OK.
+0.3 Restart your computer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Real thanks to &lt;a href=&quot;http://forums.virtualbox.org/viewtopic.php?f=7&amp;amp;t=30906&amp;amp;start=30&quot;&gt;http://forums.virtualbox.org/viewtopic.php?f=7&amp;amp;t=30906&amp;amp;start=30&lt;/a&gt; for the details filtered from the great UsersManual for this case’s fix - essence of this post - the rest is just generic…&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download and install vbox from &lt;a href=&quot;http://www.virtualbox.org/wiki/Linux_Downloads&quot;&gt;http://www.virtualbox.org/wiki/Linux_Downloads&lt;/a&gt; (the OSE version in ubuntu software center dones’t have USB settings…)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add your new guest OS normally.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(While guest is off) Go to settings &amp;gt; USB &amp;gt; Check/enable the USB support, then plug-in your USB device you want to use in the guest OS, click the small button on the right: “add Filter from Device” - select your desired device, make sure it’s checked/enabled. OK.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start your guest, plug-in your USB device then the gust OS should start to recognize it normally - in some cases you should right-click the “usb” icon at the lower-right of the virtualbox window and select/check your device to enable/disable it from guest OS.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;part-2---usb-devices-with-their-own-mass-storage-virtual-cd-driver-installer-autorun-drive&quot;&gt;&lt;em&gt;Part 2 - USB Devices with their own mass-storage “Virtual CD” driver-installer autorun drive&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;For some devices - Part 1 is not enough - especially the air-cards or mobile devices/phones (which I had to test) with their virtual “CD” drive to autorun the dirver installer once you plugin usb - they wont work only merely the “Part 1” above - some message like &lt;em&gt;an error occured installing the device…&lt;/em&gt; the hardware problem in the device manager would show as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;This device cannot start. (Code 10)&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://ubuntuforums.org/showthread.php?t=393582#3&quot;&gt;http://ubuntuforums.org/showthread.php?t=393582#3&lt;/a&gt; - we have the solution - For Ubuntu 10.04 the file to change is  /etc/udev/rules.d/10-vboxdrv.rules - so simply:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gedit /etc/udev/rules.d/10-vboxdrv.rules 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Fine the (last) line that shows:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SUBSYSTEM==&quot;usb&quot;, ENV{DEVTYPE}==&quot;usb_device&quot;, GROUP=&quot;vboxusers&quot;, MODE=&quot;0664&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Change “664” to “666” it so that it shows:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SUBSYSTEM==&quot;usb&quot;, ENV{DEVTYPE}==&quot;usb_device&quot;, GROUP=&quot;vboxusers&quot;, MODE=&quot;0666&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Save the file.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Then, start your virtualbox winxp again and things should probably work correctly now.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Symbian Tools for GNU/Linux getting official start</title>
+   <link href="http://www.clearevo.com/blog/programming/2010/04/22/symbian_tools_for_gnu_linux_getting_official_start.html"/>
+   <updated>2010-04-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2010/04/22/symbian_tools_for_gnu_linux_getting_official_start</id>
+   <content type="html">&lt;p&gt;Update: the &lt;a href=&quot;http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html&quot;&gt;Nokia Qt SDK&lt;/a&gt; is released - supproting Ubuntu GNU/Linux!&lt;/p&gt;
+
+&lt;p&gt;After waiting and using &lt;a href=&quot;http://www.clearevo.com/blog/programming/2009/06/05/symbian_c%2B%2B_on_linux_using_gnupoc_and_eclipse_cdt.html&quot;&gt;unofficial tools like gnupoc with eclipse cdt to develop native Symbian C++ applications&lt;/a&gt; for a long while. Finally, the symbian foundation and Nokia’s Qt seem to start going towards official tools for development on GNU/Linux - see these two articles:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.symbian.org/2010/04/21/stepping-toward-symbian-open-source-tools-on-linux-and-mac/&quot;&gt;http://blog.symbian.org/2010/04/21/stepping-toward-symbian-open-source-tools-on-linux-and-mac/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://labs.trolltech.com/blogs/2010/04/21/symbian-development-using-linux/&quot;&gt;http://labs.trolltech.com/blogs/2010/04/21/symbian-development-using-linux/&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Backup and restore Nokia contacts without PC-Suite</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/03/28/backup_and_restore_nokia_contacts_without_pc-suite.html"/>
+   <updated>2010-03-28T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/03/28/backup_and_restore_nokia_contacts_without_pc-suite</id>
+   <content type="html">&lt;p&gt;Normally, you’d use Nokia PC-Suite or Ovi contacts to backup and restore your mobile contacts.&lt;/p&gt;
+
+&lt;p&gt;However, there are a few reasons some people don’t use Nokia PC-Suite:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;some find it very annoying with all of its notificaitons and updates.&lt;/li&gt;
+  &lt;li&gt;consumes PC resources although they don’t use it all the time.&lt;/li&gt;
+  &lt;li&gt;some people (like me) are using free GNU/Linux operating systems like &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;Ubuntu&lt;/a&gt; instead of non-free operating systems like Microsoft Windows or Mac OS. Unfortunately, Nokia doesn’t provide a PC-Suite version for GNU/Linux (although greatly advertising how cross-platfrom &lt;a href=&quot;http://qt.nokia.com&quot;&gt;Qt&lt;/a&gt; is to developers - maybe in the future…).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As for Ovi contacts sync via GPRS, it was great until I synced between two S60 phones, and strangely (maybe there was a date-time difference between them) when I synced the second phone which had no contacts, hoping to get all my contacts from the first phone via Ovi - it brought no contacts to the phone but it removed all my contacts on ovi instead.&lt;/p&gt;
+
+&lt;p&gt;It’s great that Nokia S60 phones provide another more simple and direct “do it yourself” way to backup and restore contacts via memory-card:&lt;/p&gt;
+
+&lt;p&gt;Discalimer: Always be careful about backing up and handling contacts to avoid losing data. Do this at your own risk.&lt;/p&gt;
+
+&lt;p&gt;The method is to copy all the .vcf files from phone to some folder on your computer as a backup. To restore them, copy them back from computer to mmc then “Copy business card” from the mmc on phone to restore - something like the screenshots below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.clearevo.com/blog/files/nokia_backup_contacts_mmc_13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Your Value</title>
+   <link href="http://www.clearevo.com/blog/other/2010/03/03/your_value.html"/>
+   <updated>2010-03-03T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2010/03/03/your_value</id>
+   <content type="html">&lt;p&gt;Ever wondered how much you are worth? How to increase your value?&lt;/p&gt;
+
+&lt;p&gt;Let’s consider general products/goods, hardware, cars, fruits, food:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Generally, things that are highly priced or highly valued are those which can provide high values/benefit to its user.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Simply, the observation is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You’re “value” is in how much you are of doing “good”/benefit to others.&lt;/li&gt;
+  &lt;li&gt;The more you give, the more you get - taken wisely, that is how much you are worth both in the practical and spiritual sense.&lt;/li&gt;
+  &lt;li&gt;Do more good/benefit to others - in family, work, community, etc - to increase your value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Natural physics law considerations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;You get back what you give: We see the natural laws govering the universe about “force” - as understood and summarized by “Newton’s 3rd law” - we put our weight on our chair, our chair pushes back to us equally so we can sit.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your “value” or work is never lost: As with “the law of conservation of energy” - energy is never lost - it just changes form. Similarly, in the ethical sense - the “value” you do is never lost too.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Peace and Happiness.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Make Ubuntu programs launch much faster with Preload</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/02/20/make_ubuntu_programs_launch_much_faster_with_preload.html"/>
+   <updated>2010-02-20T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/02/20/make_ubuntu_programs_launch_much_faster_with_preload</id>
+   <content type="html">&lt;p&gt;Use “preload” to make your Ubuntu GNU/Linux desktop computer much more responsive - programs launch much faster. “Preload” monitors what apps you normally use often and it would pre-load them to memory and thus makes them launch much faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I mean REALLY faster&lt;/strong&gt; - see comparison graphs in this detailed article: &lt;a href=&quot;http://www.techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/&quot;&gt;http://www.techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Howto use install:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;type in a terminal &lt;code&gt;sudo apt-get install preload&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;restart your computer - preload would start monitoring what programs you use often.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://behdad.org/&quot;&gt;Behdad Esfahbod&lt;/a&gt; - the author of “preload” - &lt;strong&gt;it really makes the &lt;a href=&quot;http://www.gnu.org/&quot;&gt;GNU&lt;/a&gt; in my computer run blazing fast across the savannah of freedom!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/File:Wildebeest_mikumi.jpg&quot;&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Wildebeest_mikumi.jpg/800px-Wildebeest_mikumi.jpg&quot; alt=&quot;A trotting blue wildebeest in Mikumi National Park&quot; /&gt;&lt;br /&gt;&lt;small&gt;&lt;i&gt;photo: A trotting blue wildebeest in Mikumi National Park, Tanzania. Taken by Muhammad Mahdi Karim.&lt;/i&gt;&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Complete Symbian platform ready for download</title>
+   <link href="http://www.clearevo.com/blog/programming/2010/02/05/complete_symbian_platform_ready_for_download.html"/>
+   <updated>2010-02-05T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2010/02/05/complete_symbian_platform_ready_for_download</id>
+   <content type="html">&lt;p&gt;Update: the &lt;a href=&quot;http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html&quot;&gt;Nokia Qt SDK&lt;/a&gt; is released - supproting Ubuntu GNU/Linux!&lt;/p&gt;
+
+&lt;p&gt;The complete Symbian platform is now available for download and use under open-source licences. (A while ago it was just available to some countries and many of us get “export control” problem…)&lt;/p&gt;
+
+&lt;p&gt;Now it’s here &lt;a href=&quot;http://developer.symbian.org/main/source/index.php&quot;&gt;http://developer.symbian.org/main/source/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Intro video:&lt;/p&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/ytXK4mN0Lcw&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&quot; /&gt;&amp;lt;/param&amp;gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&amp;lt;/param&amp;gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&amp;lt;/param&amp;gt;&lt;embed src=&quot;http://www.youtube.com/v/ytXK4mN0Lcw&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot; /&gt;&amp;lt;/embed&amp;gt;&lt;/object&gt;
+
+&lt;p&gt;video from &lt;a href=&quot;http://developer.symbian.org/wiki/index.php/Platform_Opening/Introduction_Video&quot;&gt;http://developer.symbian.org/wiki/index.php/Platform_Opening/Introduction_Video&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New Nokia Ovi Maps has free navigation</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/01/29/new_nokia_ovi_maps_has_free_navigation.html"/>
+   <updated>2010-01-29T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/01/29/new_nokia_ovi_maps_has_free_navigation</id>
+   <content type="html">&lt;p&gt;Nokia announced plans today to release a new version of Ovi Maps for its smartphones that includes free walk and drive navigation worldwide.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://maps.nokia.com/explore-services/ovi-maps&quot;&gt;Download it from here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;See the video:&lt;/p&gt;
+
+&lt;object width=&quot;560&quot; height=&quot;340&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/WTSio3YIe8g&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&quot; /&gt;&amp;lt;/param&amp;gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&amp;lt;/param&amp;gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&amp;lt;/param&amp;gt;&lt;embed src=&quot;http://www.youtube.com/v/WTSio3YIe8g&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;560&quot; height=&quot;340&quot; /&gt;&amp;lt;/embed&amp;gt;&lt;/object&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Migrating from MS Office to OpenOffice plan</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/01/19/migrating_from_ms_office_to_openoffice_plan.html"/>
+   <updated>2010-01-19T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/01/19/migrating_from_ms_office_to_openoffice_plan</id>
+   <content type="html">&lt;p&gt;Seriously, &lt;a href=&quot;http://www.openoffice.org&quot;&gt;OpenOffice.org&lt;/a&gt; CAN DO ALL OFFICE DOCUMENT WORKS - Word processor, Impress (power point),spreadsheet (Excel).&lt;/p&gt;
+
+&lt;p&gt;Sun has an published interesting white paper on the topic “Microsoft Office to OpenOffice.org/StarOffice Migration Overview”.&lt;/p&gt;
+
+&lt;p&gt;“Make migration simple and straightforward
+This white paper will help you create an effective migration plan to either OpenOffice.org or StarOffice software from Microsoft Office.”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://dct.sun.com/dct/forms/reg_us_0605_737_0.jsp&quot;&gt;You can get the white paper here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;One main issue that people get stuck at is that when they use OpenOffice to view MS proprietary format documents like .doc, .docx, .xls, .xlsx, .ppt, .pptx - it can open them but, since they are non-open MS-specific formats, openoffice would not always exactly display them the same way as they were shown in Microsoft office.&lt;/p&gt;
+
+&lt;p&gt;If you start such documents in open office formats - like .odt, .ods, etc - such problems won’t happen in open office since they are open formats, they can be opened in new MS office too by using a plugin.&lt;/p&gt;
+
+&lt;p&gt;If you want to publish/send your open-format documents to the public or others, simply press the “pdf” button in OpenOffice to convert it to pdf and send your documents as pdf to make sure it can be opened anywhere and no changes made to them. If you want them to edit your documents, ideally, tell them to intall OpenOffice from &lt;a href=&quot;http://www.openoffice.org&quot;&gt;http://www.openoffice.org&lt;/a&gt; and then send your real open-format (.odt, .ods, etc) open office documents. You can also upload and share it on Google Docs - it supports live editing by many people at the same time on the same document too.&lt;/p&gt;
+
+&lt;p&gt;Note: If you wonder what “open format” is, please see &lt;a href=&quot;http://en.wikipedia.org/wiki/Open_format&quot;&gt;http://en.wikipedia.org/wiki/Open_format&lt;/a&gt; and google about it.&lt;/p&gt;
+
+&lt;p&gt;Talking about “open” and freedom in computer usage and the openness of the deep knowledge about its inner workings (source-code) - Ideally, use OpenOffice on GNU/Linux - see &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;http://www.ubuntu.com&lt;/a&gt; for your greater freedom in using computers.&lt;/p&gt;
+
+&lt;p&gt;Yes, you can use your computer without Windoows and its license fees, limitations.&lt;br /&gt; 
+&lt;br /&gt; 
+You can work without MS office.&lt;br /&gt; 
+&lt;br /&gt; 
+You can be free from viruses and spyware without anti-virus software. &lt;br /&gt; 
+&lt;br /&gt; 
+You can run your computer with highest quality software that respects the world society’s &lt;strong&gt;freedom to  use, study, modify and share the software. &lt;/strong&gt;&lt;br /&gt; 
+&lt;big&gt;&lt;strong&gt;&lt;br /&gt; 
+Get it on your computer now at &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;www.Ubuntu.com&lt;/a&gt;&lt;/strong&gt;&lt;/big&gt; - such a great contribution to mankind - a free/open-source and society-wise/ethically better alternative to Microsoft Windows and Mac OS. Ubuntu is based on GNU/Linux, GNOME and other free/open-source projects.&lt;br /&gt; 
+&lt;br /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Make Ubuntu much faster</title>
+   <link href="http://www.clearevo.com/blog/howto/2010/01/03/make_ubuntu_much_faster.html"/>
+   <updated>2010-01-03T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2010/01/03/make_ubuntu_much_faster</id>
+   <content type="html">&lt;p&gt;After experimenting on many desktop environments, I settled Ubuntu’s default GNOME since Ubuntu 9.10 (as GNOME, for me, was the most stable, complete, intuitive and simple compared to KDE,XFCE,LXDE,etc…), but I still missed the speed, responsiveness of XFCE - especially when I’m programming, I open many programs/documents across 3 workspaces, although already turned-off all visual effects/compositing.&lt;/p&gt;
+
+&lt;p&gt;I saw some posts in ubuntuforums talking about using openbox and XFCE’s xfwm4 window manager in GNOME - xfwm4 was way faster than openbox and I preferred how it handled/moved dragging windows across workspaces.&lt;/p&gt;
+
+&lt;p&gt;Found an easy and good post to use xfwm4 on Ubuntu’s GNOME here:
+&lt;a href=&quot;http://programmingforchildren.blogspot.com/2009/10/fastest-way-to-replace-gnomes-metacity.html&quot;&gt;http://programmingforchildren.blogspot.com/2009/10/fastest-way-to-replace-gnomes-metacity.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That was it, really satisfied - the amazing speed of xfwm4 helped make GNOME much faster and responsive.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Howto fix ubuntu 9.10 sound on compaq presario CQ35</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/19/howto_fix_ubuntu_910_sound_on_compaq_presario_cq35.html"/>
+   <updated>2009-12-19T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/19/howto_fix_ubuntu_910_sound_on_compaq_presario_cq35</id>
+   <content type="html">&lt;p&gt;Thanks to my cousin Yahya Hamad (computer science student in Ladkrabang University), he wanted to share a little howto fix the Ubuntu 9.10  “no sound” problem on compaq presario CQ35, I edit it a bit, as follows. Thanks very much to the Indonesian howto writer “Slacking Ubuntero”.&lt;/p&gt;
+
+&lt;p&gt;I found this &lt;a href=&quot;http://slackingubuntero.wordpress.com/2009/11/02/troubleshooting-suara-di-compaq-cq35-109tu/&quot;&gt;indonisian language howto&lt;/a&gt;
+So i translate by google translate  » &lt;a href=&quot;http://translate.google.com/translate?hl=en&amp;amp;sl=id&amp;amp;tl=en&amp;amp;u=http%3A%2F%2Fslackingubuntero.wordpress.com%2F2009%2F11%2F02%2Ftroubleshooting-suara-di-compaq-cq35-109tu%2F&quot;&gt;http://translate.google.com/translate?hl=en&amp;amp;sl=id&amp;amp;tl=en&amp;amp;u=http%3A%2F%2Fslackingubuntero.wordpress.com%2F2009%2F11%2F02%2Ftroubleshooting-suara-di-compaq-cq35-109tu%2F&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It say to do 3 steps.
+I did only the third step.&lt;/p&gt;
+
+&lt;p&gt;Edit /etc/modprobe.d/alsa-base.conf&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gedit /etc/modprobe.d/alsa-base.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then I added these 2 lines to the end of the file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;options snd-hda-intel model=hp-m4 enable=1 index=0
+options snd-hda-intel enable_msi=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then I restart and guess what???&lt;/p&gt;
+
+&lt;p&gt;Thank God it worked!!!!!!!!!!!&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Make ubuntu a bit faster</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/16/make_ubuntu_a_bit_faster.html"/>
+   <updated>2009-12-16T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/16/make_ubuntu_a_bit_faster</id>
+   <content type="html">&lt;p&gt;Update: Using “openbox” would be much faster than the “metacity” settings as in this post, see &lt;a href=&quot;http://www.pelagodesign.com/blog/2009/07/21/how-to-make-ubuntu-linux-run-faster-on-a-laptop/&quot;&gt;Replace Metacity with Openbox in this page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Found this tip somewhere in ubuntuforums, simply press alt-f2, type gconf-editor, then on the left navigate to apps &amp;gt; metacity &amp;gt; general then on the right check the “reduced resources” check box.&lt;/p&gt;
+
+&lt;p&gt;For those who want their ubuntu computer fast, responsive. Remember to turn-off the visual effects in apperance preferences for best speed.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu screen resolution fix for some screens</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/13/ubuntu_screen_resolution_fix_for_some_screens.html"/>
+   <updated>2009-12-13T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/13/ubuntu_screen_resolution_fix_for_some_screens</id>
+   <content type="html">&lt;p&gt;I was installing Ubuntu for my cousin, on an Acer X139HQ screen, it was ok until using the proprietary nvidia drivers for accelerated 3D stuff. The fix was here:
+&lt;a href=&quot;http://ubuntuforums.org/showthread.php?t=1045106&amp;amp;highlight=Acer+X193HQ&quot;&gt;http://ubuntuforums.org/showthread.php?t=1045106&amp;amp;highlight=Acer+X193HQ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After installing nvidia drivers, the xorg.conf would exist then edit just as in the first post of above thread, restart, done.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu install chromium browser</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/13/ubuntu_install_chromium_browser.html"/>
+   <updated>2009-12-13T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/13/ubuntu_install_chromium_browser</id>
+   <content type="html">&lt;p&gt;Update: Now’s google chrome for linux beta is out, simply get it from here: &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;http://www.google.com/chrome&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Chromium (the open-source project behind Google Chrome) is really fast, REALLY fast. See this howto to install it:
+&lt;a href=&quot;http://www.ubuntugeek.com/install-chromium-google-chrome-web-browser-in-ubuntu.html&quot;&gt;http://www.ubuntugeek.com/install-chromium-google-chrome-web-browser-in-ubuntu.html&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Some kids removed the Ubuntu panel - howto fix</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/13/some_kids_removed_the_ubuntu_panel_-_howto_fix.html"/>
+   <updated>2009-12-13T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/13/some_kids_removed_the_ubuntu_panel_-_howto_fix</id>
+   <content type="html">&lt;p&gt;A teacher observed that some kids removed the panels from the ubuntu computers, he was asking for a fix, came around this one:
+&lt;a href=&quot;http://www.ubuntugeek.com/ubuntu-tip-howto-recover-gnome-panel.html&quot;&gt;http://www.ubuntugeek.com/ubuntu-tip-howto-recover-gnome-panel.html&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Generate sitemap.xml using a ruby script</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/12/12/generate_sitemapxml_using_a_ruby_script.html"/>
+   <updated>2009-12-12T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/12/12/generate_sitemapxml_using_a_ruby_script</id>
+   <content type="html">&lt;p&gt;As I’m using nanoc and jekyll together with git to edit and publish my site and blog, I was trying to generate sitemap.xml according to &lt;a href=&quot;http://www.sitemaps.org/&quot;&gt;http://www.sitemaps.org/&lt;/a&gt; for &lt;a href=&quot;https://www.google.com/webmasters/tools/&quot;&gt;google webmaster tools&lt;/a&gt; sitemap settings.&lt;/p&gt;
+
+&lt;p&gt;So I wrote this ruby program: &lt;a href=&quot;http://www.clearevo.com/gen_sitemap.rb&quot;&gt;gen_sitemap.rb&lt;/a&gt; and called it from the git post_update hook on the server.&lt;/p&gt;
+
+&lt;p&gt;You can test it like &lt;code&gt;ruby gen_sitemap.rb &quot;.&quot;&lt;/code&gt; - add (multiple) folders as parametes.&lt;/p&gt;
+
+&lt;p&gt;In the script, remember to set &lt;code&gt;$site_url&lt;/code&gt; to your own site.&lt;/p&gt;
+
+&lt;p&gt;Hope this is useful for your sitemap.xml needs!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Unzip all zips in folder</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/12/04/unzip_all_zips_in_folder.html"/>
+   <updated>2009-12-04T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/12/04/unzip_all_zips_in_folder</id>
+   <content type="html">&lt;p&gt;I wanted to unzip lots of zips in a folder (as I downloaded lots of 3gpp specs from  ftp.3gpp.org - they were all zipped)
+Found a great solution from &lt;a href=&quot;http://ubuntuforums.org/showthread.php?t=564711&quot;&gt;http://ubuntuforums.org/showthread.php?t=564711&lt;/a&gt; - simply run in your terminal:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;for f in *.zip; do unzip &quot;$f&quot;; done&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This code can also be adapted to do many other repititive things. I want to make all those docs to pdf too (since they are all .doc and some big files take a long time to import in openoffice everytime to read them - so it’s better to use oowriter to convert them to pdf once). I’ll try to write about that soon. Ubuntuforums is a great place to learn many things!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Blogging via a text-editor and Git with jekyll</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/12/02/using_jekyll_blog_engine.html"/>
+   <updated>2009-12-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/12/02/using_jekyll_blog_engine</id>
+   <content type="html">&lt;p&gt;Share the beneficial knowledge, tips, howtos with least effort. Write a text file (in markdown or textile) with your favorite text editor (gedit, emacs, vim, etc) then use git to commit and push it to your server. &lt;a href=&quot;http://wiki.github.com/mojombo/jekyll/&quot;&gt;Jekyll blog generator&lt;/a&gt; provides that possibility.&lt;/p&gt;
+
+&lt;p&gt;After using &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; on &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;Ubuntu&lt;/a&gt; happily for quite a while, I was really happy to write and maintian my whole site with &lt;a href=&quot;http://nanoc.stoneship.org/&quot;&gt;nanoc&lt;/a&gt; using markdown, I was still using pebble as my blog server and I searched quite a while for something like nanoc that was built for a blog, finally I found Jekyll. It just requires that you run its command in a folder with the right content - get an &lt;a href=&quot;http://wiki.github.com/mojombo/jekyll/sites&quot;&gt;example site&lt;/a&gt; source then extract it in a folder then run jekyll, it would generate the blog in the &lt;code&gt;_site&lt;/code&gt; folder. All the rest of the info is there at &lt;a href=&quot;http://wiki.github.com/mojombo/jekyll&quot;&gt;Jekyll project on github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A few things worth sharing:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I dont know if this is unique to lighttpd or not, but links to folders that start with a / wont work so I needed to change all occurances of its &lt;a href=&quot;http://wiki.github.com/tobi/liquid/liquid-for-designers&quot;&gt;liquid template&lt;/a&gt; post.url to &lt;code&gt;post.url | remove_first:&apos;/&apos;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;use full path to the css in the default.html in the layout - I’m using &lt;a href=&quot;http://github.com/mojombo/mojombo.github.com&quot;&gt;Tom’s template&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The layout’s post.html “related posts” generated links were broken, I needed to prefix its url with ../../../../ (four steps since I’m using categories too).&lt;/li&gt;
+  &lt;li&gt;I wrote/used a &lt;a href=&quot;http://www.clearevo.com/blog/files/pbj.rb&quot;&gt;little ruby program&lt;/a&gt; to migrate all my old blog entries from &lt;a href=&quot;http://www.pebble.sourceforge.net&quot;&gt;pebble&lt;/a&gt; xml content files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the git pull post-update hook that worked on a Ubuntu server, here’s the script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+#SHELL=/bin/bash
+#PATH=/sbin:/bin:/usr/sbin:/usr/bin
+#MAILTO=root
+#HOME=/
+unset GIT_DIR &amp;amp;&amp;amp; cd /YourFolderWhichYouGitCloneLocally &amp;amp;&amp;amp; git pull
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(thanks to &lt;a href=&quot;http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/&quot;&gt;http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/&lt;/a&gt; for the &lt;code&gt;unset GIT_DIR&lt;/code&gt; fix)&lt;/p&gt;
+
+&lt;p&gt;For info about how to setup git on your server see &lt;a href=&quot;http://scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way&quot;&gt;this article on scie.nti.st&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To sum it up, I really think jekyll is a great contribution to the world - as it makes sharing good knowledge via blogging much easier so, hopefully, more good knowledge can be shared for the benefit of mankind. Much thanks to the developers of Jekyll and Git!&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>HOWTO Sharper fonts in Ubuntu the easy way</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/11/12/howto_sharper_fonts_in_ubuntu_the_easy_way.html"/>
+   <updated>2009-11-12T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/11/12/howto_sharper_fonts_in_ubuntu_the_easy_way</id>
+   <content type="html">&lt;p&gt;The default font display in Ubuntu&apos;s GNOME is smooth and soft. Many people like sharper and crisp font display. There&apos;s an easy way to adjust this. The fonts seem to shrink a little too.&lt;/p&gt;
+
+&lt;p&gt;Just go to System &gt; Preferences &gt; Appearance &gt; Fonts and make sure &quot;Subpixel smoothing (LCD)&quot; is selected, then press &quot;Details&quot; then choose &quot;Full&quot; under Hinting.&lt;/p&gt;
+Many people (including myself in the past) prefer sharper fonts so I hope this post would be helpful!
+(Personally, nowadays I prefer the the smooth default rendering - I&apos;m more familiar with it, I find the smooth way easier to read.)
+
+&lt;p&gt;&lt;b&gt;Default:&lt;/b&gt;&lt;br/&gt;
+&lt;img src=&quot;http://www.clearevo.com/blog/files/DefaultSlightHint.png&quot; alt=&quot;Default ubuntu font slight hinting&quot; title=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Result after changing to &quot;Full Hinting&quot;:&lt;/b&gt;&lt;br/&gt;
+&lt;img src=&quot;http://www.clearevo.com/blog/files/AfterFullHint.png&quot; alt=&quot;After set ubuntu font full hinting - looks sharper&quot; title=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu 9.10 is out and always better</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/10/31/ubuntu_910_is_out_and_always_better.html"/>
+   <updated>2009-10-31T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/10/31/ubuntu_910_is_out_and_always_better</id>
+   <content type="html">Yes, you can use your computer without Windoows and its license fees.&lt;br /&gt;
+&lt;br /&gt;
+You can work without MS office.&lt;br /&gt;
+&lt;br /&gt;
+You can be free from viruses and spyware without anti-virus software. &lt;br /&gt;
+&lt;br /&gt;
+You can run your computer with highest quality software that respects the world society&apos;s &lt;strong&gt;freedom to&amp;nbsp; use, study, modify and share the software. &lt;/strong&gt;&lt;br /&gt;
+&lt;big&gt;&lt;strong&gt;&lt;br /&gt;
+Get it on your computer now at &lt;a href=&quot;http://www.ubuntu.com&quot;&gt;www.Ubuntu.com&lt;/a&gt;&lt;/strong&gt;&lt;/big&gt; - such a great contribution to mankind - a free/open-source and socially-better alternative to Microsoft Windows and Mac OS. Ubuntu is based on GNU/Linux, GNOME and other free/open-source projects.&lt;br /&gt;
+&lt;br /&gt;
+From what I tested on my notebook, it&apos;s now much faster and much better designed, integrated and easier to use!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Symbian Foundation planning development tools for Linux</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/10/24/symbian_foundation_planning_development_tools_for_linux.html"/>
+   <updated>2009-10-24T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/10/24/symbian_foundation_planning_development_tools_for_linux</id>
+   <content type="html">Update: the &lt;a href=&quot;http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html&quot;&gt;Nokia Qt SDK&lt;/a&gt; is released - supproting Ubuntu GNU/Linux!
+
+&lt;p&gt;
+Probably in the start of 2010, we might start having official support for Symbian C++ development on GNU/Linux (and probably Qt for S60 into Qt Creator). The hint came from a post in the symbian foundation ideas page:&lt;br/&gt;&lt;br/&gt;
+&lt;big&gt;Read and scroll down &lt;a href=&quot;http://ideas.symbian.org/Idea/View?ideaid=1440&quot;&gt;this symbian idea page&lt;/a&gt;.&lt;/big&gt;	
+&lt;/p&gt;
+
+&lt;p&gt;
+I&amp;#39;ve been using &lt;a href=&quot;http://wiki.forum.nokia.com/index.php/Develop_Symbian_C%2B%2B_on_Linux_using_Gnupoc_and_Eclipse_CDT&quot;&gt;gnupoc with eclipse IDE&lt;/a&gt;&amp;nbsp;on Ubuntu&amp;nbsp;for a long time - although it works well, I&amp;#39;m sure many of us using gnupoc are waiting for real and long-term full Symbian SDK and IDE support on GNU/Linux - especially after getting to learn about the beta Qt for S60 and its integration with the Qt Creator IDE. It&amp;#39;s really great to learn about Qt and what qt-based open-source projects/communities created, and I&amp;#39;m sure many Qt developers are happy to hear this news as well!
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu Bluetooh Mobile Broadband and sending files</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/08/28/ubuntu_bluetooh_mobile_broadband_and_sending_files.html"/>
+   <updated>2009-08-28T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/08/28/ubuntu_bluetooh_mobile_broadband_and_sending_files</id>
+   <content type="html">&lt;p&gt;
+&lt;b&gt;This howto enables you to use your mobile phone as an internet connection for your notebook - great for travelling internet needs - but make sure your mobile network plan is cost-effective for such uses.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+The default GNOME bluetooth app is quite behind blueman, no internet tethering (aka mobile broadband, bluetooth dial-up network) and the default KDE bluetooth doesn&apos;t work for internet tethering either.
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;big&gt;&lt;ul&gt;Install/Setup&lt;/ul&gt;&lt;/big&gt;
+&lt;br/&gt;
+- For Ubuntu 9.10 simply run &quot;sudo apt-get install blueman&quot; without having to add any software sources, then Blueman would start automatically.
+&lt;br/&gt;
+- For Ubuntu 9.10 you MUST also add the &quot;ppa&quot; for network-manager otherwise bluetooth internet won&apos;t work: Go to System &gt; Administration &gt; Software Sources then clock the &quot;Other Software&quot; tab and press the &quot;Add&quot; button below, enter &quot;ppa:network-manager/trunk&quot; (without quotes) press &quot;Add Source&quot; then press &quot;close&quot; below, let it update. Finally, go to System &gt; Administration &gt; Update Manager &gt; Install updates then let it finish installing the new network manager updates, then restart.
+&lt;br/&gt;
+&lt;br/&gt;
+- For ubuntu 9.04 or older then please follow this HOWTO: &lt;a href=&quot;http://www.ubuntugeek.com/blueman-bluetooth-manager-for-ubuntu.html&quot;&gt;&lt;big&gt;install &quot;blueman&quot;&lt;/big&gt;&lt;/a&gt;&lt;br/&gt;(This howto is tested on Ubuntu 9.04) then open a terminal and type &quot;blueman-manager&quot; to start it.
+&lt;br/&gt;
+&lt;p&gt;
+&lt;big&gt;&lt;ul&gt;Mobile internet/broadband via Bluetooth&lt;/ul&gt;&lt;/big&gt;
+ Blueman can be used for &quot;internet tethering&quot;: using your phone&apos;s internet (GPRS or 3G data) for your notebook when you&apos;re traveling:
+&lt;br/&gt;
+(From what I tested, it is working in GNOME,XFCE with Nokia E61 and Nokia 6120 classic - but &lt;b&gt;NOT working in KDE yet&lt;/b&gt;).
+&lt;br/&gt;
+1. &quot;Find&quot; your phone and right-click and select &quot;dial-up network service&quot;. 
+&lt;br/&gt;
+&lt;br/&gt;
+For Ubuntu 9.10:&lt;br/&gt;
+2. just click the network manager icon and select New mobile broadband connection to launch the wizard, next time just select that connection.
+&lt;br/&gt;
+&lt;br/&gt;
+For Ubuntu 9.04 or older:&lt;br/&gt;
+2. Right-click the LAN/connection tray icon and &quot;Manage connections&quot; &gt; click the &quot;mobile broadbnad&quot; tab.
+&lt;br/&gt;
+Add &gt; Select &quot;Bluetooth DUN xx:xx:xx:xx:xx:xx&quot;, press OK,  set a name (for example: &quot;AIS Bluetooth&quot;), check the &quot;Connect automatically&quot; checkbox, press Apply. 
+&lt;br/&gt;
+&lt;br/&gt;
+3. Wait a few seconds and you&apos;d see the &quot;network manager&quot; circles as it tries to connect but if not, click its tray icon and select your new connection to connect manually.
+&lt;p&gt;
+If you want to use this internet tethering via USB instead, just plug your phone and select the appropriate mode (for Nokia S60 phones slect &quot;PC Suite&quot;) and the &quot;Mobile Broadband&quot; Wizard would start and get things done automatically.
+&lt;p&gt;
+&lt;b&gt;Sending files via Bluetooth:&lt;/b&gt;&lt;br/&gt;
+- In GNOME (ubuntu-desktop) right click your file, send-to and select your bluetooth phone.
+&lt;br/&gt;
+- In XFCE (xubuntu-desktop) right click your file, send-to and select your bluetooth phone. If there&apos;s no send-to menu for bluetooth yet then please follow the &quot;Bluetooth to your phone...&quot; section in &lt;a href=&quot;http://thunar.xfce.org/pwiki/documentation/sendto_menu&quot;&gt;this Thunar wiki page&lt;/a&gt;.
+&lt;br/&gt;
+- For KDE (kubuntu-desktop), I couldn&apos;t find an easy way to manage or add the send-to menu yet but I can right-click the file &gt; open with &gt; and type &quot;blueman-sendto&quot; (without quotes) as the command. 
+&lt;p&gt;
+Blueman also enables you to automatically receive files via Bluetooth without installing and running the gnome obex server. Right click the blueman icon &gt; local services &gt; transfer &gt; and check accept files from trusted devices to make it auto-receive files from the phone which you already set as trusted (after you find/pair a phone then you press the &quot;star&quot; icon to mark it as trusted).
+</content>
+ </entry>
+ 
+ <entry>
+   <title>KDE 4.3 - modern, fun to use and now stable</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/08/28/kde_43_-_modern,_fun_to_use_and_now_stable.html"/>
+   <updated>2009-08-28T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/08/28/kde_43_-_modern,_fun_to_use_and_now_stable</id>
+   <content type="html">&lt;p&gt;
+This 4.3 release is just phenomenal - all the widgets (from system related to rss to wikipedia, social etc..) provide a new, exciting modern way to use your day to day computing - and yes, KDE always has that extra care to make things look beautiful and attracts quite a few people to the world of free-software/opensource GNU/Linux. 
+&lt;p&gt;
+&lt;a href=&quot;http://webupd8.blogspot.com/2009/08/install-kde-43-in-ubuntu-jaunty-904.html&quot;&gt;&lt;big&gt;Install KDE 4.3 on Ubuntu 9.04&lt;/big&gt;&lt;/a&gt;
+&lt;p&gt;
+&lt;object width=&quot;445&quot; height=&quot;364&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/VQHG_30PeX4&amp;hl=en&amp;fs=1&amp;border=1&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/VQHG_30PeX4&amp;hl=en&amp;fs=1&amp;border=1&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;445&quot; height=&quot;364&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;p&gt;
+I had quite a bad experience in the older 4.2 release but that seems to be normal as KDE was in such a big re-write to make things more modern/dynamic - this 4.3 release seems to be much more stable and fixed most of the problems.
+&lt;p&gt;
+&lt;b&gt;For sending files via bluetooth&lt;/b&gt;, please refer to &lt;a href=&quot;http://www.clearevo.com/blog/2009/08/29/ubuntu_bluetooh_mobile_broadband_and_sending_files.html&quot;&gt;this howto for blueman&lt;/a&gt;. 
+&lt;p&gt;
+However, I still can&apos;t get mobile broadband via Bluetooth to work in KDE (it works very well in GNOME, XFCE)! 
+&lt;br/&gt;
+Therefore, although KDE looks pretty, I still mainly use XFCE because it&apos;s faster/easier for me to get work done - its minimalist simplicity, very high speed and better integration with the more stable and complete GNOME apps/features as in ubuntu-desktop. 
+&lt;p&gt;
+I tend to use KDE when I&apos;m not working - just reading or playing around with music, youtube, blogging, etc - it&apos;s good to feel a change of the environment to a beautiful KDE and relax yourself from thinking about work. Somewhat similar to the idea that we must separate working and relaxing rooms to relax and divide time better.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Free-Software Movement</title>
+   <link href="http://www.clearevo.com/blog/other/2009/08/22/the_free-software_movement.html"/>
+   <updated>2009-08-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/08/22/the_free-software_movement</id>
+   <content type="html">&lt;p&gt;
+&lt;b&gt;Part One&lt;b&gt; &lt;br/&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/RN1Wk9agqr8&amp;hl=en&amp;fs=1&amp;&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/RN1Wk9agqr8&amp;hl=en&amp;fs=1&amp;&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;Part Two&lt;b&gt; &lt;br/&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/91E7-MjBdWA&amp;hl=en&amp;fs=1&amp;&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/91E7-MjBdWA&amp;hl=en&amp;fs=1&amp;&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Open-Source in businesses, how and why it works?</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/08/22/open-source_in_businesses,_how_and_why_it_works.html"/>
+   <updated>2009-08-22T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/08/22/open-source_in_businesses,_how_and_why_it_works?</id>
+   <content type="html">Some parts in these videos explain very important points about how the open-source developers/companies make money and share knowledge in the same time. Also how general companies benefit from using open-source software: an example of a Brazilian rain-forest research company.
+&lt;p&gt;
+&lt;b&gt;Part One&lt;/b&gt;&lt;br/&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/WIpip-5Nm5w&amp;hl=en&amp;fs=1&amp;rel=0&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/WIpip-5Nm5w&amp;hl=en&amp;fs=1&amp;rel=0&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Part Two&lt;/b&gt;&lt;br/&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/zvd_5Ne4WsY&amp;hl=en&amp;fs=1&amp;rel=0&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/zvd_5Ne4WsY&amp;hl=en&amp;fs=1&amp;rel=0&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Part Three&lt;/b&gt;&lt;br/&gt;
+&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/8HIK86bGvgk&amp;hl=en&amp;fs=1&amp;rel=0&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/8HIK86bGvgk&amp;hl=en&amp;fs=1&amp;rel=0&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Google's Linux OS Chrome OS</title>
+   <link href="http://www.clearevo.com/blog/other/2009/08/02/googles_linux_os_chrome_os.html"/>
+   <updated>2009-08-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/08/02/googles_linux_os_chrome_os</id>
+   <content type="html">&lt;em&gt;&lt;strong&gt;&amp;quot;a new windowing system on top of a Linux kernel.&amp;quot;&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;br /&gt;
+Sounds like Google&apos;s own XFCE: &lt;em&gt;&lt;strong&gt;&amp;quot;Speed, simplicity and security are the key aspects of Google Chrome OS. We&apos;re designing the OS to be fast and lightweight...&amp;quot;&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span id=&quot;OBJ_PREFIX_DWT105&quot; class=&quot;Object&quot;&gt;&lt;a href=&quot;http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html&quot; target=&quot;_blank&quot;&gt;http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+I&apos;m very much looking forward to this Google Linux Distro but I don&apos;t expect it to be as stable as Ubuntu initially.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Talking about speed, let&apos;s talk about XFCE...&lt;/strong&gt;&lt;br /&gt;
+&lt;br /&gt;
+I really like that direction of speed, simplicity: &lt;strong&gt;&amp;quot;getting my work done without the OS getting in the way&amp;quot;&lt;/strong&gt; - so I was really impressed when I tried XFCE on my Ubuntu desktop by &amp;quot;&lt;strong&gt;sudo apt-get install xubuntu-desktop&lt;/strong&gt;&amp;quot; then logging out and choose Session &amp;gt; Xfce Session. I&apos;ve been really impressed with the speed of XFCE since then and using XFCE as default eversince both on my desktop and notebook! GNOME, although much more complete, is much much slower, my KDE 4 experience is also slower and very unstable - just copying big files to a usb drive even stopped unexpectedly, copying files through samba in dolphin also hanged the whole computer, the &amp;quot;kickstart&amp;quot; sometimes doesn&apos;t pop-up on click anymore, Konquerer crash in Youtube, main panel crash after editing it via its GUI - KDE really looks beautiful though but maybe this KDE 4 release in Ubuntu 9.04 packages are too immature.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;A big thank you to all the GNU, Linux, Ubuntu, GNOME, KDE and XFCE guys! You all have contributed much much betterment to the world society!&lt;/strong&gt;&lt;br /&gt;
+&lt;br /&gt;
+XFCE is really amazingly fast, responsive, stable - but at first I needed to learn a few things too, you need to learn the new menu, where the generic stuff are, then the file browser thunar doesn&apos;t mount other non-linux drives so easily as in GNOME&apos;s nautilus - you need to go to System &amp;gt; Remote Filesystems and double-click your drive once to mount it and again to browse it. Network sharing of folders is missing though (for both right-click share folder and smb://&amp;lt;ip&amp;gt; to access as in nautilus) so you need GNOME&apos;s nautilus in that case: just open a terminal (opening a terminal is really easy in Ubuntu&apos;s XFCE: right click the white space in any folder and &amp;quot;Open Terminal Here&amp;quot;) and simply type &amp;quot;nautilus&amp;quot;.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Symbian C++ on Linux using Gnupoc and Eclipse CDT</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/06/05/symbian_c++_on_linux_using_gnupoc_and_eclipse_cdt.html"/>
+   <updated>2009-06-05T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/06/05/symbian_c++_on_linux_using_gnupoc_and_eclipse_cdt</id>
+   <content type="html">Update: the &lt;a href=&quot;http://www.forum.nokia.com/info/sw.nokia.com/id/e920da1a-5b18-42df-82c3-907413e525fb/Nokia_Qt_SDK.html&quot;&gt;Nokia Qt SDK&lt;/a&gt; is released - supproting Ubuntu GNU/Linux!
+
+Finally I can develop all my main symbian C++ work projects in Ubuntu - and I&apos;d like to share the knowledge in this howto which I was trying/writing little by little across a few months.&lt;br /&gt;
+&lt;br /&gt;
+I&apos;m posting this on Forum Nokia Wiki too - please feel help edit and contribute there. This blog entry would be my original article - comments are welcome!&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;http://www.clearevo.com/blog/files/develop_symbian_linux_gnupoc_eclipse.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Full credit to the developers of Gnupoc, Martin Storsj&amp;ouml; (http://www.martin.st/symbian/), and all others who made this possible.&lt;br /&gt;
+&lt;br /&gt;
+Discalimer: This software is provided &apos;as-is&apos;, without any express or implied warranty. In no event will &lt;br /&gt;
+the authors be held liable for any damages arising from the use of this software.&lt;br /&gt;
+&lt;br /&gt;
+///////&lt;br /&gt;
+Working: &lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - Making native builds of Symbian C++ applications, sis, signing.&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - Code assist. (but settings are still done repetitively for each project - please help suggest - see below.)&lt;br /&gt;
+///////&lt;br /&gt;
+&lt;br /&gt;
+///////&lt;br /&gt;
+Missing: (please help suggest and contribute)&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 1. Emulator builds/runs (see in &lt;a href=&quot;http://www.martin.st/symbian/&quot;&gt;Martin&apos;s page&lt;/a&gt; - not covered in this howto)&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 2. Debug on emulator/device (Personally, I now prefer debug by logging things to file - because my &amp;quot;debug on device&amp;quot; experience was very unstable when I used it for large workspaces and a few debug apps running at the same time - used days to identity debugger problems instead of debugging.)&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;br /&gt;
+///////&lt;br /&gt;
+&lt;br /&gt;
+///////&lt;br /&gt;
+Getting Started&lt;br /&gt;
+&lt;br /&gt;
+0. Compiling the symbian gcc, csl-gcc, EKA2, EKA1 tools from source made lots of errors for me - because I didn&apos;t have all the required packages - so make sure you install these and read what&apos;s missing if error happens then google for it when a compile error happens:&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - sudo apt-get install build-essential&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - sudo apt-get install bison&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - sudo apt-get install flex&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; - sudo apt-get install libssl-dev&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; if you want to use S60 2nd ed sdks also then sudo apt-get install libncurses5-dev&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; (Yes, I&apos;m using Ubuntu so I&apos;m using &amp;quot;sudo apt-get install&amp;quot; - your linux distro might be different)&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;br /&gt;
+&lt;br /&gt;
+1. Download the latest version of Gnupoc from &lt;a href=&quot;http://www.martin.st/symbian/&quot;&gt;Martin&apos;s page&lt;/a&gt; and extract to ~/gnupoc.&lt;br /&gt;
+&lt;br /&gt;
+2. Since we&apos;re targetting S60 3rd apps - follow &amp;quot;Installing the EKA2 toolchain&amp;quot; in http://www.martin.st/symbian/ - I want to use native Linux builds of the tools, so I followed:&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 1.1 &amp;quot;To compile it from source instead&amp;quot; - download &amp;quot;the source&amp;quot; link and compile it. (using the binaries didn&apos;t work for me)&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt; if failed because no bison &amp;gt;&amp;gt; &amp;quot;sudo apt-get install bison&amp;quot; then clean by: &amp;quot;rm -R csl-build&amp;quot; then compile it again&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt; if failed because no flex &amp;gt;&amp;gt; &amp;quot;sudo apt-get install flex&amp;quot; then clean as above and re-compile&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt; OK that worked for me...&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1.2 &amp;quot;Then you can install the rest of the tools&amp;quot;&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt; If failed because needed openssl dev libs, so: sudo apt-get install libssl-dev&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; then try build it again - if you get other buld errors - try see what&apos;s missing and try to find/google or see in the synaptic pkg manager the appropriate &amp;quot;dev&amp;quot; libs and install them via apt-get... I remember once I needed &amp;quot;bison&amp;quot;... etc.&lt;br /&gt;
+&lt;br /&gt;
+3. Follow &amp;quot;SDKs&amp;quot; in &lt;a href=&quot;http://www.martin.st/symbian/&quot;&gt;Martin&apos;s page&lt;/a&gt; and also install the wrapper (./install_wrapper ~/gnupoc) - As I&apos;m focused on compiling for the device only and I&apos;m using the natively compiled tools above so I skipped the &amp;quot;Wine setup&amp;quot; stage.&lt;br /&gt;
+&lt;br /&gt;
+(You can go on to Martin&apos;s &amp;quot;Using it&amp;quot; section to get the real taste of Symbian C++ development from the commandline and to understand how the Carbide IDE actually works. We&apos;ll make a shell script to call these things from the eclipse IDE in the next steps - so make sure you can make helloworldbasic.sisx run on your phone first.)&lt;br /&gt;
+&lt;br /&gt;
+4. Install java: &amp;quot;sudo apt-get install sun-java6-jdk&amp;quot;&lt;br /&gt;
+&lt;br /&gt;
+5. Download eclipse for c++ from eclipse.org (&amp;quot;ganymede&amp;quot; at the time of this writing), unzip it, double click &amp;quot;eclipse&amp;quot; in its folder to start it.&lt;br /&gt;
+&lt;br /&gt;
+6. Take a working project from carbide or the s60 examples, copy its folder to your workspace, delete all the .cproject .project .metadata etc - just a plain folder with group, inc, src, data, etc folders.&lt;br /&gt;
+&lt;br /&gt;
+7. File &amp;gt; New &amp;gt; C++ project &amp;gt; type: Makefile Project &amp;gt; Empty project, Select &amp;quot;other toolchain&amp;quot;, Use the project name as exactly the same name as your folder (a warning would show).&lt;br /&gt;
+&lt;br /&gt;
+8. Download (and edit as you like) -  &amp;quot;mysismakelist&amp;quot; from &lt;a href=&quot;http://www.clearevo.com/blog/files/mysismakelist&quot;&gt;here (right-click)&lt;/a&gt; into your project&apos;s group folder - edit all in the &amp;quot;config part&amp;quot; of the file to meet your project - this will be the main script that would call &amp;quot;abld&amp;quot;, etc. I&apos;m a novice in shell scripts - please help share about how to make it better - for example, make it build only if not already built, so when we press Ctrl+B it doesn&apos;t take too long.&lt;br /&gt;
+&lt;br /&gt;
+9. Right-Click on your project folder &amp;gt; C++ build &amp;gt; uncheck the &amp;quot;use default build command&amp;quot; &amp;gt; set command as &amp;quot;sh mysismakelist&amp;quot;, add /group to the build location.&lt;br /&gt;
+&lt;br /&gt;
+10. Build it. You might want to uncheck &amp;quot;auto-build&amp;quot; or &amp;quot;build after clean&amp;quot; and other default build setttings of eclipse.&lt;br /&gt;
+&lt;br /&gt;
+11. A lot of &amp;quot;file not found&amp;quot; errors might pop up - generally these are about the case-sensitivity of file-names in the Linux world that is not there in Windows so you should fix them one by one - be patient.&lt;br /&gt;
+&lt;br /&gt;
+12. They&apos;d be errors in the pkg file (that is shown in the build-console but not detected by eclipse-cdt parsers) - I don&apos;t know how to make the $(EPOCROOT) or other params work yet - so I used the full path to each file of the sis. Try searching your sdk folders to see where some files actually are.&lt;br /&gt;
+&lt;br /&gt;
+13. See &lt;a href=&quot;http://www.martin.st/symbian/&quot;&gt;Martin&apos;s page&lt;/a&gt; for info on how to make your cert and keys if you want to self sign projects (that don&apos;t need protected capabilities).&lt;br /&gt;
+&lt;br /&gt;
+14. For making .csr files with symbian devcert request tool - install and use it via WINE. (I installed WINE from WineHQ official site, using its deb for Ubuntu - then installed &amp;quot;wine tricks&amp;quot; from http://wiki.winehq.org/winetricks - working with DevcertRequest 2.3)&lt;br /&gt;
+&lt;br /&gt;
+15. For code-completion (when you press the -&amp;gt; or . after a ptr or object) - you need to add the epoc32\include and &amp;lt;your project&amp;gt;\inc to each project&apos;s Properties &amp;gt; C/C++ General &amp;gt; Paths &amp;gt; then select language as &amp;quot;GNU C++&amp;quot; then &amp;quot;Add&amp;quot; - choose &amp;quot;file system&amp;quot; for the sdk include and &amp;quot;workspace&amp;quot; for your project include. Then, right click your project &amp;gt; Index &amp;gt; Rebuild, then after indexing is done - choose Index &amp;gt; Search for unresolved Includes and analyze what path/folder you&apos;re missing - start over as needed. (TODO: Please help contribute/suggest about how to do this once per &amp;quot;build configuration&amp;quot; per workspace.)&lt;br /&gt;
+&lt;br /&gt;
+///////&lt;br /&gt;
+&lt;br /&gt;
+Extra suggestions:&lt;br /&gt;
+- If you want to use Git with these projects - I suggest to add to .gitignore about the .metadata folder, *.sis, *.sisx and project files like .cproject, .project.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+For S60 2nd ed sdks:&lt;br /&gt;
+- if compiling symbian-gcc as in Martin&apos;s page: EKA1 - you need to install libncurses -&amp;gt; i checked the synaptic and installed libncurses5-dev, then i had to delete the src and obj folder in the current folder - build succeeds.&lt;br /&gt;
+- If you run into &amp;quot; *** Unknown character &apos; &amp;quot; errors - this is because the new line character problem - it needs to be converted from \r\n (0D0A) to \n (0A) - so you can use dos2unix: &amp;quot;sudo apt-get install tofrodos&amp;quot; then run in terminal &amp;quot;dos2unix &amp;lt;the file&amp;gt;&amp;quot;.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Synchronizing your works and documents between PC and Notebook</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/04/30/synchronizing_your_works_and_documents_between_pc_and_notebook.html"/>
+   <updated>2009-04-30T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/04/30/synchronizing_your_works_and_documents_between_pc_and_notebook</id>
+   <content type="html">After having a Notebook sometime back, I had to zip my work and transfer them between my PC and Notebook before and after going to work.&lt;br /&gt;
+&lt;br /&gt;
+When using SVN, the daily routine is like: &lt;br /&gt;
+- Simply &amp;quot;update&amp;quot; your local SVN folder (using &lt;a href=&quot;http://tortoisesvn.tigris.org/&quot;&gt;TurtoiseSVN&lt;/a&gt; - for windows) from the server (I use my PC running &lt;a href=&quot;http://www.visualsvn.com/server/&quot;&gt;VisualSVN&lt;/a&gt; server - for windows - as the server) before working, and &amp;quot;commit&amp;quot; it back to the Server after you&apos;re done.&lt;br /&gt;
+&lt;br /&gt;
+(However, remember to always zip the work folders for safety and backup purposes - write them to a CDbefore new big changes, also weekly etc. - all these stuff the manage your work folders are in some way dangerous and sometimes risky about losing your work.)&lt;br /&gt;
+&lt;br /&gt;
+At fist you got to create a &amp;quot;folder&amp;quot; in the SVN server itself, then &amp;quot;checkout&amp;quot; the project folder to a folder using TurtoiseSVN (right-click on folder...).&lt;br /&gt;
+&lt;br /&gt;
+Fore more info please read the &lt;a href=&quot;http://svnbook.red-bean.com/&quot;&gt;Subversion Book&lt;/a&gt; to know what SVN is all about and the docs of TurtoiseSVN, VisualSVN or other tools you chose as the server and client.&lt;br /&gt;
+&lt;br /&gt;
+If you&apos;re using it to sync software development project folders (I use for Carbide.C++ Symbian development projects) then you should also set TurtoiseSVN (on both PC and Notebook) to omit certain filetypes that are not necessary for syncing/&lt;br /&gt;
+&lt;br /&gt;
+For Carbide.C++ folders, I set Turtoise SVN settings &amp;gt; Subversion &amp;gt; &amp;quot;Global ignore pattern&amp;quot; as &amp;quot;*.log *.pdom */.metadata .metadata&amp;quot; to make it sync well without all other other unnecessary files. Remember to close Carbide.C++ before you update or commit your folder.&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+Update:&lt;/strong&gt; Nowadays, I&apos;m mainly using git instead, for many reasons, mainly that I can commit frequently (because commits are done locally) and fast because, many many other things are really neat with git - and it&apos;s not hard to use the command-line/terminal at all if you devote some time to read the docs/tutorials/help.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Setting Pebble Blog Server default URL</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/04/16/setting_pebble_blog_server_default_url.html"/>
+   <updated>2009-04-16T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/04/16/setting_pebble_blog_server_default_url</id>
+   <content type="html">After I setup lighttpd for my server (to serve static files of my site and also keep the door open to try some php, ruby webapps) , using it to proxy tomcat (mod_proxy) and also using virtual servers in both tomcat and lighttpd, there were two problems with my Pebble Blog Server:&lt;br /&gt;
+(This problem doesn&apos;t happen on my previous setup where I used tomcat directly on port 80...)&lt;br /&gt;
+&lt;br /&gt;
+1. The URL of all pebble-based links were like www.clearevo.com:8080/blog/....&lt;br /&gt;
+2. Login to Pebble failed, or sometimes worked then I&apos;d see http 404 not found sometimes, and on logoff.&lt;br /&gt;
+&lt;br /&gt;
+These two problems can be fixed by editing the file: &amp;lt;your pebble folder&amp;gt;/WEB-INF/applicationContext-pebble.xml (thanks to the xml &amp;quot;comments&amp;quot; from Pebble in the file, it was easy to understand what to set...)&lt;br /&gt;
+&lt;ol&gt;
+    &lt;li&gt;Set your blog default URL: from ${url} to &amp;quot;your blog URL&amp;quot;, my case was edited to &amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;http://www.clearevo.com/blog/&amp;quot;/&amp;gt;&lt;/li&gt;
+    &lt;li&gt;Empty the ${secureUrl} to an empty string, my case was edited to &amp;lt;property name=&amp;quot;secureUrl&amp;quot; value=&amp;quot;&amp;quot;/&amp;gt;&lt;/li&gt;
+    &lt;li&gt;Reload your pebble instance from your java webserver/tomcat (tomcat app manager: http://&amp;lt;url&amp;gt;/manager/html).&lt;/li&gt;
+    &lt;li&gt;Login to your Pebble server, goto the top menu &amp;quot;Configuration&amp;quot; &amp;gt; &amp;quot;Utilities&amp;quot; then click on &amp;quot;Reindex&amp;quot; to apply the new correct url to all past posts/links.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;u&gt;Note:&lt;/u&gt; Since these settings are in /WEB-INF so you&apos;d probably have to set them again when you deplay each new version of Pebble because the file would be overwritten.&lt;br /&gt;
+&lt;br /&gt;
+Hope this helps other Pebble users! Get the latest pebble release from &lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Pebble Official Site&lt;/a&gt;.&amp;nbsp;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Sitting tips from Sidiz</title>
+   <link href="http://www.clearevo.com/blog/other/2009/04/15/sitting_tips_from_sidiz.html"/>
+   <updated>2009-04-15T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/04/15/sitting_tips_from_sidiz</id>
+   <content type="html">&lt;p&gt;
+Although the tips are quite biased for their product, it help me understand and learn a few things to be a healthy software coder. Hope these tips benefit you too:
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;&lt;a href=&quot;http://www.sidiz.com/eng/chair/chair0201.asp&quot;&gt;Sidiz: &quot;How to keep a healthy spine&quot;&lt;/a&gt;&lt;/b&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+A part of their second recommendation:&lt;br/&gt;&lt;i&gt;&quot;Move about in your seat is the most important thing. Your discs have a sponge-like structure, and your body motion provides a pumping action that lets them absorb nutrients and dispel waste. Moreover, your discs separate when your waist moves under compressed body weight and the discs are concentrated on a single spot. Lean back and adjust your bodily posture to keep your discs healthy.&quot;&lt;/i&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+I&apos;m using their T50-ex chair (bought it from &quot;modern-form&quot; yearly sale in Thailand last year...), it&apos;s quite a good chair with quite a lot of adjustable parts. Quite good for the price compared to their competitors, I just wished that it used mesh fabric for the seat instead of leather because it gets hot in summer here in Thailand so sitting on leather quickly feels humid and uncomfortable. Herman-miller have their chairs all all mesh but it&apos;s too expensive! Also the price for it at Thai resellers is also more than the prices I see in the internet.
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Don't sit too long - SitSatSat mobile java app helps remind/alert you</title>
+   <link href="http://www.clearevo.com/blog/howto/2009/04/15/dont_sit_too_long_-_sitsatsat_mobile_java_app_helps_remind_alert_you.html"/>
+   <updated>2009-04-15T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2009/04/15/dont_sit_too_long_-_sitsatsat_mobile_java_app_helps_remind_alert_you</id>
+   <content type="html">&lt;p&gt; I have this neck pain problem myself and made this little j2me (for java-enabled phones) app long ago - to remind every 20 minuts with an alert sound:&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://www.getjar.com/products/1749/SitSatSat&quot;&gt;SitSatSat (FREE)&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;br /&gt;
+I forgot about it for so long until recently my neck pain increased.&lt;br /&gt;
+&lt;br /&gt;
+I tried different chairs, sitting positions, but none solved the problem if you still &lt;strong&gt;sit for too long&lt;/strong&gt; without moving periodically. The neck pain was much less during holidays or days I didn&apos;t sit coding.&lt;br /&gt;
+&lt;br /&gt;
+So I remembered this SitSatSat app, searched for it (I remember I deployed it on GetJar.com long ago), installed it on my current development phone: Nokia 6120 - &lt;strong&gt;stand up, move your neck in all directions when it alerted&lt;/strong&gt; - it helped reduce my neck pain a lot at the end of the day. &lt;br /&gt;
+&lt;br /&gt;
+The main thing is that the alerting app actually can&apos;t help you at all, you need to help yourself: move you neck, stand up regularly when it alerts. Just keep in mind that &lt;strong&gt;&amp;quot;your health is important too!&amp;quot;&lt;/strong&gt;. &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Try listen this Daniel Masson</title>
+   <link href="http://www.clearevo.com/blog/other/2009/03/05/try_listen_this_daniel_masson.html"/>
+   <updated>2009-03-05T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/03/05/try_listen_this_daniel_masson</id>
+   <content type="html">My favorite track: &lt;strong&gt;&lt;em&gt;Morning Fall&lt;/em&gt; &lt;/strong&gt;- also in &lt;strong&gt;Buddha-Bar:&amp;nbsp; Travel Impressions&lt;/strong&gt;. &lt;a href=&quot;http://www.danielmasson.net/&quot;&gt;Daniel Masson&apos;s official site&lt;/a&gt; also provides more good feeling tracks in the video (youtube) section too.&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+&lt;/strong&gt; &lt;br /&gt;
+&lt;embed height=&quot;228&quot; width=&quot;434&quot; src=&quot;http://cache.reverbnation.com/widgets/swf/15/widgetPlayer.swf?emailPlaylist=artist_330790&amp;amp;backgroundcolor=EEEEEE&amp;amp;font_color=000000&amp;amp;posted_by=artist_330790&amp;amp;shuffle=&amp;amp;autoPlay=false&quot; type=&quot;application/x-shockwave-flash&quot;&gt;&lt;/embed&gt; &lt;a href=&quot;http://www.reverbnation.com/c./a4/15/330790/Artist/0/User/link&quot;&gt;&lt;img height=&quot;19&quot; border=&quot;0&quot; width=&quot;434&quot; src=&quot;http://cache.reverbnation.com/widgets/content/15/footer.png&quot; alt=&quot;Daniel%20Masson&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;img height=&quot;0&quot; border=&quot;0&quot; width=&quot;0&quot; src=&quot;http://www.reverbnation.com/widgets/trk/15/artist_330790/artist_330790/t.gif&quot; style=&quot;visibility: hidden; width: 0px; height: 0px;&quot; alt=&quot;&quot; /&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://www.quantcast.com/p-05---xoNhTXVc&quot;&gt;&lt;img height=&quot;1&quot; border=&quot;0&quot; width=&quot;1&quot; alt=&quot;Quantcast&quot; style=&quot;display: none;&quot; src=&quot;http://pixel.quantserve.com/pixel/p-05---xoNhTXVc.gif&quot; /&gt;&lt;/a&gt;&lt;img height=&quot;0&quot; border=&quot;0&quot; width=&quot;0&quot; src=&quot;http://counters.gigya.com/wildfire/IMP/CXNID=2000002.0NXC/bT*xJmx*PTEyMzYyMzI5MTU1NjImcHQ9MTIzNjIzMzA1OTQ4NCZwPTI3MDgxJmQ9d2lkZ2V*UGxheWVyJmc9MiZ*PSZvPWFhN2YxMWYzZWZlYTRmNDhiMWRjY2E4YjMyZWEyZDdi.gif&quot; style=&quot;visibility: hidden; width: 0px; height: 0px;&quot; alt=&quot;&quot; /&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Enjoy Roots Reggae Music!</title>
+   <link href="http://www.clearevo.com/blog/other/2009/02/28/enjoy_roots_reggae_music!.html"/>
+   <updated>2009-02-28T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/02/28/enjoy_roots_reggae_music!</id>
+   <content type="html">Well, personally I mostly enjoy roots-reggae, world and world-lounge music.&lt;br /&gt;
+&lt;br /&gt;
+Really enjoyed these two online radio stations and like to share the positive vibration with you! Have a visit:&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.burningspear.net/radio.php&quot;&gt;Burning Spear Radio&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.sky.fm/rootsreggae/&quot;&gt;Skyfm Roots Reggae&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+Enjoy!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Finally there's Categories in Pebble Java Blog Server</title>
+   <link href="http://www.clearevo.com/blog/programming/2009/02/25/finally_theres_categories_in_pebble_java_blog_server.html"/>
+   <updated>2009-02-25T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2009/02/25/finally_theres_categories_in_pebble_java_blog_server</id>
+   <content type="html">As you can see - to the right, there&apos;s &amp;quot;Categories&amp;quot; now! This was added when I upgraded to pebble 2.3.1&lt;br /&gt;
+&lt;br /&gt;
+Thanks again to &lt;a href=&quot;http://www.simongbrown.com/blog/&quot;&gt;Simon Brown&lt;/a&gt; for his great one-step-install elegant &lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Pebble&lt;/a&gt; Blog server!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to reduce bitterness of egg-plants</title>
+   <link href="http://www.clearevo.com/blog/other/2009/02/24/how_to_reduce_bitterness_of_egg-plants.html"/>
+   <updated>2009-02-24T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/02/24/how_to_reduce_bitterness_of_egg-plants</id>
+   <content type="html">Some people don&apos;t like to eat egg-plants because its little bitter taste.&lt;br /&gt;
+&lt;br /&gt;
+The technique to reduce/remove the bitterness I found in a Turkish cookbook is to cut the egg-plants and put them in salt-water for about 30 minutes. &lt;br /&gt;
+&lt;br /&gt;
+I dont remember how much salt but I think I put enough salt to make the water quite salty.&lt;br /&gt;
+&lt;br /&gt;
+After the time, you will see the water color change to be darker. Remove the egg-plants from the brine and wash them with plain water, squeeze the salt water out too.&lt;br /&gt;
+&lt;br /&gt;
+Maybe this tip is one reason why there are so many Turkish egg-plant recipe/dishes!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to prevent milk tea/boiling from burning at the bottom</title>
+   <link href="http://www.clearevo.com/blog/other/2009/02/02/how_to_prevent_milk_tea_boiling_from_burning_at_the_bottom.html"/>
+   <updated>2009-02-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2009/02/02/how_to_prevent_milk_tea_boiling_from_burning_at_the_bottom</id>
+   <content type="html">(A simple version of &amp;quot;Indian tea&amp;quot; is boiling the tea in milk rather than water)&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Prevent milk from being burnt at the bottom of your tea pot&lt;/strong&gt;. &lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Simple&lt;/strong&gt; - put your milk tea pot to boil inside another larger pot with some water - just enough water to cover about one third of your tea pot! &lt;br /&gt;
+&lt;br /&gt;
+How it works - Once the water in the outer tea pot comes to boil - the water temperature is regulated naturally between its liquid and steam state so the bottom of your milk tea pot doesn&apos;t get too hot.&lt;br /&gt;
+&lt;br /&gt;
+This same &amp;quot;2 pot&amp;quot; method can be used for cooking food/rice dishes with no bottom burns.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>HOWTO SIT - relieve back pain and neck pain</title>
+   <link href="http://www.clearevo.com/blog/other/2008/12/19/howto_sit_-_relieve_back_pain_and_neck_pain.html"/>
+   <updated>2008-12-19T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2008/12/19/howto_sit_-_relieve_back_pain_and_neck_pain</id>
+   <content type="html">See &lt;a href=&quot;http://www.officeorganix.com/Chairsit.htm&quot;&gt;this article about how to sit in a chair&lt;/a&gt;. &lt;br /&gt;
+&lt;br /&gt;
+The middle of the page has a good &amp;quot;&lt;strong&gt;&lt;font face=&quot;Arial&quot;&gt;If       you experience this problem&lt;/font&gt;&lt;/strong&gt;&amp;quot; - &amp;quot;&lt;font face=&quot;Arial&quot;&gt;&lt;strong&gt;Caused       by:&lt;/strong&gt;&lt;/font&gt;&amp;quot; - &amp;quot;&lt;font face=&quot;Arial&quot;&gt;&lt;strong&gt;Try       this:&lt;/strong&gt;&lt;/font&gt;&amp;quot; table.&lt;br /&gt;
+&lt;br /&gt;
+In my case I was looking for the &amp;quot;&lt;font size=&quot;2&quot;&gt;&lt;strong&gt;Neck       tension, tightness, upper back and shoulders tension.&lt;/strong&gt;&lt;/font&gt;&amp;quot; case and the solution seems to relieve the situation very effectively.&lt;br /&gt;
+&lt;br /&gt;
+I would also like to add that the pillow you use to sleep on also plays a significant role about neck pain too. I remember once I had a severe neck pain until I can&apos;t even sleep well then I changed my pillow and it significantly helped.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>HOWTO Simple way to make clear, sharper and smoother font display on Ubuntu</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/12/19/howto_simple_way_to_make_clear,_sharper_and_smoother_font_display_on_ubuntu.html"/>
+   <updated>2008-12-19T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/12/19/howto_simple_way_to_make_clear,_sharper_and_smoother_font_display_on_ubuntu</id>
+   <content type="html">For LCD screens:&lt;br /&gt;
+&lt;br /&gt;
+1. Simply open &amp;quot;System&amp;quot; -&amp;gt;&amp;quot;Preferences&amp;quot;-&amp;gt;&amp;quot;Appearance&amp;quot; then choose the &amp;quot;Font&amp;quot; tab then select &amp;quot;Subpixel smoothing (LCDs)&amp;quot; &lt;br /&gt;
+&lt;br /&gt;
+2. Now, your fonts might grow too big - so press the &amp;quot;Details...&amp;quot; button and set the resolution to 90 dots per inch (default is 96) changes would apply when your press enter or when you use the increase/decrease button.&lt;br /&gt;
+&lt;br /&gt;
+That&apos;s it! Notice the difference.&amp;nbsp; Some apps might need restart to be affected.
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Carbide.c++ Professional and OEM are now FREE!</title>
+   <link href="http://www.clearevo.com/blog/programming/2008/12/06/carbidec++_professional_and_oem_are_now_free!.html"/>
+   <updated>2008-12-06T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2008/12/06/carbidec++_professional_and_oem_are_now_free!</id>
+   <content type="html">&lt;p&gt;This is amazing news:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;Carbide.c++ Version 2.0.  In addition to new features and improvements, Carbide.c++ will have an entirely new licensing model - All Carbide.c++ 2.0 Editions (Developer, Professional and OEM) and licenses are now available for FREE!&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This means the on-device debug - which is of huge help to save time - especially in difficult situations are now FREE for everyone. &lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Got to check this out:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; &lt;span lang=&quot;en-us&quot;&gt; &lt;/span&gt;&lt;span class=&quot;Object&quot; id=&quot;OBJ_PREFIX_DWT95&quot;&gt;&lt;a href=&quot;http://www.forum.nokia.com/carbide_cpp&quot; target=&quot;_blank&quot;&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;strong&gt;&lt;font face=&quot;Arial&quot;&gt;www.forum.nokia.com/carbide_cpp&lt;/font&gt;&lt;/strong&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;span lang=&quot;en-us&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Really happy to hear that a lot more people working hard on Symbian C++ can debug over Bluetooth and save lots of time! &lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;I was using on-device debug for nearly a year now (the company I work for bought it - it was not free in the past) for my job - it really saved lots and lots of time. Probably never used the emulator ever since.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Intuitive, easy to use, on-line todo list managerTadalist.com</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/12/02/intuitive,_easy_to_use,_on-line_todo_list_managertadalistcom.html"/>
+   <updated>2008-12-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/12/02/intuitive,_easy_to_use,_on-line_todo_list_managertadalistcom</id>
+   <content type="html">I tried a few to-do list manager apps in the past but always had to revert to my simple text file TODO.txt method because my needs can&apos;t be sufficed:&lt;br /&gt;
+&lt;br /&gt;
+1. Easily/instantly add TODOs - don&apos;t ask/force me to put the end-dates, priority, etc.&lt;br /&gt;
+2. Easily/instantly re-order the list - move the more important ones up according to the situation.&lt;br /&gt;
+3. Easily/instantly move the TODOs that were DONE down at the bottom of the list for future reference - but not delete them.&lt;br /&gt;
+&lt;br /&gt;
+Finally, I found this ta-da list to meet my demands and it&apos;s on-line so it&apos;s better than transferring my TODO.txt here and there and sometimes forget which copy is latest! It also has multiple lists so you can group up the TODOs.&lt;br /&gt;
+&lt;br /&gt;
+Ta-da List seems very simple and easy to use with the least annoyance of regular todo list managers, plus this is on-line: a centralized place to keep your lists:&lt;br /&gt;
+&lt;br /&gt;
+&lt;big&gt;&lt;strong&gt;&lt;a href=&quot;http://www.tadalist.com&quot;&gt; Ta-da List Homepage&lt;/a&gt;&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;
+&lt;br /&gt;
+It&apos;s easy to-do!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Manually install Nvidia drivers on Ubuntu 8.10</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/11/15/manually_install_nvidia_drivers_on_ubuntu_810.html"/>
+   <updated>2008-11-15T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/11/15/manually_install_nvidia_drivers_on_ubuntu_810</id>
+   <content type="html">&lt;p&gt; For some strange reason, the restrictred hardware drivers that used to work for installing the nvidia drivers on ubuntu freezed/hanged on two computers i tried already. So I somehow found this useful. &lt;br /&gt;
+&lt;br /&gt;
+Open the Accessories &amp;gt; Terminal and enter  &lt;br /&gt;
+&lt;br /&gt;
+sudo apt-get install nvidia-glx-177 &lt;br /&gt;
+&lt;br /&gt;
+Then &lt;br /&gt;
+&lt;br /&gt;
+sudo nvidia-xconfig &lt;br /&gt;
+&lt;br /&gt;
+Then, make sure all work is saved, all other programs are closed, press Ctrl+Alt+Backspace to restart the window server. Hope this helps.     &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Symbian OS Future S60, UIQ, and MOAP to be merged</title>
+   <link href="http://www.clearevo.com/blog/other/2008/10/31/symbian_os_future_s60,_uiq,_and_moap_to_be_merged.html"/>
+   <updated>2008-10-31T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2008/10/31/symbian_os_future_s60,_uiq,_and_moap_to_be_merged</id>
+   <content type="html">&lt;p&gt; The Symbian Foundation&apos;s announcements so far is probably music to users and developer&apos;s ears in a way that, hopefully, we&apos;ll have less problems like &amp;quot;Yes, your phone is Symbian BUT no it can&apos;t work on your phone&amp;quot;.  &lt;br /&gt;
+&lt;a href=&quot;http://www.symbianone.com/content/view/5776/84/&quot;&gt;Check this article on SymbianOne &lt;/a&gt; &lt;br /&gt;
+And also this video about whats going on in the Symbian Foundation: &lt;br /&gt;
+&lt;a href=&quot;http://conversations.nokia.com/home/2008/06/symbain-foundat.html&quot;&gt;Symbian Foundation: Lee Williams video interview&lt;/a&gt; &lt;br /&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Native C++ programming in an easier way wxWidgets + CodeBlocks</title>
+   <link href="http://www.clearevo.com/blog/programming/2008/09/21/native_c++_programming_in_an_easier_way_wxwidgets_+_codeblocks.html"/>
+   <updated>2008-09-21T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2008/09/21/native_c++_programming_in_an_easier_way_wxwidgets_+_codeblocks</id>
+   <content type="html">&lt;p&gt; I&apos;d really like to express my thanks to the whole wxWidgets.org community for such a great open-source cross-platform framework.  &lt;br /&gt;
+&lt;br /&gt;
+I see that some famous software that are native across platforms, like &lt;a href=&quot;http://www.videolan.org/vlc/&quot;&gt;VLC media player&lt;/a&gt; and &lt;a href=&quot;http://filezilla-project.org&quot;&gt;FileZilla&lt;/a&gt; are using wxWidgets too! &lt;br /&gt;
+&lt;br /&gt;
+Although it&apos;s not that easy to start like the commercial or non-native frameworks for application programming, I would say wxWidgets does many things so well that it seems to be far better than coding MFC. Also, &lt;strong&gt;with Code::Blocks IDE&apos;s integrated wxSmith - you even have a drag-and-drop GUI enabled IDE&lt;/strong&gt;. Special thanks to the &lt;a href=&quot;http://www.codeblocks.org/&quot;&gt;Code::Blocks IDE&lt;/a&gt; team!!! &lt;br /&gt;
+&lt;br /&gt;
+wxWidgets is not only a GUI framework, it&apos;s a really complete programming framework: wxWidget&apos;s really helps many programming tasks: wxString string class (like CString in MFC), auto free allocated memory on exit of block (wxON_BLOCK_EXIT1), threading (wxThread), and many many more are very very useful. I even use these stuff in the console apps I made at work! &lt;br /&gt;
+&lt;br /&gt;
+Take a look: &lt;a href=&quot;http://www.wxwidgets.org/&quot;&gt;wxWidgets Official site&lt;/a&gt; &lt;br /&gt;
+&lt;br /&gt;
+How to setup wxWidgets + Code::Blocks?&lt;br /&gt;
+&lt;a href=&quot;http://wiki.wxwidgets.org/CodeBlocks_Setup_Guide&quot;&gt;Code::Blocks setup guide on wxWiki&lt;/a&gt; &lt;br /&gt;
+&lt;br /&gt;
+The wxBook is very helpful in clearing things up and giving you a solid foundation, big-picture of things, strengths/limits, and how to use things: &lt;a href=&quot;http://www.wxwidgets.org/docs/book/&quot;&gt;wxBook Page&lt;/a&gt; &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The free FTP client FileZilla</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/07/05/the_free_ftp_client_filezilla.html"/>
+   <updated>2008-07-05T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/07/05/the_free_ftp_client_filezilla</id>
+   <content type="html">&lt;p&gt; I was very happy when I came to know about FileZilla - finally a simple, stable and free Ftp client. I hope this suggestion benefit others too... &lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://filezilla-project.org/download.php&quot;&gt;The FileZilla FTP Client&lt;/a&gt;. &lt;br /&gt;
+&lt;br /&gt;
+If you&apos;re using Windows, just download and run the installer from the page above. &lt;br /&gt;
+&lt;br /&gt;
+As for Ubuntu Linux, the easier way to install is to simply find, check the box and click apply - from the Add/Remove software manager. &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notepad++ is the better Notepad</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/06/23/notepad++_is_the_better_notepad.html"/>
+   <updated>2008-06-23T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/06/23/notepad++_is_the_better_notepad</id>
+   <content type="html">&lt;p&gt; Looking for a handy, smart and free text-editor? Need to edit text, html and all kinds of source-code? &lt;br /&gt;
+&lt;br /&gt;
+Get &lt;a href=&quot;http://notepad-plus.sourceforge.net&quot;&gt;Notepad++&lt;/a&gt;. &lt;br /&gt;
+&lt;br /&gt;
+Here&apos;s a small HOWTO: &lt;br /&gt;
+- Go to the &lt;a href=&quot;http://notepad-plus.sourceforge.net&quot;&gt;Notepad++&lt;/a&gt; site. &lt;br /&gt;
+- Click on &lt;strong&gt;&amp;quot;Download Notepad++ executable files&amp;quot;&lt;/strong&gt; under &amp;quot;Binary files&amp;quot; section. &lt;br /&gt;
+- Locate, download and install the &amp;quot;npp.5.0.beta.Installer.exe&amp;quot; (it was 5.0 at the time of writing this blog entry). &lt;br /&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Nvu - A free alternative to DreamWeaver</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/06/21/nvu_-_a_free_alternative_to_dreamweaver.html"/>
+   <updated>2008-06-21T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/06/21/nvu_-_a_free_alternative_to_dreamweaver</id>
+   <content type="html">&lt;p&gt; I came to realize that many people I met needed a free and easy way to edit simple html files for their websites. Nvu has always been my suggestion - I use it regularly myself on both Windows and Ubuntu linux. &lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.nvudev.com&quot;&gt; &lt;img border=&quot;0&quot; alt=&quot;Made with Nvu&quot; src=&quot;http://www.nvudev.com/made-with-Nvu-t.png&quot; /&gt; &lt;/a&gt; &lt;br /&gt;
+(My &lt;a href=&quot;http://www.clearevo.com&quot;&gt;ClearEvo.com&lt;/a&gt; site is maintained using Nvu, but this blog is powered by &lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Pebble&lt;/a&gt;!) &lt;br /&gt;
+&lt;br /&gt;
+Give it a try: &lt;a href=&quot;http://www.nvu.com&quot;&gt;Nvu official site&lt;/a&gt; &lt;br /&gt;
+&lt;br /&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Try a faster web-browser - The new Opera 9.5</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/06/18/try_a_faster_web-browser_-_the_new_opera_95.html"/>
+   <updated>2008-06-18T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/06/18/try_a_faster_web-browser_-_the_new_opera_95</id>
+   <content type="html">&lt;p&gt; A new hairstyle would probably make you feel a lot different. What about trying a new browser? Try this: &lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.opera.com/&quot;&gt;&lt;img height=&quot;250&quot; width=&quot;300&quot; alt=&quot;Opera 9.5 - beautifully engineered&quot; src=&quot;http://files.myopera.com/EspenAO/albums/548363/kestrel_300x250.jpg&quot; /&gt;&lt;/a&gt; &lt;br /&gt;
+&lt;br /&gt;
+Yes, for me it&apos;s faster. Feels much more response. Looks new and very intuitive. &lt;br /&gt;
+&lt;br /&gt;
+I really love the speed-dial feature too - just add your favorite sites you go often there and just speed-dial it - like on a phone! (Maybe because Opera is from Norway, near Nokia in Finland and Ericsson in Sweden?) &lt;br /&gt;
+&lt;br /&gt;
+Speaking about mobile phone&apos;s - don&apos;t forget to try their famous &lt;strong&gt;&lt;a href=&quot;http://www.operamini.com/&quot;&gt;Opera Mini&lt;/a&gt;&lt;/strong&gt; too! &lt;br /&gt;
+&lt;br /&gt;
+Have a nice &amp;amp; fresh new day! &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ZIMBRA Desktop email - effectively manage all your emails - Gmail, AOL, Outlook or other POP/IMAP email accounts</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/05/06/zimbra_desktop_email_-_effectively_manage_all_your_emails_-_gmail,_aol,_outlook_or_other_pop_imap_email_accounts.html"/>
+   <updated>2008-05-06T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/05/06/zimbra_desktop_email_-_effectively_manage_all_your_emails_-_gmail,_aol,_outlook_or_other_pop_imap_email_accounts</id>
+   <content type="html">&lt;p&gt; I&apos;ve been trying lots of (free) email clients lately both in Ubuntu Linux and Windows... As for now, my favorite is: &lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.zimbra.com/products/desktop.html&quot;&gt; &lt;img src=&quot;http://www.clearevo.com/blog/files/zdesktopubuntu.png&quot; alt=&quot;&quot; /&gt; &lt;/a&gt; &lt;br /&gt;
+(This picture is its icon on my Ubuntu desktop) &lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.zimbra.com/products/desktop.html&quot;&gt;&lt;strong&gt;Zimbra Desktop&lt;/strong&gt;&lt;/a&gt; - you get all your emails in one place, very smart highlighting (For example, when you hover your mouse on some &amp;quot;today&amp;quot; in a message - Zimbra shows what day was that... etc.). It seems to work well and stable with lots of mail in the inboxes. Best of all, it&apos;s really smart and &lt;strong&gt;SUPER EASY to setup new email accounts&lt;/strong&gt; (I used gmail-based company acoounts). I never found any email client that is this easy to setup accounts, you always had to enter repetitive things, ports, etc. &lt;br /&gt;
+&lt;br /&gt;
+Yes, I love the simplicity that comes from &amp;quot;convention over configuration&amp;quot;. (If you&apos;re a programmer then maybe you heard that phrase recently? &lt;a href=&quot;http://www.rubyonrails.org/&quot;&gt;No?&lt;/a&gt;) &lt;br /&gt;
+&lt;br /&gt;
+For &lt;strong&gt;Windows&lt;/strong&gt; it&apos;s super easy to install Zimbra: just download and run the installer. &lt;br /&gt;
+&lt;br /&gt;
+For &lt;strong&gt;Ubuntu Linux&lt;/strong&gt;, a little harder to install (but that&apos;s normal in Linux). Here&apos;s a small &lt;strong&gt;HOWTO install Zimbra Desktop on Ubuntu&lt;/strong&gt;: &lt;br /&gt;
+&lt;br /&gt;
+1. Download Zimbra desktop for linux (browse from &lt;a href=&quot;http://www.zimbra.com/products/desktop.html&quot;&gt; Zimbra Desktop official page&lt;/a&gt;) to your home folder. &lt;br /&gt;
+&lt;br /&gt;
+( in your terminal, where you downloaded the installer for linux...) &lt;br /&gt;
+2. &lt;strong&gt;chmod +x zdesktop*&lt;/strong&gt; &lt;br /&gt;
+&lt;br /&gt;
+3. &lt;strong&gt;sh zdesk*&lt;/strong&gt; &lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+I used to like/use the embedded email client that &lt;a href=&quot;http://www.opera.com&quot;&gt;&lt;strong&gt;Opera Internet browser&lt;/strong&gt;&lt;/a&gt; provided, but I had problems about its strage behaviors with IMAP (with my gmail account - I recall that it showed sent messages in inbox, etc...), and in POP3 mode - I also observed a few cases when some new big sized emails get lost when there are lots of messages in its Inbox... Not using it anymore now. &lt;br /&gt;
+&lt;br /&gt;
+As for my Ubuntu Linux boot, I always liked/preferred its default email client - Evolution (and still like/use it now...). However, sometimes (OK, many times) it seems to hang/freeze for a few seconds, makes you feel in danger of a system hang - but no - just the Evolution froze a few secs. Other instabilities I found included a case where the program froze with the CPU in full usage and got hot, and a sometimes it just hanged - needed to kill the process. But those things are rare, not a real problem. Evolution would still be the number-one and most complete linux-based email client in my mind. &lt;br /&gt;
+&lt;br /&gt;
+I also tried Thunderbird - it&apos;s good, fast, but it had difficulties in using multiple outgoing email accounts, it doesn&apos;t seem to be designed for using many email accounts in one place... especially about the sending smtp settings.&lt;br /&gt;
+&lt;br /&gt;
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Super small USB Bluetooth dongle e-blue mini nova</title>
+   <link href="http://www.clearevo.com/blog/other/2008/04/02/super_small_usb_bluetooth_dongle_e-blue_mini_nova.html"/>
+   <updated>2008-04-02T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2008/04/02/super_small_usb_bluetooth_dongle_e-blue_mini_nova</id>
+   <content type="html">I was walking in an IT accessories store and spotted this very small USB Bluetooth dongle - bought it right away. Let me write a small review for it... &lt;br /&gt;
+&lt;img src=&quot;http://www.clearevo.com/blog/images/USBBTDongles/MiniNova_275.jpg&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;
+The main thing I like about it is that it&apos;s very small! It doesn&apos;t bother the space of other USB devices, you just plug it in and leave it there. &lt;br /&gt;
+&lt;br /&gt;
+As for performance, it seems to have very good response time, great multi-connection handling: You can use your Bluetooth Stereo Headset (I&apos;m using an i-Tech BlueBand) at great sound quality and send files to your mobile at the same time - although the file transfer speed would drop in this scenario and the music would pause once on the start of the file transfer (but music runs fine during file transfer) - it seems to be much faster and better performing that other USB Bluetooth dongles which I tried.  &lt;br /&gt;
+&lt;br /&gt;
+As it runs on a Broadcom/WIDCOMM Bluetooth stack/driver, it worked perfectly with &lt;a href=&quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP - Bluetooth Wireless Presenter Mouse + Media Player Remote Control Software&lt;/a&gt; (For Nokia/S60/Moto/SE Phones). &lt;br /&gt;
+&lt;br /&gt;
+It comes with a CD driver for you to install the Broadcom/WIDCOMM Bluetooth stack, if you just plug it in then it won&apos;t work with the Microsoft Plug and Play Bluetooth stack. You must install its CD driver. The CD driver I got didn&apos;t have auto-run, you should go to &apos;My Computer&apos; browse its folders (choices are for Windows XP or Vista, etc...) then run the Setup.exe . &lt;br /&gt;
+&lt;br /&gt;
+If you&apos;re interested, the e-blue mini nova official site is &lt;a href=&quot;http://www.e-blue.jp/en/Product/ViewProduct.aspx?Ser_Id=309&amp;amp;Cat_ID=9&quot;&gt;HERE&lt;/a&gt; but there seems to be no &amp;quot;Buy&amp;quot; link there... but you can easily Google for it. Checkout your local IT store, maybe they have it!
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New Pebble 2.3 Rocks Harder!</title>
+   <link href="http://www.clearevo.com/blog/programming/2008/03/08/new_pebble_23_rocks_harder!.html"/>
+   <updated>2008-03-08T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2008/03/08/new_pebble_23_rocks_harder!</id>
+   <content type="html">&lt;p&gt;  A big &amp;quot;THANK YOU!&amp;quot; to &lt;a href=&quot;http://www.simongbrown.com/blog/&quot;&gt;Simon Brown&lt;/a&gt;, the creator of &amp;quot;Pebble&amp;quot; java-based blogging engine. He just released the new &lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Pebble 2.3&lt;/a&gt; - this is truly the easiest-to-setup java-based blogging engine I&apos;ve ever tried. Its features are also excellently designed and very powerful. &lt;/p&gt;
+&lt;p&gt; I installed the new release on my blog and found that it loads MUCH FASTER than the 2.2 - probably because &amp;quot;Added a GZIP compression filter to reduce page loading times.&amp;quot; as described by Simon in his blog. I was feeling that the 2.2 was loading too slow, now I&apos;m very happy that this new release solved that problem - loads much faster! &lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;Tips for Apache Tomcat 6 Users:&lt;/strong&gt; &lt;br /&gt;
+When you install the &amp;quot;pebble.war&amp;quot; to your tomcat server, you can rename it as &amp;quot;blog.war&amp;quot; (to automatically set its path to /blog on your site) and upload it to the &amp;quot;$TOMCAT_HOME/webapps&amp;quot; path, then restart your tomcat server. &lt;br /&gt;
+&lt;br /&gt;
+Another way is to simply use the tomcat application manger to deploy your &amp;quot;blog.war&amp;quot; via its web-interface which is normally at &amp;quot;www.yourdomain.com/manager/html&amp;quot; - you don&apos;t have to restart your server this way. &lt;br /&gt;
+&lt;br /&gt;
+Please remember to copy the &amp;quot;.jar&amp;quot; files from the &amp;quot;lib&amp;quot; folder which came in the pebble-2.3.zip to your $TOMCAT_HOME/lib/ folder. &lt;/p&gt;
+&lt;strong&gt;&lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Click here to go and get the latest Pebble release for your site/blog Now!&lt;/a&gt;&lt;/strong&gt; &lt;br /&gt;
+&lt;br /&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Google Analytics - the way to analyse your website.</title>
+   <link href="http://www.clearevo.com/blog/programming/2008/03/08/google_analytics_-_the_way_to_analyse_your_website.html"/>
+   <updated>2008-03-08T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2008/03/08/google_analytics_-_the_way_to_analyse_your_website</id>
+   <content type="html">This is a really amazing free service that Google offers! You can know about your website&apos;s visitors in a very very detailed way - where they come from, how long they stay, which pages in your site that they go and how many finally went to your &apos;goal&apos; page (like signing up for your site or download your software).&lt;br /&gt;
+&lt;br /&gt;
+If you didn&apos;t use it yet, come and see how it works:&lt;br /&gt;
+&lt;a href=&quot;http://64.233.179.110/analytics/tour/index_en-US.html&quot;&gt;Google Analytics Tour&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+Or go directly to the main page:&lt;br /&gt;
+&lt;a href=&quot;http://www.google.com/analytics/en-GB/&quot;&gt;Google Analytics Main Page&lt;/a&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>MUST SEE - The world's best of the best in computer science!!!</title>
+   <link href="http://www.clearevo.com/blog/other/2008/02/11/must_see_-_the_worlds_best_of_the_best_in_computer_science!!!.html"/>
+   <updated>2008-02-11T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/other/2008/02/11/must_see_-_the_worlds_best_of_the_best_in_computer_science!!!</id>
+   <content type="html">You really got to see this! See how the world&apos;s best of the best in computer science look like!!!
+&lt;p&gt;  &lt;a href=&quot;http://www.codethinked.com/post/2007/12/The-Programmer-Dress-Code.aspx&quot;&gt;The Programmer Dress Code - Part I&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;    &lt;a href=&quot;http://www.codethinked.com/post/2007/12/The-Programmer-Dress-Code---Part-Deux.aspx&quot;&gt;The Programmer Dress Code - Part II&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;  Beards are Natural!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>WMouseXP 2.0 supporting BlueSoleil Released!</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/01/19/wmousexp_20_supporting_bluesoleil_released!.html"/>
+   <updated>2008-01-19T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/01/19/wmousexp_20_supporting_bluesoleil_released!</id>
+   <content type="html">&lt;p&gt;
+&lt;a href = &quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP 2.0&lt;/a&gt; - Bluetooth Wireless Presenter Mouse + Media Player Remote Control Software. For Nokia/S60/Moto/SE Phones! NEW - Supports BlueSoleil Bluetooth!
+&lt;/p&gt;
+&lt;p&gt;
+With &lt;a href = &quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP 2.0&lt;/a&gt;, you can use your phone&apos;s Joystick as your wireless mouse, use your phone&apos;s numpads as a presentation (PowerPoint/PPT) remote control and media player remote control (like a stereo remote) - all wirelessly via Bluetooth, directly from your phone. This software requires a Java-Enabled Bluetooth mobile phone + Windows XP/Vista with Bluetooth (USB, integrated, etc...) on BlueSoleil or Microsoft or Broadcom/WIDCOMM Bluetooth Stacks.
+&lt;/p&gt;
+&lt;p&gt;
+Uniquely easy to setup, uniquely easy to use, uniqely smooth mouse movement, uniqely integrated powerful functions. Simple, stable and straightforward.
+&lt;/p&gt;
+&lt;p&gt;
+Get WMouseXP 2.0 RIGHT NOW from &lt;a href = &quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP 2.0 Official Page&lt;/a&gt;.
+&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Free in-call minute-beep software for S60 2nd Ed phones</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/01/14/free_in-call_minute-beep_software_for_s60_2nd_ed_phones.html"/>
+   <updated>2008-01-14T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/01/14/free_in-call_minute-beep_software_for_s60_2nd_ed_phones</id>
+   <content type="html">&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href=&quot;http://www.clearevo.com/incallert/index.html&quot;&gt;Incallert &lt;/a&gt;periodically generates sound beeps (which are normally heard only on your side) during phone calls. Use &lt;a href=&quot;http://www.clearevo.com/incallert/index.html&quot;&gt;Incallert &lt;/a&gt;to make you conscious of your phone calls&apos; minute mark - at and BEFORE the minute mark - WITHOUT having to look at the phone. AND IT&apos;S FREE!&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;&lt;a href=&quot;http://www.clearevo.com/incallert/index.html&quot;&gt;Incallert &lt;/a&gt;can be used on S60 2nd Edition phones only.&lt;br /&gt;
+&lt;br /&gt;
+While active, this program makes a beep sound at the minute mark and can also make a different beep sound before the minute mark of your call. This feature helps notify you that a new minute cycle is coming soon, useful to control your call lengths by not getting into a new minute and using just a few soconds of the whole new minute that you&apos;re charged for - especially for international or other costly calls where the cost per minute is quite high. In cases like this, you would like to set Incallert to warn at and before every minute.&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; It can also be useful in the case that you don&apos;t want to waste too much time on the phone - you can set &lt;a href=&quot;http://www.clearevo.com/incallert/index.html&quot;&gt;Incallert &lt;/a&gt;to warn you every 5 or 10 minutes.&lt;br /&gt;
+&lt;br /&gt;
+See more details from &lt;a href=&quot;http://www.clearevo.com/incallert/index.html&quot;&gt;Incallert Official Page.&lt;/a&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>BlueSoleil implementation for WMouseXP coming soon!</title>
+   <link href="http://www.clearevo.com/blog/howto/2008/01/03/bluesoleil_implementation_for_wmousexp_coming_soon!.html"/>
+   <updated>2008-01-03T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/howto/2008/01/03/bluesoleil_implementation_for_wmousexp_coming_soon!</id>
+   <content type="html">&lt;p&gt;
+Many USB Bluetooth dongles nowadays comes with BlueSoleil driver CD.
+&lt;p&gt;
+The upcoming &lt;a href=&quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP&lt;/a&gt; 2.0 would support using BlueSoleil too! (The current WMouseXP 1.2 only supports Microsoft and Broadcom Bluetooth driver/stacks...) I expect this to be released within 1 month&apos;s time.
+&lt;p&gt;
+&lt;strong&gt;About WMouseXP&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href=&quot;http://www.clearevo.com/wmousexp/&quot;&gt;WMouseXP&lt;/a&gt; software turns your phone into a Bluetooth Wireless Presenter Mouse + Media Player Remote Control! For Nokia, S60, Motorola and SonyEricsson phones that support Java (MIDP-2.0) + Java Bluetooth fuctions (JSR-82).
+&lt;br&gt;The PC-Side software runs on Windows XP with Service Pack 2 or later installed. 
+&lt;br&gt;Uniquely easy to setup, uniquely easy to use, uniqely smooth mouse movement, uniqely integrated powerful functions. Simple, stable and straightforward.
+&lt;p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Just added a blog server using Pebble...</title>
+   <link href="http://www.clearevo.com/blog/programming/2007/12/31/just_added_a_blog_server_using_pebble.html"/>
+   <updated>2007-12-31T00:00:00+07:00</updated>
+   <id>http://www.clearevo.com/blog/programming/2007/12/31/just_added_a_blog_server_using_pebble</id>
+   <content type="html">&lt;p&gt;
+
+Want to have your own blog hosted on your web-server in minutes? Pebble is the answer! 
+
+&lt;p&gt;
+You don&apos;t even have to do any database stuff since it stores data in xml files. Just deploy the .war file and DONE!
+&lt;p&gt;
+It&apos;s sooooooo easy to setup and use (I&apos;m using an Apache Tomcat 6 app server),
+&lt;p&gt;
+Just open up &lt;a href=&quot;http://pebble.sourceforge.net/&quot;&gt;Pebble official site&lt;/a&gt; and Enjoy!
+
+&lt;p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

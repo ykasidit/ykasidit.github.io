@@ -1,0 +1,6 @@
+# /robots.txt file for http://clearevo.com/
+# mail support@clearevo.com for constructive criticism
+
+User-agent: *
+Disallow: /thankyou_wmxp.html
+Disallow: /thankyou_aglprsntr.html
