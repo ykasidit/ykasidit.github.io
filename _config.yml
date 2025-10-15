@@ -188,6 +188,8 @@ defaults:
       comments: true
       share: true
       related: true
+      redirect_from: 
+        - "{{ page.url }}/"
   # _pages
   - scope:
       path: ""
@@ -195,6 +197,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      redirect_from: 
+        - "{{ page.url }}/"
 
 
 # Sass/SCSS
