@@ -18,7 +18,7 @@ Connect Android phones to Bluetooth GNSS receivers. This free and open-source ap
 
 ---
 
-[Other previous software products](/legacy_products)
+[Other previous software products](/legacy_products/)
 
 Visit a list of older/legacy products.
 
