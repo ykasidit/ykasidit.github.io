@@ -2,6 +2,10 @@
 title: Incallert
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
+
 Incallert 3.0
 =============
 
@@ -53,5 +57,3 @@ Settings
 
 >**"Warn Before Cycle"** function issues a warning beep - you would hear the "warning beep" before each new "Minute Alert Cycle".This feature helps notify you that a new minute cycle is coming soon, useful to control your call lengths by not getting into a new minute. If you want it to warn before every new minute, you should set the "Minute Alert Cycle" in the Settings to "Every Minute".
 
-<p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>

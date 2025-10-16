@@ -1,3 +1,11 @@
+---
+title: ParkedAid
+---
+
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
+
 ParkedAid 1.4 (FREE!) 
 =====================
 
@@ -22,6 +30,3 @@ Download to PC:
 [Download](ParkedAid.jar) (Install via your phone's PC-Suite J2ME software/game installer or send the ".jar" file via Bluetooth to phone...)
 
 [Download Source Code (BSD License)](ParkedAid_src.zip)
-
-<p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>

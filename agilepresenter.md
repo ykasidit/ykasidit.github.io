@@ -2,6 +2,9 @@
 title: AgilePresenter Mobile WIFI Presenter Remote
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
 
 AgilePresenter Mobile WIFI Presenter Remote
 ==========================
@@ -54,7 +57,4 @@ AgilePresenter was developed by Kasidit Yusuf. A lot of the code is based on a Q
 Special thanks
 --------------
 Thanks to **Stuart Hanlon** for all his great ideas and effort contributed to this project.
-
- <p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
 

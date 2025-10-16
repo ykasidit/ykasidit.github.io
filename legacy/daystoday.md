@@ -2,6 +2,9 @@
 title: DaysToDay calendar counter
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
 
 DaysToDay 2.2 (FREE!)
 =====================
@@ -35,5 +38,3 @@ Special Thanks
 - Special thanks to Mathias Gundlach for his great ideas, suggestions and the very nice program icon he made for DaysToDay. 
 - Special thanks to Dr. Gilberto González for his ideas, very detailed testing and lots of translation for the Spanish version. 
 
- <p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>

@@ -6,6 +6,10 @@ title: "Legacy discontinued projects"
 
 *Legacy discontinued projects and products history.*
 
+> **Note:** These projects are no longer maintained or supported.
+> The following information is provided solely for historical and legacy reference.
+
+
 ---
 
 [EcoDroidGPS Bluetooth GPS for Android](/ecodroidgps/)

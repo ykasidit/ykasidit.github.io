@@ -3,6 +3,8 @@ title: LocalTelBox - Fast Local WIFI-network free telephone call solution
 description: Turn your WIFI network into a telephone network for your office, store or restaurant
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
 
 LocalTelBox - Turn your WIFI network into a local telephone network
 =========================================

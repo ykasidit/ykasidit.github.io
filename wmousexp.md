@@ -2,6 +2,9 @@
 title: WMouseXP Bluetooth Presentation Remote Control Software
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
 <img src="WMouseXP_Bluetooth_Presenter_Remote_Logo.png" style="float:left;"/>
 
 WMouseXP Bluetooth Presentation Remote Control Software
@@ -256,7 +259,3 @@ Special Thanks
 - Thanks to Alexandre Calixto for his great suggestions and bug reports.
 - Thanks to Nokia, Sun, Google, Eclipse, GIMP, Emacs, git, and others for providing all the tools to make and maintain this software.
 - Thanks to the [Tango project](http://tango.freedesktop.org/) for providing great icons as public domain, also thanks to the derived [Tango for devices](http://quantum-bits.org/?page_id=3) icons.
-
-<p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
-

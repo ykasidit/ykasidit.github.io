@@ -2,6 +2,10 @@
 title: PregTool - obstetric pregnancy calculator
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
+
+
 PregTool 1.0 (FREE!)
 =====================
 
@@ -27,9 +31,3 @@ Download to PC:
 Special Thanks 
 -------------
 - Special thanks to Dr. Selvio Simon for his ideas, suggestions, medical details and testing for making Pregtool. 
-
-<p>
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kasiditsblog/embed.js"></script><noscript><a href="http://disqus.com/forums/kasiditsblog/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
-
-
- 

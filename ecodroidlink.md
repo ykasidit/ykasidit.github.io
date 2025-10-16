@@ -3,6 +3,8 @@ title: WIFI-Alternative for Android phones and tablets - EcoDroidLink Bluetooth 
 description: Share internet from LAN/Ethernet to Android via Bluetooth using EcoDroidLink Bluetooth Aceess Point. Saves more battery than WIFI in our tests!
 ---
 
+> **Note:** This project is no longer maintained or supported.  
+> The following information is provided solely for historical and legacy reference.
 
 WIFI Alternative for Android phones and tablets - EcoDroidLink Bluetooth Internet Access Point
 ===========================================
