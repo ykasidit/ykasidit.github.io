@@ -1,8 +1,10 @@
+---
+title: AgilePresenter Mobile WIFI Presenter Remote
+---
+
 
 AgilePresenter Mobile WIFI Presenter Remote
 ==========================
-
-<big>Note: This product has been discontinued.</big>
 
 Use this software to Remote-Control Powerpoint/Presentations from WIFI-enabled Phones!
 

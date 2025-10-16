@@ -1,3 +1,7 @@
+---
+title: PregTool - obstetric pregnancy calculator
+---
+
 PregTool 1.0 (FREE!)
 =====================
 

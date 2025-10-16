@@ -6,7 +6,7 @@ description: Bluetooth GPS Receiver with External GPS antenna, connects to multi
 Bluetooth GPS Receiver for Android - EcoDroidGPS
 =======================================================
 
-<big>Note: This product has been discontinued.</big>
+<big>Note: Aug 2021 - due to the COVID pandemic situation in Thailand, we have halted operations temporarily. For more info, please kindly send an email to **`<`support[AT]clearevo.com`>`**.</big>
 
 Use the EcoDroidGPS Bluetooth GPS Receiver kit in your car to greatly improve your GPS positioning accuracy in Android phones and tablets. <strong>[Only 85 USD](#buy) - [one of the best in value for 1.x-2.x meter accuracy in the market today!](https://wiki.openstreetmap.org/wiki/GPS_device_reviews)</strong>
 

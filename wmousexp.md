@@ -1,9 +1,11 @@
+---
+title: WMouseXP Bluetooth Presentation Remote Control Software
+---
+
 <img src="WMouseXP_Bluetooth_Presenter_Remote_Logo.png" style="float:left;"/>
 
 WMouseXP Bluetooth Presentation Remote Control Software
 =================
-
-<big>Note: This product has been discontinued.</big>
 
 *Turn your Android phone into a Wireless Presenter Remote*
 -----------------------------------------------

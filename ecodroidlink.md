@@ -7,8 +7,6 @@ description: Share internet from LAN/Ethernet to Android via Bluetooth using Eco
 WIFI Alternative for Android phones and tablets - EcoDroidLink Bluetooth Internet Access Point
 ===========================================
 
-<big>Note: This product has been discontinued.</big>
-
 The Lower-power alternative to WIFI - using Bluetooth Internet made our Android phone battery charge last up to 26% longer than WIFI in our test! [see our battery test results](bluetooth_vs_wifi_on_android_battery_consumption)
 
 If you ever used 'Bluetooth Internet Tethering' - this is essentially the same but instead of mobile internet, EcoDroidLink uses your home/office Internet router as the internet source (via a LAN cable), providing internet to Android phones and tablets (and even most laptop PCs, notebooks or Raspberry Pis) via Bluetooth.

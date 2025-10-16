@@ -7,8 +7,6 @@ description: Turn your WIFI network into a telephone network for your office, st
 LocalTelBox - Turn your WIFI network into a local telephone network
 =========================================
 
-<big>Note: This product has been discontinued.</big>
-
 Create your own local 'intercom' telephone network by plugging LocalTelBox into your WIFI network!
 
 - Fast, direct connections - no Internet used. Make free local-network calls between with Android, Windows PCs and GNU/Linux computers. If your business or tasks need fast, frequent/long local telephone calls - give LocalTelBox a try!
